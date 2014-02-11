@@ -123,7 +123,7 @@ the dataset with the filled-in missing values for this part.
 
 1. Make a panel plot containing a time series plot (i.e. `type = "l"`) of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis). The plot should look something like the following, which was creating using **simulated data**:
 
-![plot of chunk sample_panelplot](instructions_fig/sample_panelplot.png) 
+![Sample panel plot](instructions_fig/sample_panelplot.png) 
 
 
 **Your plot will look different from the one above** because you will
