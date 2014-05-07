@@ -89,7 +89,6 @@ png(file = "plot3.png", bg="white",
 
 # Create the plot with appropriate colors and labels.
 
-
 with(df, {plot(x=DateTime, y=Sub_metering_1, type="l",
                xlab="",
                ylab = "Energy sub metering")
