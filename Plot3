@@ -1,0 +1,19 @@
+new_hpc = read.table('household_power_consumption.txt', sep=';', header = TRUE,
+                     colClasses = c('character', 'character', 'numeric', 'numeric',
+                                    'numeric', 'numeric','numeric', 'numeric', 'numeric'), 
+                     na.strings = '?')
+
+
+new_hpc$Date_Time = strptime(paste(new_hpc$Date, new_hpc$Time),"%d/%m/%Y %H:%M:%S")
+
+new_hpc <- subset(new_hpc,as.Date(Date_Time) >= as.Date("2007-02-01") & as.Date(Date_Time) <= as.Date("2007-02-02"))
+
+png("plot3.png", height=480, width=480)
+                 
+plot(data$Date_Time, data$Sub_metering_1, pch=NA, xlab="", ylab="Energy sub metering")
+lines(data$Date_Time, data$Sub_metering_1, col='black')
+lines(data$Date_Time, data$Sub_metering_2, col='red')
+lines(data$Date_Time, data$Sub_metering_3, col='blue')
+legend('topright', c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty = c(1,1,1), col = c('black', 'red', 'blue'))
+
+dev.off()
