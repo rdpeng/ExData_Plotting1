@@ -1,4 +1,6 @@
 ##### PLOT 3
+#### this script requires the functions 'get_data' and 'make_numeric' (see Plot1.R)
+
 # prelims: getting data, and so forth
 data=get_data()
 data$DateTime=paste(as.character(data$Date),as.character(data$Time))
@@ -7,9 +9,9 @@ x=data$DateTime
 
 # actually plotting
 quartz()
-plot(x,data$Sub_metering_1,ylab='Energy sub metering',xlab='',yaxt='n',ylim=c(0,35),type='l',col='black')
-lines(x,data$Sub_metering_2,col='red')
-lines(x,data$Sub_metering_3,col='blue')
+plot(x,make_numeric(data$Sub_metering_1),ylab='Energy sub metering',xlab='',yaxt='n',ylim=c(0,35),type='l',col='black')
+lines(x,make_numeric(data$Sub_metering_2),col='red')
+lines(x,make_numeric(data$Sub_metering_3),col='blue')
 axis(side=2, at=seq(0,30,10), labels=seq(0,30,10))
 
 # adding legend

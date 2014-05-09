@@ -4,7 +4,7 @@ data=get_data()
 data$DateTime=paste(as.character(data$Date),as.character(data$Time))
 data$DateTime=strptime(data$DateTime, "%d/%m/%Y %H:%M:%S")
 x=data$DateTime
-y=as.numeric(as.character(data$Global_active_power))
+y=make_numeric(data$Global_active_power)
 
 # actually plotting
 quartz()

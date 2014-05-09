@@ -14,10 +14,15 @@ get_data=function(){
     return(data)
 }
 
+# function that turns factor levels into numeric
+make_numeric=function(x){
+    as.numeric(as.character(x))
+}
+
 
 ##  PLOT 1
 png(filename='plot1.png')
-hist(as.numeric(as.character(data$Global_active_power)),xlab='Global Active Power (kilowatts)',col='red',main='Global Active Power')
+hist(make_numeric(data$Global_active_power),xlab='Global Active Power (kilowatts)',col='red',main='Global Active Power')
 axis(side=2, at=seq(0,1200,200), labels=seq(0,1200,200))
 setwd('/Users/jenniferli/Desktop/ExData_Plotting1/figure/')
 dev.off()
