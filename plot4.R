@@ -1,0 +1,14 @@
+png(file="plot4.png");
+tempData = read.csv(pipe('egrep \'^Date|^[1-2]/2/2007\' household_power_consumption.txt'), header=T, sep=';');
+tempData$Date <- as.Date(tempData$Date,format="%d/%m/%Y");
+tempData$Time <- as.character(tempData$Time);
+dateTime <- as.POSIXct(paste(tempData$Date,tempData$Time));
+par(mfrow=c(2,2));
+plot(dateTime,tempData$Global_active_power,ylab="Global Active Power (kilowatts)",type="l",xlab="");
+plot(dateTime,tempData$Voltage,ylab="Voltage",type="l",xlab="");
+plot(dateTime,tempData$Sub_metering_1,ylab="Energy Sub Metering",type="l",xlab="");
+lines(dateTime,tempData$Sub_metering_2,col="red");
+lines(dateTime,tempData$Sub_metering_3,col="blue");
+legend("topright",legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),col=c("black","red","blue"),lwd=1);
+plot(dateTime,tempData$Global_reactive_power,ylab="Global_reactive_power",type="l",xlab="");
+dev.off();
