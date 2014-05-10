@@ -1,5 +1,9 @@
 ## This script creates the first plot for the first course project for the 
 ## "Exploratory data analysis course" in Coursera.
+## To make it work properly, run the script in the same directoy where the
+## the file "household_power_consumption.txt" is located.The dataset was donwloaded from:
+## https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip
+
 
 ## All dates are read to check the position of the elements we are interested in
 
