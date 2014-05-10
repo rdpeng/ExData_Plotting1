@@ -1,0 +1,10 @@
+png(file="plot3.png");
+tempData = read.csv(pipe('egrep \'^Date|^[1-2]/2/2007\' household_power_consumption.txt'), header=T, sep=';');
+tempData$Date <- as.Date(tempData$Date,format="%d/%m/%Y");
+tempData$Time <- as.character(tempData$Time);
+dateTime <- as.POSIXct(paste(tempData$Date,tempData$Time));
+plot(dateTime,tempData$Sub_metering_1,ylab="Energy Sub Metering",type="l",xlab="");
+lines(dateTime,tempData$Sub_metering_2,col="red");
+lines(dateTime,tempData$Sub_metering_3,col="blue");
+legend("topright",legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),col=c("black","red","blue"),lwd=1);
+dev.off();
