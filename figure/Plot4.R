@@ -23,12 +23,12 @@ plot(x,make_numeric(data$Voltage),ylab='Voltage',xlab='datetime',type='l')
 # panel 3
 plot(x,make_numeric(data$Sub_metering_1),ylab='Energy sub metering',xlab='',yaxt='n',ylim=c(0,35),type='l',col='black')
 lines(x,make_numeric(data$Sub_metering_2),col='red')
-lines(x,make_numeric(data$Sub_metering_2),col='blue')
+lines(x,make_numeric(data$Sub_metering_3),col='blue')
 legend("topright",c('Sub_metering_1','Sub_metering_2','Sub_metering_3'), col = c('black','red','blue'),lwd=1,bty='n')
 
 # panel 4
 plot(x,make_numeric(data$Global_reactive_power),yaxt='n',ylab='Global_reactive_power',xlab='datetime',type='l')
-axis(side=2, at=seq(0.0,0.5,0.1),labels=seq(0.0,0.5,0.1))
+axis(side=2, at=seq(0.0,0.5,by=0.1),labels=c('0.0','0.1','0.2','0.3','0.4','0.5'))
 
 dev.off()
 
