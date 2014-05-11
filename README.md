@@ -1,3 +1,7 @@
+The directory 'figure' contains 4 R scripts and 4 png files. For the purposes of the assignment, I am assuming that the data file has been downloaded, unzipped, and currently resides in the local directory. 
+
+Two important functions in Plot1.R are used throughout the scripts. The functions are get_data and make_numeric.  
+
 ## Introduction
 
 This assignment uses data from
