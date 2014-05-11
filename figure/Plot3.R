@@ -8,7 +8,7 @@ data$DateTime=strptime(data$DateTime, "%d/%m/%Y %H:%M:%S")
 x=data$DateTime
 
 # actually plotting
-quartz()
+png(filename='plot3.png')
 plot(x,make_numeric(data$Sub_metering_1),ylab='Energy sub metering',xlab='',yaxt='n',ylim=c(0,35),type='l',col='black')
 lines(x,make_numeric(data$Sub_metering_2),col='red')
 lines(x,make_numeric(data$Sub_metering_3),col='blue')
@@ -19,5 +19,4 @@ legend("topright",c('Sub_metering_1','Sub_metering_2','Sub_metering_3'), col = c
 
 # going to folder and saving 
 setwd('/Users/jenniferli/Desktop/ExData_Plotting1/figure/')
-dev.copy(png,'plot3.png')
 dev.off()

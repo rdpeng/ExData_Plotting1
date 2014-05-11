@@ -7,11 +7,9 @@ x=data$DateTime
 y=make_numeric(data$Global_active_power)
 
 # actually plotting
-quartz()
+png(filename='plot2.png')
 plot(x,y,ylab='Global Active Power (kilowatts)',xlab='',type='l')
-
 # going to folder and saving 
 setwd('/Users/jenniferli/Desktop/ExData_Plotting1/figure/')
-dev.copy(png,'plot2.png')
 dev.off()
 
