@@ -1,5 +1,7 @@
-## 
-##
+## Data can be downloaded from this link 
+##       https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip
+## Assume data is loaded and unzipped
+##========================================================================================================================
 ## plot2.R: Global Active Power in two days Feb 01, 2007 and Feb 02, 2007
 # Read data, specify the format of each variable, na.strings is coded as ?, date in format dd/mm/yyyy, time in format hh:mm:ss
 data<-read.table("household_power_consumption.txt", sep=";", header =T, 
