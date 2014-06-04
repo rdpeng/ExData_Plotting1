@@ -1,0 +1,29 @@
+png(filename="plot1.png")
+
+# загружаем первые 10 000 000 записей из файла
+powerdata<-read.table("./household_power_consumption.txt",sep=";",nrows=1000000,head=TRUE)
+
+# преобразуем переменную Date в формат даты
+powerdata$Date<-as.Date(powerdata$Date,format="%d/%m/%Y")
+head(powerdata)
+
+# выделить диапозон с 2007-02-01 по 2007-02-02
+SubPowerData<-subset(powerdata,Date=="2007-02-01" | Date=="2007-02-02")
+head(SubPowerData)
+tail(SubPowerData)
+length(SubPowerData$Date)
+
+# преобразуем переменную Global_active_power в числовой формат
+SubPowerData$Global_active_power<-as.numeric(SubPowerData$Global_active_power)/1000
+
+# строим гисторамму
+hist(SubPowerData$Global_active_power, 
+     col="red",
+     main="Global Active Power",
+     xlab="Global Active Power (kilowatts)",
+     xaxt="n",
+     yaxt="n")
+axis(1,at=c(0,2,4,6))
+axis(2,at=c(0,200,400,600,800,1000,1200))
+
+dev.off()
