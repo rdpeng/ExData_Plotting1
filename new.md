@@ -1,2 +1,2 @@
-##Prueba de esta wea
-a ver q rechucha pasa
+##Prueba de esta wea -> todo bien	
+a ver q rechucha pasa cuando se modifica un archivo
