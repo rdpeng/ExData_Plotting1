@@ -1,0 +1,7 @@
+data <- read.table("household_power_consumption.txt", sep=";", col.names=c("Date", "Time", "Global_active_power", "Global_reactive_power", "Voltage", "Global_inten", "Sm1", "Sm2","Sm3"), na.strings="?",skip=66637,nrows=2880,colClasses=c("character", "character", "numeric", "numeric", "numeric", "numeric","numeric", "numeric","numeric"))
+y<-paste(data$Date, data$Time)
+z<-strptime(y, "%d/%m/%Y %H:%M:%S")
+win.graph()
+plot(z,data$Global_active_power, type="l", ylab="Global Active Power (kilowatts)",xlab="")
+dev.copy(png,file="plot2.png")
+dev.off()
