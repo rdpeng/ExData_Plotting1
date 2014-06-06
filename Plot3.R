@@ -22,3 +22,4 @@ lines(x=epcds$Time,y=epcds$Sub_metering_3,lty="solid",col="blue")
 legend("topright", lty = "solid", col = c("black","blue", "red"), legend = c("Sub_metering_1", "Sub_metering_2","Sub_metering_3"))
 dev.copy(png,file="plot3.png")
 dev.off()
+ 
