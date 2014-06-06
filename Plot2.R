@@ -20,3 +20,4 @@ lines(x=epcds$Time,y=epcds$Global_active_power,lty="solid")
 dev.copy(png,file="plot2.png")
 dev.off()
  
+ 
