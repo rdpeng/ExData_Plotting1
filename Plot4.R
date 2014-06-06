@@ -30,3 +30,4 @@ with(epcds,plot(x=Time,y=Global_reactive_power,xlab="datetime",type="l"))
 dev.copy(png,file="plot4.png")
 dev.off()
  
+  
