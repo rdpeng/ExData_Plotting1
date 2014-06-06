@@ -23,3 +23,4 @@ legend("topright", lty = "solid", col = c("black","blue", "red"), legend = c("Su
 dev.copy(png,file="plot3.png")
 dev.off()
  
+ 
