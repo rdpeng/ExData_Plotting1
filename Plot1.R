@@ -20,4 +20,4 @@ hist(epcds$Global_active_power,col="red",xlab="Global Active Power (kilowatts)",
 dev.copy(png,file="plot1.png")
 dev.off()
 
-#Output at https://github.com/rdpeng/ExData_Plotting1/pull/52
+
