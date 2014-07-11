@@ -118,7 +118,9 @@ This consists of 5 R scripts. The first one ,ReadProcessData.R
  frame and save the reduced data set in a smaller dataset. This 
  reduced dataset is read by the 4 files (plot1.R, plot2.R, 
  plot3.R and plot4.R) that generated the desired plots.
- 
+'''sh
+![readprocessdata.r](ReadProcessData.R)
+'''
 ### ReadProcessData.R
 ```sh
 # Read the data form the original file
@@ -181,7 +183,7 @@ load("household_power_consumption_reduced.RData")
 png(filename="plot2.png",width=480,height=480)
 par(mfrow = c(1,1)) #add within the png context
 
-with (dsub,plot(DateTime,Global_active_power,main="Global Active Power",type="l"
+with (dsub,plot(DateTime,Global_active_power,main="",type="l"
                 ,col="black",ylab="Global Active Power(kilowatts)"),xlab="")
 dev.off()
 
