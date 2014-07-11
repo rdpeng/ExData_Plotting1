@@ -1,32 +1,29 @@
-# Exploratory Data Analysis - Assignment 2 - Q. #4
-# Ron Mashrouteh May 23, 2014
+PowerData <- read.csv("household_power_consumption.csv",header=T)
 
-# Load ggplot2 library
-require(ggplot2)
+#fix date time
+x <- as.Date(PowerData$Date, format="%d/%m/%Y")
+datetime1 <- paste(x, PowerData$Time)
+datetime <- strptime(datetime1, format="%Y-%m-%d %H:%M:%S")
+PowerData$datetime <- datetime
 
-# Loading provided datasets - loading from local machine
-NEI <- readRDS("~/Exploratory_Data_Analysis/Assignment_2/summarySCC_PM25.rds")
-SCC <- readRDS("~/Exploratory_Data_Analysis/Assignment_2/Source_Classification_Code.rds")
+#make plot
+par(mfrow = c(2,2))
 
-# Coal combustion related sources
-SCC.coal = SCC[grepl("coal", SCC$Short.Name, ignore.case=TRUE),]
+#top right
+with(PowerData, plot(datetime, Global_active_power,xlab="",ylab = "Global Active Power (kilstrowatts)",type="n"))
+with(PowerData, lines(datetime, Global_active_power))
 
-# Merge two data sets
-merge <- merge(x=NEI, y=SCC.coal, by='SCC')
-merge.sum <- aggregate(merge[, 'Emissions'], by=list(merge$year), sum)
-colnames(merge.sum) <- c('Year', 'Emissions')
+#top left
+with(PowerData, plot(datetime, Voltage, type="n"))
+with(PowerData, lines(datetime, Voltage))
 
-# Across the United States, how have emissions from coal combustion-related sources
-# changed from 1999-2008?
+#bottom right
+with(PowerData, plot(datetime, Sub_metering_1,xlab="",ylab = "Energy sub metering",type="n"))
+with(PowerData, lines(datetime, Sub_metering_1))
+with(PowerData, lines(datetime, Sub_metering_2, col="red"))
+with(PowerData, lines(datetime, Sub_metering_3, col="blue"))
+legend("topright", cex=.8, lwd=1, col = c("black","red","blue"), legend = c("Sub_Metering_1","Sub_Metering_2","Sub_Metering_3"))
 
-# Generate the graph in the same directory as the source code
-png(filename='~/Exploratory_Data_Analysis/Assignment_2/plot4.png')
-
-ggplot(data=merge.sum, aes(x=Year, y=Emissions/1000)) +
-    geom_line(aes(group=1, col=Emissions)) + geom_point(aes(size=2, col=Emissions)) +
-    ggtitle(expression('Total Emissions of PM'[2.5])) +
-    ylab(expression(paste('PM', ''[2.5], ' in kilotons'))) +
-    geom_text(aes(label=round(Emissions/1000,digits=2), size=2, hjust=1.5, vjust=1.5)) +
-    theme(legend.position='none') + scale_colour_gradient(low='black', high='red')
-
-dev.off()
+#bottom left
+with(PowerData, plot(datetime, Global_reactive_power, type="n"))
+with(PowerData, lines(datetime, Global_reactive_power))
