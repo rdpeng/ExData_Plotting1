@@ -9,6 +9,6 @@ load("household_power_consumption_reduced.RData")
 png(filename="plot2.png",width=480,height=480)
 par(mfrow = c(1,1)) #add within the png context
 
-with (dsub,plot(DateTime,Global_active_power,main="Global Active Power",type="l"
+with (dsub,plot(DateTime,Global_active_power,main="",type="l"
                 ,col="black",ylab="Global Active Power(kilowatts)"),xlab="")
 dev.off()
