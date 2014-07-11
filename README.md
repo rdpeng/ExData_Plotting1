@@ -94,7 +94,6 @@ The four plots that you will need to construct are shown below.
 
 ### Plot 1
 
-
 ![plot of chunk unnamed-chunk-2](figure/unnamed-chunk-2.png) 
 
 
@@ -112,3 +111,137 @@ The four plots that you will need to construct are shown below.
 
 ![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5.png) 
 
+## My Implementation 
+
+This consists of 5 R scripts. The first one ,ReadProcessData.R 
+ is used to read and pre-process the data for the correct time
+ frame and save the reduced data set in a smaller dataset. This 
+ reduced dataset is read by the 4 files (plot1.R, plot2.R, 
+ plot3.R and plot4.R) that generated the desired plots.
+ 
+### ReadProcessData.R
+```sh
+# Read the data form the original file
+d_raw= read.table("household_power_consumption.txt", sep=";",header=TRUE,as.is=TRUE)
+
+# Process data for use
+dsub<-subset(d_raw,Date=="1/2/2007" | Date=="2/2/2007")  # Filter entire data set
+
+# Convert susetted data to corrrect type
+dsub$DateTime<-paste(dsub$Date,dsub$Time) # Create date-time entry
+dsub$DateTime=strptime(dsub$DateTime,format="%d/%m/%Y %H:%M:%S") # Convert to correct format
+dsub$Global_active_power<-as.numeric(dsub$Global_active_power)
+dsub$Global_reactive_power<-as.numeric(dsub$Global_reactive_power)
+dsub$Voltage<-as.double(dsub1$Voltage)
+dsub$Sub_metering_1<-as.numeric(dsub$Sub_metering_1)
+dsub$Sub_metering_2<-as.numeric(dsub$Sub_metering_2)
+dsub$Sub_metering_3<-as.numeric(dsub$Sub_metering_3)
+
+# Save subsetted data for use later
+write.table(dsub,"household_power_consumption_reduced.txt", sep=";")
+save("dsub", file="household_power_consumption_reduced.RData")
+
+```
+### plot1.R
+```sh
+# Read Data
+# read the data from previous file (ReadProcessData.R)
+# dsub is the data name
+
+load("household_power_consumption_reduced.RData")
+
+# Create the png graph file
+
+png(filename="plot1.png",width=480,height=480)
+
+par(mfrow = c(1,1)) #add within the png context
+
+#plot 1
+
+hist(dsub$Global_active_power,main="Global Active Power", col="red" ,ylab="Frequency", xlab="Global Active Power(kilowatts)")
+
+dev.off()
+### End of plot1.R
+```
+
+### My Plot 1
+
+![plot 1](plot1.png) 
+
+### plot2.R
+```sh
+# Read Data
+# read the data from previous file (ReadProcessData.R)
+# dsub is the data name
+load("household_power_consumption_reduced.RData")
+
+# Create the png graph file
+
+#plot 2
+png(filename="plot2.png",width=480,height=480)
+par(mfrow = c(1,1)) #add within the png context
+
+with (dsub,plot(DateTime,Global_active_power,main="Global Active Power",type="l"
+                ,col="black",ylab="Global Active Power(kilowatts)"),xlab="")
+dev.off()
+
+```
+
+### My Plot 2
+
+![plot 2](plot2.png) 
+
+### plot3.R
+```sh
+# Read Data
+# read the data from previous file (ReadProcessData.R)
+# dsub is the data name
+load("household_power_consumption_reduced.RData")
+
+# Create the png graph file
+
+#plot 3
+png(file = "plot3.png")
+par(mfrow = c(1,1)) #add within the png context
+maxvals=range(c(dsub$Sub_metering_1,dsub$Sub_metering_2,dsub$Sub_metering_3))
+plot(dsub$DateTime,dsub$Sub_metering_1,main="Global Active Power",type="l",col="black",ylab="Energy sub metering",xlab="",ylim=maxvals)
+lines(dsub$DateTime,dsub$Sub_metering_2,col="red")
+lines(dsub$DateTime,dsub$Sub_metering_3,col="blue")
+legend("topright", pch = 1, col = c("black","blue", "red"), legend = c("Sub_metering_1","Sub_metering_2","Sub_metering_3"))     
+dev.off()
+
+```
+
+### My Plot 3
+
+![plot 3](plot3.png) 
+
+### plot4.R
+```sh
+# Read Data
+# read the data from previous file (ReadProcessData.R)
+# dsub is the data name
+load("household_power_consumption_reduced.RData")
+
+# Create the png graph file
+
+#plot 4
+png(file = "plot4.png")
+par(mfrow = c(2, 2)) #add within the png context
+with(dsub, {
+  plot(DateTime,Global_active_power,col="black",type="l", ylab= "Global Active Power",xlab="")
+  plot(DateTime,Voltage,type="l", ylab= "Voltage",col="black",xlab="datetime")
+  plot(DateTime,Sub_metering_1,type="l"
+       ,col="black",ylab="Energy sub metering",xlab="")
+  lines(DateTime,Sub_metering_2,col="red")
+  lines(DateTime,Sub_metering_3,col="blue")
+  legend("topright", pch = 1, col = c("black","blue", "red"), legend = c("Sub_metering_1","Sub_metering_2","Sub_metering_3"))     
+  plot(DateTime,Global_reactive_power,col="black",type="l", ylab= "Global Reactive Power",xlab="datetime")
+  
+})
+dev.off()
+```
+
+### My Plot 4
+
+![plot 4](plot4.png) 
