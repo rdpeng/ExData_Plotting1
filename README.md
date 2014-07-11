@@ -118,7 +118,8 @@ This consists of 5 R scripts. The first one ,ReadProcessData.R
  frame and save the reduced data set in a smaller dataset. This 
  reduced dataset is read by the 4 files (plot1.R, plot2.R, 
  plot3.R and plot4.R) that generated the desired plots.
-![readprocessdata.r](ReadProcessData.R)
+
+
 ### ReadProcessData.R
 ```sh
 # Read the data form the original file
@@ -204,7 +205,7 @@ load("household_power_consumption_reduced.RData")
 png(file = "plot3.png")
 par(mfrow = c(1,1)) #add within the png context
 maxvals=range(c(dsub$Sub_metering_1,dsub$Sub_metering_2,dsub$Sub_metering_3))
-plot(dsub$DateTime,dsub$Sub_metering_1,main="Global Active Power",type="l",col="black",ylab="Energy sub metering",xlab="",ylim=maxvals)
+plot(dsub$DateTime,dsub$Sub_metering_1,main="",type="l",col="black",ylab="Energy sub metering",xlab="",ylim=maxvals)
 lines(dsub$DateTime,dsub$Sub_metering_2,col="red")
 lines(dsub$DateTime,dsub$Sub_metering_3,col="blue")
 legend("topright", pch = 1, col = c("black","blue", "red"), legend = c("Sub_metering_1","Sub_metering_2","Sub_metering_3"))     
