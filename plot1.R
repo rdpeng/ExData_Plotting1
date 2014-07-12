@@ -1,4 +1,4 @@
-# ---------------------  Readind file 
+# ---------------------  Readind the file 
 if (!('data.table' %in% installed.packages())){install.packages('data.table')}
 library(data.table)
 dat=fread('household_power_consumption.txt',na.strings='?',colClasses='character')
