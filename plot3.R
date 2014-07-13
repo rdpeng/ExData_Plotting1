@@ -1,6 +1,6 @@
 # Program code for Exploratory Data Analysis Project 1 Plot 3
 # Author: Yvonne Beirne FitzGerald
-# Date: June 6, 2014
+# Date: July 13, 2014
 # Creates both the plot and the png file
 # File Source: UCI Machine Learning Repository http://archive.ics.uci.edu/ml/
 # Dataset: Electric power consumption  at URL
