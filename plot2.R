@@ -1,6 +1,7 @@
+if(!"load_data.R" %in% list.files()) {
+    setwd("~/Desktop/Online Coursera/Coursera-Exploratory-Data-Analysis/ExData_Plotting1/")
+} 
 source("load_data.R")
-dim(newData) # 2880   10
-attach(newData)
 png(filename="plot2.png", 
      width=480, height=480,
      units="px", bg="transparent")
