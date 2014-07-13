@@ -1,4 +1,5 @@
 
+
 ## Read data
 
 gpa <- read.table("household_power_consumption.txt", stringsAsFactors = FALSE, header=TRUE, sep=';')
