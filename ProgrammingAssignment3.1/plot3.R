@@ -15,7 +15,7 @@ plot3 <- function ()
   data[,"DateTime"] <- as.POSIXct(paste(data$Date, data$Time), 
                                   format="%d/%m/%Y %H:%M:%S")
   
-  ## Creation of the png image with the hist() function
+  ## Creation of the png image with the plot() function
   pngPath <- paste(getwd(),
                    "/ProgrammingAssignment3.1/plot3.png", 
                    sep = "")
