@@ -18,7 +18,7 @@ plot1 <- function() {
         ##removes the NAs in the data
         data<-data[complete.cases(data),]
 
-        ##formatting the graph page
+        ##formatting the page for histogram
         par(mfrow = c(1, 1), mar = c(4, 4, 2, 2), oma = c(1, 1, 1, 1))
 
         ## Create histogram with 11 breaks, color red, and add head title and x-axis title
