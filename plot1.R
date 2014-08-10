@@ -21,7 +21,7 @@ plot1 <- function() {
         ##formatting the page for histogram
         par(mfrow = c(1, 1), mar = c(4, 4, 2, 2), oma = c(1, 1, 1, 1))
 
-        ## Create histogram with 11 breaks, color red, and add head title and x-axis title
+        ## Create histogram with 11 breaks, color red, and add x-axis title and main title
         hist(data[["Global_active_power"]],breaks=11, 
              col="red", 
              xlab="Global Active Power (kilowatts)",
