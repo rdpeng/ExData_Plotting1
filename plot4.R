@@ -1,4 +1,4 @@
-household_power_consumption <- read.csv("/household_power_consumption.txt", na.strings = "?", sep=";")
+household_power_consumption <- read.csv("household_power_consumption.txt", na.strings = "?", sep=";")
 dane<-household_power_consumption[household_power_consumption$Date == "1/2/2007" | household_power_consumption$Date == "2/2/2007" ,]
 
 
