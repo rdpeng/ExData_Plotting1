@@ -12,7 +12,6 @@ rm(data)
 # convert the dates & times to Date/Time classes in R & reassign to the 
 # date column
 dat$Date  <- strptime(paste(dat$Date, dat$Time), format = '%d/%m/%Y %H:%M:%S')
-# dat$Date  <- as.POSIXct(paste(dat$Date, dat$Time), format = '%d/%m/%Y %H:%M:%S')
 
 # convert columns V3, V4, & V5 to numeric
 dat$Global_active_power  <- as.numeric(dat$Global_active_power)
