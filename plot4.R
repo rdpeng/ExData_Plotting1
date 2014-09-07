@@ -1,5 +1,5 @@
 # read the whole data set (further enquiry: reading the data but only storing the needed)
-data <- read.table("household_power_consumption.txt", sep = ";", colClasses = "character", header = TRUE)
+data <- read.table("household_power_consumption.txt", sep = ";", colClasses = "character", header = TRUE) # skip = 66636
 
 # subset the data by date after changing the format of the dates
 dat <- data[as.Date(data$Date, format = '%d/%m/%Y') %in% as.Date(c('2007-02-01', '2007-02-02')), ]
@@ -19,6 +19,8 @@ dat$Global_reactive_power  <- as.numeric(dat$Global_reactive_power)
 dat$Voltage  <- as.numeric(dat$Voltage)
 
 # base plot4 - multiple base plot
+png(filename = "./ExData_Plotting1/figures/plot4.png") ## Open PNG device; create 'plot4.png' in my working directory
+## Create plot and send to a file (no plot appears on screen)
 par(mfrow = c(2,2))
 with(dat, {
         plot(x = dat$Date, y = dat$Global_active_power, xlab = "", ylab = "Global Active Power", type = "l")
@@ -29,4 +31,6 @@ with(dat, {
         legend("topright", lty="solid", col = c("black", "red", "blue"), legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
         plot(x = dat$Date, y = dat$Global_reactive_power, ylab = "Global_reactive_power", xlab = "datetime", type = "s")
 })
-# pch = "-"
+dev.off() ## Close the PNG file device
+
+## Note: if the plot was sent to the screen device the legend in the third plot will overlap the plot!

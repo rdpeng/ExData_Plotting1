@@ -5,6 +5,9 @@ data <- read.table("household_power_consumption.txt", sep = ";", colClasses = "c
 dat <- data[as.Date(data$Date, format = '%d/%m/%Y') %in% as.Date(c('2007-02-01', '2007-02-02')), ]
 dat <- na.omit(dat)
 
+# another way to subset is using a logical expression
+# dat = subset(dat, DateTime >= as.POSIXct("2007-02-01") & DateTime < as.POSIXct("2007-02-03"))
+
 # free up memory taken by data by removing data
 rm(data)
 
@@ -19,4 +22,6 @@ dat$Global_reactive_power  <- as.numeric(dat$Global_reactive_power)
 dat$Voltage  <- as.numeric(dat$Voltage)
 
 # base plot1 - histogram base plot
+png(filename = "./ExData_Plotting1/figures/plot1.png") ## Open PNG device; create 'plot4.png' in my working directory
 hist(x = dat$Global_active_power, col = "red", xlab = "Global Active Power (kilowatts)", ylab = "Frequency", main = "Global Active Power")
+dev.off()
