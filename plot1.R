@@ -1,15 +1,11 @@
-# read the whole data set (further enquiry: reading the data but only storing the needed)
-data <- read.table("household_power_consumption.txt", sep = ";", colClasses = "character", header = TRUE)
+# read the data file skipping 66636 lines and only reading the first 2280 lines
+dat <- read.table("household_power_consumption.txt", sep = ";", colClasses = "character", header = TRUE, skip = 66636, nrows = 2880)
 
-# subset the data by date after changing the format of the dates
-dat <- data[as.Date(data$Date, format = '%d/%m/%Y') %in% as.Date(c('2007-02-01', '2007-02-02')), ]
-dat <- na.omit(dat)
+# rename the column names
+names(dat) <- c("Date", "Time", "Global_active_power", "Global_reactive_power", "Voltage", "Global_intensity", "Sub_metering_1", "Sub_metering_2", "Sub_metering_3")
 
 # another way to subset is using a logical expression
 # dat = subset(dat, DateTime >= as.POSIXct("2007-02-01") & DateTime < as.POSIXct("2007-02-03"))
-
-# free up memory taken by data by removing data
-rm(data)
 
 # Concatenate the date & time columns into the date column
 # convert the dates & times to Date/Time classes in R & reassign to the 
