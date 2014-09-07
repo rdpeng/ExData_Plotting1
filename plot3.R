@@ -1,4 +1,4 @@
-# read the data file skipping 66636 lines and only reading the first 2280 lines
+# read the data file skipping 66636 lines and only reading the first 2880 lines
 dat <- read.table("household_power_consumption.txt", sep = ";", colClasses = "character", header = TRUE, skip = 66636, nrows = 2880)
 
 # rename the column names
