@@ -1,0 +1,5 @@
+date <- as.character(mydata[,1])
+time <- as.character(mydata[,2])
+x2 <- paste(date,time, sep=" ", collapse=NULL)
+x <- strptime(x2,format=("%d/%m/%Y %H:%M:%S"))
+plot(x,y, type ="l",main="An extra day is good for you!",ylab="Global Active Power (kilowatts)",xlab="Day")
