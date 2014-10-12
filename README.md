@@ -1,5 +1,9 @@
 ## Introduction
 
+This has been modified by Stephen James
+
+based on the assignment instructions.
+
 This assignment uses data from
 the <a href="http://archive.ics.uci.edu/ml/">UC Irvine Machine
 Learning Repository</a>, a popular repository for machine learning
@@ -97,6 +101,7 @@ The four plots that you will need to construct are shown below.
 
 ![plot of chunk unnamed-chunk-2](figure/unnamed-chunk-2.png) 
 
+!plot1.png
 
 ### Plot 2
 
