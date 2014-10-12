@@ -5,7 +5,7 @@ setwd('/repository-ssd/work-2.0/datasciencecoursera/Exploratory\ Data\ Analysis/
 library(dplyr)
 
 #
-# define some formats so we don't repeat ourselves
+# Define some formats so we don't repeat ourselves
 #
 DATE_FORMAT = "%d/%m/%Y"
 DATE_TIME_FORMAT = "%Y-%m-%d %H:%M:%S"
@@ -51,11 +51,11 @@ if (!exists("wattageDataSource")) {
 # Using the same custom date coercer.
 #
 wattageSubset <- wattageDataSource %>%
-  mutate(DateTime = paste(Date, Time)) %>%
   filter(
     Date >= as.Date(START_DATE, format = DATE_FORMAT),
     Date <= as.Date(END_DATE, format = DATE_FORMAT)
   ) %>%
+  mutate(DateTime = paste(Date, Time)) %>%
   select(-Date, -Time)
 
 wattageSubset$DateTime <- strptime(wattageSubset$DateTime, DATE_TIME_FORMAT)
