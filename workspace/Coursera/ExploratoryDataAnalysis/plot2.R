@@ -3,7 +3,7 @@
 #make second plot
 
 # read in the data and select data for plotting
-source("plot2.R")
+source("plot1.R")
 setwd(plotDir) # plotDir set in plot1.R
 
 # the whole data set is stored in power
@@ -23,7 +23,7 @@ weekdays(dates(as.character(powerDates$Date[1])))
 plot(1:3,1:3)
 
 #make the plot
-#png(file="plot2.png",width=480,height=480)
+png(file="plot2.png",width=480,height=480)
 
 plot(powerDates$Time,powerDates$Global_active_power,axes=FALSE,
      ylab="Global Active Power (kilowatts)",
@@ -32,7 +32,7 @@ axis(1,at=weekdays(dates(as.character(powerDates$Date))))
 axis(2)
 box()
 #
-#dev.off()
+dev.off()
 #plot something to the screen
 plot(1:3,1:3)
 #return to original directory
