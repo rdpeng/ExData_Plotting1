@@ -7,32 +7,9 @@ library(dplyr)
 #
 # Define some formats so we don't repeat ourselves
 #
-DATE_FORMAT = "%d/%m/%Y"
-DATE_TIME_FORMAT = "%Y-%m-%d %H:%M:%S"
-START_DATE = "01/02/2007"
-END_DATE = "02/02/2007"
-
-#
-loadWattageData <- function() {
-
-  # create a new format for coercing the Date column
-  setAs("character", "customDate", function(from) {
-    as.Date(from, format = DATE_FORMAT)
-  })
-
-  # presuming data file is in ./data
-  tbl_df(read.table('./data/household_power_consumption.txt',
-    header = TRUE,
-    stringsAsFactors = FALSE,
-    na.strings = '?',
-    sep = ';',
-    colClasses = c(
-      "customDate",
-      "character",
-      rep("numeric", 7)
-    )
-  ))
-}
+DATE_TIME_FORMAT = "%d/%m/%Y %H:%M:%S"
+START_DATE = "1/2/2007"
+END_DATE = "2/2/2007"
 
 #
 # READ DATA FILE
@@ -41,20 +18,29 @@ loadWattageData <- function() {
 # Use rm(wattageDataSource) to reread the file.
 #
 if (!exists("wattageDataSource")) {
-  wattageDataSource <- loadWattageData()
+
+  # presuming data file is in ./data
+  wattageDataSource <- tbl_df(read.table(
+    './data/household_power_consumption.txt',
+    header = TRUE,
+    stringsAsFactors = FALSE,
+    na.strings = '?',
+    sep = ';',
+    colClasses = c(
+      rep("character", 2),
+      rep("numeric", 7)
+    )
+  ))
 }
 
 #
 # FILTER OUT
 #
-# Get the data subset that we need, from 01/02/2007 to 01/02/2007.
+# Get the data subset that we need, from 01/02/2007 to 02/02/2007.
 # Using the same custom date coercer.
 #
 wattageSubset <- wattageDataSource %>%
-  filter(
-    Date >= as.Date(START_DATE, format = DATE_FORMAT),
-    Date <= as.Date(END_DATE, format = DATE_FORMAT)
-  ) %>%
+  filter(Date == START_DATE | Date == END_DATE) %>%
   mutate(DateTime = paste(Date, Time)) %>%
   select(-Date, -Time)
 
