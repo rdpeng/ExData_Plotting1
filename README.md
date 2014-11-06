@@ -1,3 +1,16 @@
+## How to run the scripts
+To reproduce the graphs on your local, please download the following files and run them.
+<ol>
+<li>loadConsumptionData.R</li>
+<li>plot1.R</li>
+<li>plot2.R</li>
+<li>plot3.R</li>
+<li>plot4.R</li>
+</ol>
+
+loadConsumptionData.R - Helps to download the dataset and tidy up the data so that the data can be use for the plots.
+plot1.R/plot2.R/plot3.R/plot4.R - It will checks if there is any object being created. If there is none, it will call loadConsumptionData.R before running the plot.
+
 ## Introduction
 
 This assignment uses data from
