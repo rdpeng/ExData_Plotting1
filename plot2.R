@@ -12,4 +12,6 @@ subfile <- file[file$Date >="2007-02-01" & file$Date<="2007-02-02",]
 ## Convert column 3 to numeric
 subfile$Global_active_power <- as.numeric(subfile$Global_active_power)
 ## Plot x-y
-plot(subfile$DateTime,subfile$Global_active_power,type="l",xlab="",ylab="Global Active Power (Kilowatts)",cex.lab=0.8,cex.axis=0.8)
+png(filename="plot2.png",width=480,height=480,units="px",pointsize=12)
+plot(subfile$DateTime,subfile$Global_active_power,type="l",xlab="",ylab="Global Active Power (Kilowatts)")
+dev.off()

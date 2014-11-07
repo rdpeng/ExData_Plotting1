@@ -11,6 +11,7 @@ sub2 <- file[file$Date >="2007-02-01" & file$Date<="2007-02-02",]
 ## Convert column 3 to numeric
 sub2$Global_active_power <- as.numeric(sub2$Global_active_power)
 ## Plot histogram
-hist(sub2$Global_active_power,col="red",main="Global Active Power",xlab="Global Active Power (Kilowatts)",ylim=c(0,1200),cex.axis=0.75,cex.lab=0.8,cex.main=0.8)
-
+png(filename="plot1.png",width=480,height=480,pointsize=12,units="px")
+hist(sub2$Global_active_power,col="red",main="Global Active Power",xlab="Global Active Power (Kilowatts)",ylim=c(0,1200))
+dev.off()
 
