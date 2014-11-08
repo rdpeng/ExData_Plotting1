@@ -9,7 +9,7 @@ data$Time <- strptime(data$Time, format="%H:%M:%S")
 
 #Open the png device
 
-png(filename="plot1.png", width=480, height=480)
+png(filename="Plot1.png", width=480, height=480)
 
 #Create the histogram
 
