@@ -22,8 +22,8 @@ txtFileName <- "household_power_consumption.txt"
 ## The datasets are arranged in intervals of 1 minute hence from 1/2/2007 00:00:00 till 2/2/2007 23:59:00
 ## the script needs to read 2x24x60 lines (days X hrs X mins) = 2880 rows of the datasets
 ## 
-## This plot is for the Global Active Power vs Freq 
-## Hence only the first 3 cols needs to be read, using colClasses.
+## This plot is for the Energy Submetering vs DateTime 
+## Hence only the cols1,2,7,8,9 needs to be read, using colClasses.
 
 (cols <- c("character", "character", rep("numeric", 7))) 
 ## For this script , only need the col1,col2,col7-col9: Date, Time, sub metering 1 -3
@@ -69,9 +69,8 @@ DateTime <- strptime(Extract_DateTimeCols, format="%d/%m/%Y %H:%M:%S")
 ## tail(DateTime)
 
 ###################################################################
-## STEP3: Plotting of the Global Active Power Vs Day of the week ## 
+## STEP3: Plotting of the energy submetering (1-3) vs DateTime   ## 
 ###################################################################
-
 
 ## Set the locale to get "Thu, Fri, Sat".
 Sys.setlocale("LC_TIME", "C")  # turn off locale-specific sorting,

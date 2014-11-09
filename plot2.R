@@ -22,7 +22,8 @@ txtFileName <- "household_power_consumption.txt"
 ## The datasets are arranged in intervals of 1 minute hence from 1/2/2007 00:00:00 till 2/2/2007 23:59:00
 ## the script needs to read 2x24x60 lines (days X hrs X mins) = 2880 rows of the datasets
 ## 
-## This plot is for the Global Active Power vs Freq 
+## This plot is for the Global Active Power vs DateTime
+
 ## Hence only the first 3 cols needs to be read, using colClasses.
 
 (cols <- c("character", "character", rep("numeric", 7)))  ## only need the first 3 cols: Date, Time, Global active power.
@@ -67,9 +68,9 @@ DateTime <- strptime(Extract_DateTimeCols, format="%d/%m/%Y %H:%M:%S")
 ## tail(DateTime)
 
 
-###################################################################
-## STEP3: Plotting of the Global Active Power Vs Day of the week ## 
-###################################################################
+############################################################
+## STEP3: Plotting of the Global Active Power Vs DateTime ##
+############################################################
 
 ## Set the locale to get "Thu, Fri, Sat".
 Sys.setlocale("LC_TIME", "C")  # turn off locale-specific sorting,
@@ -79,7 +80,7 @@ Sys.setlocale("LC_TIME", "C")  # turn off locale-specific sorting,
 png(filename = "plot2.png", width = 480, height = 480, units = "px",
     pointsize = 11.75, bg = "transparent")
 
-## Plotting the Global Active Power data vs Freq 
+## Plotting the Global Active Power data vs Datetime 
 plot(DateTime, GlobalActivePower$Global_active_power,
      type="l", main="", xlab="", ylab="Global Active Power (kilowatts)")
 
