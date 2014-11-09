@@ -33,13 +33,12 @@ cols[colsOmitted] <- rep("NULL",length(colsOmitted))   ## Clear the cols 4-9 wit
 
 ## Need to read in the header as it will be omitted in the reading of the datasets
 TableHeader <- 
-  read.table(file="household_power_consumption.txt",  
-             header=TRUE, na.strings="?", nrows=1, sep=";", 
+  read.table(txtFileName, header=TRUE, na.strings="?", nrows=1, sep=";", 
              check.names=TRUE, colClasses=cols)
 
 ## Read in the datasets from 1/2/2007 0:00 to 2/7/2007 23:59
 GlobalActivePower <- 
-  read.table("household_power_consumption.txt",sep=";", skip=66637, 
+  read.table(txtFileName,sep=";", skip=66637, 
              nrows=(2*24*60), na.strings="?", colClasses=cols)
 
 
