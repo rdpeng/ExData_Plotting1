@@ -1,0 +1,19 @@
+# SublimeText
+*.sublime-project
+*.sublime-workspace
+
+# Example code in package build process
+*-Ex.R
+
+# RStudio files
+*.Rproj
+.Rproj.user
+.Rdata
+.RData
+.Rhistory
+
+# Course related
+submitscript1.R
+
+# Raw data folders
+data
