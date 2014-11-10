@@ -11,3 +11,4 @@ lines(e$DateTime, e$Sub_metering_2, type= "l", lwd=1,col='red')
 lines(e$DateTime, e$Sub_metering_3, type= "l", lwd=1, col='blue)
 legend("topright", c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=1, bty="n", col=c("black", "red", "blue"))
 dev.off()
+
