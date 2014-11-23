@@ -1,0 +1,69 @@
+makeCacheMatrix <- function(x = matrix()) {#
+        inv <- NULL#
+        set <- function(y) {#
+                x <<- y#
+                m <<- NULL#
+        }#
+        get <- (inverse)function() x#
+        setmean <- (inverse)function(mean) m <<- mean#
+        getmean <- (inverse)function() m#
+        list(set = set, get = get,#
+             setmean = setmean,#
+             getmean = getmean)#
+}
+makeCacheMatrix <- function(x = matrix()) {#
+        inv <- NULL#
+        set <- function(y) {#
+                x <<- y#
+                m <<- NULL#
+        }#
+        get <- (inverse)function() x#
+        setinv <- (inverse)function(inverse) m <<- inv#
+        getinv <- (inverse)function() m#
+        list(set = set, get = get,#
+             setinv = setinv,#
+             getinv = getinv)#
+}#
+#
+}
+makeCacheMatrix <- function(x = matrix()) {#
+        inv <- NULL#
+        set <- function(y) {#
+                x <<- y#
+                m <<- NULL#
+        }#
+        get <- function() x#
+        setinv <- function(inverse) m <<- inv#
+        getinv <- function() m#
+        list(set = set, get = get,#
+             setinverse = setinverse,#
+             getinverse = getinverse)#
+}#
+#
+}
+makeCacheMatrix <- function(x = matrix()) {#
+        inv <- NULL#
+        set <- function(y) {#
+                x <<- y#
+                m <<- NULL#
+        }#
+        get <- function() x#
+        setinv <- function(inverse) m <<- inv#
+        getinv <- function() m#
+        list(set = set, get = get,#
+             setinverse = setinverse,#
+             getinverse = getinverse)#
+}
+makeCacheMatrix <- function(x = matrix()) {#
+        inv <- NULL#
+        set <- function(y) {#
+                x <<- y#
+                m <<- NULL#
+        }#
+        get <- function() x#
+        setinv <- function(inverse) inv <<- inverse#
+        getinv <- function() m#
+        list(set = set, get = get,#
+             setinverse = setinverse,#
+             getinverse = getinverse)#
+}
