@@ -1,14 +1,12 @@
 ## Reading the extracted data and keep the records from the dates 
 ## 2007-02-01 and 2007-02-02.
 ## Save the file to future use.
+library(sqldf)
+data <- read.csv.sql("Household Power Consumption.txt", 
+	sql = "select * from file where Date in ('1/2/2007', '2/2/2007')", 
+	header = TRUE, sep = ";")
 
-fullData <- read.csv2("Household Power Consumption.txt",
-                      stringsAsFactors = F, header = T, 
-                      sep = ";", na.strings = "?")
-powerData <- fullData[grepl("^[1-2]/2/2007", fullData$Date),]
-
-powerData$Date_time <- strptime(paste(powerData$Date, powerData$Time), 
+data$Datetime <- strptime(paste(data$Date, data$Time), 
                                 format = "%d/%m/%Y %H:%M:%S")
-powerData[,c(3:9)] <- apply(powerData[,c(3:9)], 2, function(x) as.numeric(x))
 
-saveRDS(powerData, file = "powerData.rds")
+saveRDS(powerData, file = "powerData.rda")
