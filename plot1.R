@@ -1,4 +1,6 @@
-#exdata-016 sergioquadros 2014-12-04
+# exdata-016 sergioquadros 2014-12-04
+# R version 3.1.2 (2014-10-31) -- "Pumpkin Helmet"
+# Platform: i686-pc-linux-gnu (32-bit)
 library(dplyr)
 library(lubridate)
 library(magrittr)
