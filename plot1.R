@@ -11,10 +11,10 @@ dat2$Date <- dmy(dat2$Date)
 dat2 %<>% filter(Date==ymd("2007-02-01")|Date==ymd("2007-02-02"))
 dat2$Time <-hms(dat2$Time)
 class(dat2$Global_active_power) <- "numeric"
+xx <- (dat2$Global_active_power)/500.0
 
 png(filename = "plot1.png",
     width = 480, height = 480, units = "px", bg = "white")
-xx <- (dat2$Global_active_power)/500
 hist(xx,, col = "red")
 title(main = " Global Active Power ", xlab= " Global Active Power(kilowatts) "
                 , ylab= " Frequency ")
