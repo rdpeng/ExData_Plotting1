@@ -50,7 +50,7 @@ and his code [plot1.R](https://github.com/sergioquadros/ExData_Plotting1/blob/ma
 and his code [plot2.R](https://github.com/sergioquadros/ExData_Plotting1/blob/master/plot2.R)
 
 
-![plot2](https://github.com/sergioquadros/ExData_Plotting1/issues/2) 
+![plot2](https://cloud.githubusercontent.com/assets/8396810/5324072/95e047ae-7cbd-11e4-9691-8ba2ea8d0ece.png) 
 
 
 ### Plot 3
