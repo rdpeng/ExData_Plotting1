@@ -15,7 +15,6 @@ xx <- (dat2$Global_active_power)/500.0
 
 png(filename = "plot1.png",
     width = 480, height = 480, units = "px", bg = "white")
-hist(xx,, col = "red")
-title(main = " Global Active Power ", xlab= " Global Active Power(kilowatts) "
-                , ylab= " Frequency ")
+hist(xx, col = "red", main = " Global Active Power ",
+            xlab= " Global Active Power(kilowatts) ", ylab= " Frequency ")
 dev.off()
