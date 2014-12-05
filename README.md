@@ -33,31 +33,6 @@ web site</a>:
 <li><b>Sub_metering_3</b>: energy sub-metering No. 3 (in watt-hour of active energy). It corresponds to an electric water-heater and an air-conditioner.</li>
 </ol>
 
-## Loading the data
-
-
-
-
-
-When loading the dataset into R, please consider the following:
-
-* The dataset has 2,075,259 rows and 9 columns. First
-calculate a rough estimate of how much memory the dataset will require
-in memory before reading into R. Make sure your computer has enough
-memory (most modern computers should be fine).
-
-* We will only be using data from the dates 2007-02-01 and
-2007-02-02. One alternative is to read the data from just those dates
-rather than reading in the entire dataset and subsetting to those
-dates.
-
-* You may find it useful to convert the Date and Time variables to
-Date/Time classes in R using the `strptime()` and `as.Date()`
-functions.
-
-* Note that in this dataset missing values are coded as `?`.
-
-
 ## Making Plots
 
 Our overall goal here is simply to examine how household energy usage
@@ -89,10 +64,10 @@ GitHub so that the GitHub version of your repository is up to
 date. There should be four PNG files and four R code files.
 
 
-These four plots that I construct are shown below:
+These four plots with respective codes that I construct are shown below:
 
 
-### Plot 1
+### Plot 1 and [plot1.R]()
 
 
 ![plot1](https://cloud.githubusercontent.com/assets/8396810/5314688/07f11038-7c5c-11e4-8515-75188f63b196.png) 
