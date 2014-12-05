@@ -68,7 +68,7 @@ These four plots with respective codes that I construct are shown below:
 
 
 ### Plot 1 
-    and his code [plot1.R](https://github.com/sergioquadros/ExData_Plotting1/blob/master/plot1.R)
+and his code [plot1.R](https://github.com/sergioquadros/ExData_Plotting1/blob/master/plot1.R)
 
 
 ![plot1](https://cloud.githubusercontent.com/assets/8396810/5314688/07f11038-7c5c-11e4-8515-75188f63b196.png) 
