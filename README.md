@@ -49,7 +49,7 @@ and his code [plot1.R](https://github.com/sergioquadros/ExData_Plotting1/blob/ma
 ### Plot 2
 and his code [plot2.R](https://github.com/sergioquadros/ExData_Plotting1/blob/master/plot2.R)
 
-https://github.com/sergioquadros/ExData_Plotting1/issues/1
+
 ![plot2](https://github.com/sergioquadros/ExData_Plotting1/issues/1) 
 
 
