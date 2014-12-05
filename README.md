@@ -47,16 +47,22 @@ and his code [plot1.R](https://github.com/sergioquadros/ExData_Plotting1/blob/ma
 
 
 ### Plot 2
+and his code [plot2.R](https://github.com/sergioquadros/ExData_Plotting1/blob/master/plot1.R)
 
-![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3.png) 
+
+![plot2](https://cloud.githubusercontent.com/assets/8396810/5314688/07f11038-7c5c-11e4-8515-75188f63b196.png) 
 
 
 ### Plot 3
+and his code [plot3.R](https://github.com/sergioquadros/ExData_Plotting1/blob/master/plot1.R)
 
-![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-4.png) 
+
+![plot3](https://cloud.githubusercontent.com/assets/8396810/5314688/07f11038-7c5c-11e4-8515-75188f63b196.png) 
 
 
 ### Plot 4
+and his code [plot4.R](https://github.com/sergioquadros/ExData_Plotting1/blob/master/plot1.R)
 
-![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5.png) 
+
+![plot4](https://cloud.githubusercontent.com/assets/8396810/5314688/07f11038-7c5c-11e4-8515-75188f63b196.png) 
 
