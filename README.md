@@ -47,10 +47,10 @@ and his code [plot1.R](https://github.com/sergioquadros/ExData_Plotting1/blob/ma
 
 
 ### Plot 2
-and his code [plot2.R](https://github.com/sergioquadros/ExData_Plotting1/blob/master/plot1.R)
+and his code [plot2.R](https://github.com/sergioquadros/ExData_Plotting1/blob/master/plot2.R)
 
 
-![plot2](https://cloud.githubusercontent.com/assets/8396810/5314688/07f11038-7c5c-11e4-8515-75188f63b196.png) 
+![plot2]() 
 
 
 ### Plot 3
