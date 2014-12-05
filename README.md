@@ -49,8 +49,9 @@ and his code [plot1.R](https://github.com/sergioquadros/ExData_Plotting1/blob/ma
 ### Plot 2
 and his code [plot2.R](https://github.com/sergioquadros/ExData_Plotting1/blob/master/plot2.R)
 
+https://cloud.githubusercontent.com/assets/8396810/5324480/2fd58d98-7cc2-11e4-8052-57bc098d7600.png
 
-![plot2](https://cloud.githubusercontent.com/assets/8396810/5324072/95e047ae-7cbd-11e4-9691-8ba2ea8d0ece.png) 
+![plot2](https://cloud.githubusercontent.com/assets/8396810/5324480/2fd58d98-7cc2-11e4-8052-57bc098d7600.png) 
 
 
 ### Plot 3
