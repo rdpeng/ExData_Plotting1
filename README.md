@@ -43,7 +43,7 @@ These four plots with respective codes for **Course Project 1** in _Exploratory 
 and his code [plot1.R](https://github.com/sergioquadros/ExData_Plotting1/blob/master/plot1.R)
 
 
-![plot1](https://cloud.githubusercontent.com/assets/8396810/5314688/07f11038-7c5c-11e4-8515-75188f63b196.png) 
+![plot1](https://cloud.githubusercontent.com/assets/8396810/5324072/95e047ae-7cbd-11e4-9691-8ba2ea8d0ece.png) 
 
 
 ### Plot 2
