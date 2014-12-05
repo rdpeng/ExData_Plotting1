@@ -54,15 +54,15 @@ and his code [plot2.R](https://github.com/sergioquadros/ExData_Plotting1/blob/ma
 
 
 ### Plot 3
-and his code [plot3.R](https://github.com/sergioquadros/ExData_Plotting1/blob/master/plot1.R)
+and his code [plot3.R](https://github.com/sergioquadros/ExData_Plotting1/blob/master/plot3.R)
 
 
-![plot3](https://cloud.githubusercontent.com/assets/8396810/5314688/07f11038-7c5c-11e4-8515-75188f63b196.png) 
+![plot3]() 
 
 
 ### Plot 4
-and his code [plot4.R](https://github.com/sergioquadros/ExData_Plotting1/blob/master/plot1.R)
+and his code [plot4.R](https://github.com/sergioquadros/ExData_Plotting1/blob/master/plot4.R)
 
 
-![plot4](https://cloud.githubusercontent.com/assets/8396810/5314688/07f11038-7c5c-11e4-8515-75188f63b196.png) 
+![plot4]() 
 
