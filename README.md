@@ -7,7 +7,7 @@ datasets. In particular, we will be using the "Individual household
 electric power consumption Data Set" which I have made available on
 the course web site.
 
-The following descriptions of the 9 variables in the dataset are taken
+We described these nine variables that was taken
 from
 the <a href="https://archive.ics.uci.edu/ml/datasets/Individual+household+electric+power+consumption">UCI
 web site</a>:
@@ -27,7 +27,7 @@ web site</a>:
 This description was forked from following GitHub repository:
 [https://github.com/rdpeng/ExData_Plotting1](https://github.com/rdpeng/ExData_Plotting1)
 
-These four plots with respective codes for **Course Project 1** in _Exploratory Data Analysis_ that I constructed are shown below:
+These four plots was uploaded in four issues that we saw bellow with respective codes in blue for **Course Project 1** in _Exploratory Data Analysis_ that I constructed are shown below:
 
 
 ### Plot 1 
