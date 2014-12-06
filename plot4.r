@@ -1,4 +1,4 @@
-png(filename="plot4.png",width = 480,height = 480)
+png(filename="plot4.png",width = 480,height = 480,bg="transparent")
 par(mfrow = c(2,2))
 with(data,hist(Global_active_power,col="red",xlab="Global Active Power (kilowatts)",main=""))
 plot(data$DateTime,data$Voltage,pch=NA_integer_,xlab="datetime",ylab="Voltage")
