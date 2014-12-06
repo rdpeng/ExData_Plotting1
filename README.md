@@ -1,4 +1,4 @@
-## Introduction
+##  Assignment for _Course Project 1_ in _Exploratory Data Analysis_ 
 
 This assignment uses data from
 the <a href="http://archive.ics.uci.edu/ml/">UC Irvine Machine
@@ -27,7 +27,7 @@ web site</a>:
 This description was forked from following GitHub repository:
 [https://github.com/rdpeng/ExData_Plotting1](https://github.com/rdpeng/ExData_Plotting1)
 
-These four plots was uploaded in four issues in my repository [link](https://github.com/sergioquadros/ExData_Plotting1/issues) that also we saw bellow with respective codes in blue for **Course Project 1** in _Exploratory Data Analysis_ that I constructed are shown below:
+These four plots was uploaded in four issues at my repository [link](https://github.com/sergioquadros/ExData_Plotting1/issues) that also we saw with respective codes' links in blue bellow:
 
 
 ### Plot 1 
