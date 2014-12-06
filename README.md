@@ -55,7 +55,7 @@ and his code [plot2.R](https://github.com/sergioquadros/ExData_Plotting1/blob/ma
 
 
 ### Plot 3
-and his code [plot3.R](https://github.com/sergioquadros/ExData_Plotting1/blob/master/plot3.R)
+and his code [plot3.R](https://cloud.githubusercontent.com/assets/8396810/5325743/52b6fc4c-7cdc-11e4-9cbc-94c9f28854e0.png)
 
 
 ![plot3]() 
