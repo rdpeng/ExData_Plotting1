@@ -1,4 +1,5 @@
-I have technical issue and can't post my work by push, so i copy the R script but not the png.
+Assignment week 1 of the mooc : exploratory data 
+
 
 
 
