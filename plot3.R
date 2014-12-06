@@ -7,7 +7,7 @@ library(lubridate)
 library(magrittr)
 library(png)
 
-dat2 <-  tbl_df(read.csv("household_power_consumption.txt",sep=";"))
+dat2 <-  tbl_df(read.csv("household_power_consumption.txt",sep=";", header=TRUE, as.is=TRUE))
 # add new column 'newtime' to data frame 'dat2'
 newtime <- dmy_hms(paste(as.character(dat2$Date[]),as.character(dat2$Time[])))
 dat2 %<>%mutate(newtime)
