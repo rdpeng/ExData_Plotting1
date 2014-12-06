@@ -27,7 +27,7 @@ web site</a>:
 This description was forked from following GitHub repository:
 [https://github.com/rdpeng/ExData_Plotting1](https://github.com/rdpeng/ExData_Plotting1)
 
-I committed these four plots to four issues at my repository [link](https://github.com/sergioquadros/ExData_Plotting1/issues). Also we can see their respective codes' by clicking links in blue bellow:
+I committed these four plots to issues at my repository, see this [link](https://github.com/sergioquadros/ExData_Plotting1/issues). Also we can see their respective codes' by clicking links in blue bellow:
 
 
 ### Plot 1 
