@@ -30,14 +30,14 @@ This description was forked from following GitHub repository:
 I committed these four plots to issues at my repository, see this [link](https://github.com/sergioquadros/ExData_Plotting1/issues). Also we can see their respective codes' by clicking links in blue bellow:
 
 
-### Plot 1 
+### [Plot 1](https://github.com/sergioquadros/ExData_Plotting1/blob/master/plot1.png) 
 and his code [plot1.R](https://github.com/sergioquadros/ExData_Plotting1/blob/master/plot1.R)
 
 
 ![plot1](https://cloud.githubusercontent.com/assets/8396810/5324072/95e047ae-7cbd-11e4-9691-8ba2ea8d0ece.png) 
 
 
-### Plot 2
+### [Plot 2](https://github.com/sergioquadros/ExData_Plotting1/blob/master/plot2.png)
 and his code [plot2.R](https://github.com/sergioquadros/ExData_Plotting1/blob/master/plot2.R)
 
 
@@ -45,14 +45,14 @@ and his code [plot2.R](https://github.com/sergioquadros/ExData_Plotting1/blob/ma
 ![plot2](https://cloud.githubusercontent.com/assets/8396810/5324480/2fd58d98-7cc2-11e4-8052-57bc098d7600.png) 
 
 
-### Plot 3
+### [Plot 3](https://github.com/sergioquadros/ExData_Plotting1/blob/master/plot3.png)
 and his code [plot3.R](https://github.com/sergioquadros/ExData_Plotting1/blob/master/plot3.R)
 
 
 ![plot3](https://cloud.githubusercontent.com/assets/8396810/5325743/52b6fc4c-7cdc-11e4-9cbc-94c9f28854e0.png) 
 
 
-### Plot 4
+### [Plot 4](https://github.com/sergioquadros/ExData_Plotting1/blob/master/plot4.png)
 and his code [plot4.R](https://github.com/sergioquadros/ExData_Plotting1/blob/master/plot4.R)
 
 
