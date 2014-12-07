@@ -1,1 +1,7 @@
-file:///Users/victoriamcfarland/Coursera/plot1.png
+git add plot1.png
+git commit -m 'add png file'
+git remote add origin https://github.com/vmcfarland/ExData_Plotting1/edit/master/Plot1.png
+git push -u origin master
+
+
+
