@@ -1,0 +1,30 @@
+# plot1.R: Project 1, part 1 of Exploratory Data Analysis (Johns Hopkins / Coursera)
+# 
+# Reads electrical power consumption data and creates a png file of a histogram
+# 
+
+if(!file.exists(".\\data")){dir.create(".\\data")}
+hpcfile <- ".\\data\\household_power_consumption.txt"
+if(file.exists(hpcfile))
+  {
+  print ("reading from existing text file . . . .")
+  alldata <- read.table(hpcfile, sep=";", header = TRUE, stringsAsFactors = FALSE)
+  } else
+  {
+  print ("downloading and reading from temporary zipped file")
+  fileUrl <- "https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip"  
+  download.file(fileUrl,temp)
+  alldata <- read.table(unz(temp, "household_power_consumption.txt"), sep=";", header = TRUE, stringsAsFactors = FALSE)
+  unlink(temp)
+  }
+
+# extract data from the dates 2007-02-01 and 2007-02-02
+data <- alldata[(alldata$Date=="1/2/2007") | (alldata$Date=="2/2/2007"),]
+#
+png(filename=".\\data\\plot1.png", width=480, height=480)
+hist(as.numeric(data$Global_active_power), 
+     main = 'Global Active Power',
+     xlab='Global Active Power (kilowatts)',
+     border='black',
+     col='red')
+dev.off()
