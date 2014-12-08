@@ -1,4 +1,4 @@
-# plot4.R: Project 1, part 4 of Exploratory Data Analysis (Johns Hopkins / Coursera)
+# plot2.R: Project 1, part 4 of Exploratory Data Analysis (Johns Hopkins / Coursera)
 # 
 # Reads electrical power consumption data and creates a png file of four plots
 # 
