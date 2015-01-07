@@ -1,0 +1,33 @@
+expdata=read.csv("Z:/Mona Moradi/Cate ET&PD/Mona Course/Course data.csv",header=TRUE,sep=",",fill=TRUE)
+
+
+
+#convert the neccessary variables to as.Date
+#expdata$Date2 <- strptime(hhpc$Date, "%d/%m/%Y")
+
+expdata$Date2<-as.Date(expdata$Date, "%d/%m/%Y")## (Mona convert date)
+
+#all mising values are recorded as ?
+#na.strings=c("?")
+
+#subset a data We will only be using data from the dates 2007-02-01 and 2007-02-02.
+#subdata <- hhpc[(hhpc$Date2 %in% "2007-02-01" | hhpc$Date2 %in% "2007-02-02"  ),]
+
+subdata <- subset(expdata, Date2 == "2007-02-01" | Date2 == "2007-02-02")
+#convert the time variable to time format
+
+
+subdata$Time2 <- strptime(subdata$Time,"%H:%M:%S")
+#combine date and time
+subdata$DateTime <- paste(subdata$Date, subdata$Time)
+subdata$DateTime <-  strptime(subdata$DateTime , "%d/%m/%Y %H:%M:%S")
+
+#plot1
+str(subdata)
+subdata$Global_active_power[subdata$Global_active_power=="?"] <- NA
+subdata$Global_active_power <- as.numeric(as.character(subdata$Global_active_power))
+hist(subdata$Global_active_power , col="red", main="Global Active Power",xlab="Global Active Power (kilowatts)")
+dev.copy(png, file = "plot1.png" ,width = 480, height = 480)  ## Copy my plot to a plot1.PNG file
+dev.off()
+
+
