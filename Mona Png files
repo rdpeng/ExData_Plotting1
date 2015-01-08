@@ -1,0 +1,95 @@
++plot1
++str(subdata)
++subdata$Global_active_power[subdata$Global_active_power=="?"] <- NA
++subdata$Global_active_power <- as.numeric(as.character(subdata$Global_active_power))
++hist(subdata$Global_active_power , col="red", main="Global Active Power",xlab="Global Active Power (kilowatts)")
++dev.copy(png, file = "plot1.png" ,width = 480, height = 480) ## Copy my plot to a plot1.PNG file
++dev.off()
++
++
++#plot 2
++#line graph of Global Active Power
++str(subdata)
++subdata$Global_active_power[subdata$Global_active_power=="?"] <- NA
++subdata$Global_active_power <- as.numeric(as.character(subdata$Global_active_power))
++plot(subdata$DateTime ,subdata$Global_active_power,type="n",ylab="Global Active Power (kilowatts)")
++lines(subdata$DateTime ,subdata$Global_active_power)
++dev.copy(png, file = "plot2.png" ,width = 480, height = 480) ## Copy my plot to a plot2.PNG file
++dev.off()
++
++
++
++#Description: Measurements of electric power consumption in one household with a one-minute sampling rate over a period of almost 4 years.
++#Different electrical quantities and some sub-metering values are available
++
++#plot3
++subdata$Sub_metering_1 <- as.character(subdata$Sub_metering_1)
++subdata$Sub_metering_1[subdata$Sub_metering_1=="?"] <-NA
++subdata$Sub_metering_1 <- as.numeric(as.character(subdata$Sub_metering_1))
++
++subdata$Sub_metering_2 <- as.character(subdata$Sub_metering_2)
++subdata$Sub_metering_2[subdata$Sub_metering_2=="?"] <-NA
++subdata$Sub_metering_2 <- as.numeric(as.character(subdata$Sub_metering_2))
++
++subdata$Sub_metering_3 <- as.character(subdata$Sub_metering_3)
++subdata$Sub_metering_3[subdata$Sub_metering_3=="?"] <-NA
++subdata$Sub_metering_3 <- as.numeric(as.character(subdata$Sub_metering_3))
++
++
++plot(subdata$DateTime , subdata$Sub_metering_1,type="n",ylab="Energy Sub Metering")
++lines(subdata$DateTime ,subdata$Sub_metering_1, col="black")
++lines(subdata$DateTime ,subdata$Sub_metering_2, col="red")
++lines(subdata$DateTime ,subdata$Sub_metering_3, col="blue")
++legend("topright",lty=c(1,1,1), col = c("black", "red","blue"), legend = c("Sub_metering_1", "Sub_metering_2","Sub_metering_3"))
++dev.copy(png, file = "plot3.png" ,width = 480, height = 480) ## Copy my plot to a plot2.PNG file
++dev.off()
++
++
++#plot4
++subdata$Sub_metering_1 <- as.character(subdata$Sub_metering_1)
++subdata$Sub_metering_1[subdata$Sub_metering_1=="?"] <-NA
++subdata$Sub_metering_1 <- as.numeric(as.character(subdata$Sub_metering_1))
++
++subdata$Sub_metering_2 <- as.character(subdata$Sub_metering_2)
++subdata$Sub_metering_2[subdata$Sub_metering_2=="?"] <-NA
++subdata$Sub_metering_2 <- as.numeric(as.character(subdata$Sub_metering_2))
++
++subdata$Sub_metering_3 <- as.character(subdata$Sub_metering_3)
++subdata$Sub_metering_3[subdata$Sub_metering_3=="?"] <-NA
++subdata$Sub_metering_3 <- as.numeric(as.character(subdata$Sub_metering_3))
++
++
++plot(subdata$DateTime , subdata$Sub_metering_1,type="n",ylab="Energy Sub Metering")
++lines(subdata$DateTime ,subdata$Sub_metering_1, col="black")
++lines(subdata$DateTime ,subdata$Sub_metering_2, col="red")
++lines(subdata$DateTime ,subdata$Sub_metering_3, col="blue")
++dev.copy(png, file = "plot3.png" ,width = 480, height = 480) ## Copy my plot to a plot3.PNG file
++dev.off()
++
++subdata$Global_active_power[subdata$Global_active_power=="?"] <- NA
++subdata$Global_active_power <- as.numeric(as.character(subdata$Global_active_power))
++
++subdata$Voltage[subdata$Voltage=="?"] <- NA
++subdata$Voltage <- as.numeric(as.character(subdata$Voltage))
++
++subdata$Global_reactive_power[subdata$Global_reactive_power=="?"] <- NA
++subdata$Global_reactive_power <- as.numeric(as.character(subdata$Global_reactive_power))
++
++par(mfrow = c(2, 2), mar = c(4, 4, 2, 1), oma = c(0, 0, 2, 0))
++plot(subdata$DateTime ,subdata$Global_active_power,type="n",ylab="Global Active Power (kilowatts)")
++lines(subdata$DateTime ,subdata$Global_active_power)
++
++plot(subdata$DateTime ,subdata$Voltage,type="n",ylab="Voltage")
++lines(subdata$DateTime ,subdata$Voltage)
++
++
++plot(subdata$DateTime , subdata$Sub_metering_1,type="n",ylab="Energy Sub Metering")
++lines(subdata$DateTime ,subdata$Sub_metering_1, col="black")
++lines(subdata$DateTime ,subdata$Sub_metering_2, col="red")
++lines(subdata$DateTime ,subdata$Sub_metering_3, col="blue")
++
++plot(subdata$DateTime ,subdata$Global_reactive_power,type="n",ylab="Global reactive power")
++lines(subdata$DateTime ,subdata$Global_reactive_power)
++dev.copy(png, file = "plot4.png" ,width = 480, height = 480) ## Copy my plot to a plot4.PNG file
++dev.off()
+
