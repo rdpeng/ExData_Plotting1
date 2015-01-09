@@ -27,7 +27,7 @@ tDateTime <- strptime(vDateTime, format="%d/%m/%Y %H:%M:%S")
 
 Sys.setlocale("LC_TIME", "C")
 png(filename = "plot2.png", width = 480, height = 480, units = "px", pointsize = 11.75, bg = "transparent")
-plot(tDateTime, format="%a", dfMyData$Global_active_power, type="l", main="", xlab="", ylab="Global Active Power (kilowatts)")
+plot(tDateTime, dfMyData$Global_active_power, type="l", main="", xlab="", ylab="Global Active Power (kilowatts)")
 
 dev.off()
 
