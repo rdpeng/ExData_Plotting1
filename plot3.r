@@ -1,0 +1,12 @@
+household_power_consumption <- read.csv("household_power_consumption.txt", sep=";", na.strings="?")
+hhpwcons<-subset(household_power_consumption,household_power_consumption$date == as.Date("01/02/2007",format="%d/%m/%Y")|household_power_consumption$date == as.Date("02/02/2007",format="%d/%m/%Y"))
+hhpwcons$datetime<-paste(hhpwcons$Date,hhpwcons$Time,sep = "-")
+hhpwcons$datetime<-strptime(hhpwcons$datetime, "%d/%m/%Y-%H:%M:%S")
+png(filename = "plot3.png",width = 480, height = 480, units = "px", pointsize = 12)
+plot(hhpwcons$datetime,hhpwcons$Sub_metering_1,  type = "l", col="black",xlab = "", ylab = "Energy Sub Metering")
+lines(hhpwcons$datetime,hhpwcons$Sub_metering_2,  type = "l",col="red")
+lines(hhpwcons$datetime,hhpwcons$Sub_metering_3,  type = "l",col="blue")
+legend("topright",c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),lty=c(1,1,1),lwd=c(2.5,2.5,2.5),col=c("black","red","blue"))
+, col = "red")
+dev.off()
+
