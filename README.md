@@ -1,9 +1,3 @@
-## Having repeated problems with GitHub commits
-
-from the Github log:
-2014-12-07 19:45:53.9348|WARN|thread: 1|StandardUserErrors|Showing user error Failed to create a new commit.
-LibGit2Sharp.LockedFileException: The index is locked. This might be due to a concurrent or crashed process
-
 ## Course Project 1: Using the base plotting system in R, re-create graphs of household power consumption
 ####################################################################################################################
 ## Introduction

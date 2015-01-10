@@ -1,7 +1,13 @@
-# plot2.R: Project 1, part 3 of Exploratory Data Analysis (Johns Hopkins / Coursera)
+# plot3.R: Project 1, part 3 of Exploratory Data Analysis (Johns Hopkins / Coursera)
 # 
+# updated for January 2015 session of EDA
+#
 # Reads electrical power consumption data and creates a png file of submetering over time
 # 
+# If data directory with the 'household_power_consumption' data file exists, use it.
+# Otherwise, create a data directory if necessary (for the output file) and use the 
+# supplied url to download the zipped file as a temporary file, unzip and read into
+# a data table, and delete temp file (code for this courtesy of Dirk / Stack Overflow)
 
 if(!file.exists(".\\data")){dir.create(".\\data")}
 hpcfile <- ".\\data\\household_power_consumption.txt"
@@ -18,10 +24,15 @@ if(file.exists(hpcfile))
   unlink(temp)
   }
 
-# extract data from the dates 2007-02-01 and 2007-02-02
+# extract data from the dates 2007-02-01 and 2007-02-02 only
+
 data <- alldata[(alldata$Date=="1/2/2007") | (alldata$Date=="2/2/2007"),]
-#
+
+# convert character date and time to POSIXlt
+
 data$datetime <- strptime(paste(data$Date, data$Time, sep=" "),"%d/%m/%Y %H:%M:%S")
+
+# create plot of the three sub-metering  as a png file
 
 png(filename=".\\data\\plot3.png", width=480, height=480)
 plot(data$datetime, as.numeric(data$Sub_metering_1), type="l",
