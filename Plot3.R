@@ -7,6 +7,11 @@ power_data$Date <- as.Date(power_data$Date, format="%d/%m/%Y")
 # subsetting for the required 2 dates
 power <- subset(power_data,Date == "2007-02-01"| Date=="2007-02-02")
 
+power$Time <- as.character(power$Time)
+power$datetime <- paste(power$Date,power$Time)
+power$datetime <- as.POSIXlt(power$datetime,format="%Y-%m-%d %H:%M:%S")
+power <- power[order(power$datetime),]
+
 png(filename="plot3.png",width=480,height=480,units="px",bg="white")
 plot(as.numeric(power$Sub_metering_1),type="l",xlab="",ylab="Energy sub metering",xaxt="n",yaxt="n")
 points(as.numeric(power$Sub_metering_2)/5,type="l",xaxt="n",col="red")
