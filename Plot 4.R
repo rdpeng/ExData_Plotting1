@@ -1,5 +1,5 @@
 ### Exploratory Data Analytics
-### Assignment 1; plot 3
+### Assignment 1; plot 4
 
 library(data.table)
 library(sqldf)
@@ -21,7 +21,7 @@ DF$DateTime <- as.POSIXct(paste(DF$Date, DF$Time), format="%d/%m/%Y %H:%M:%S")
 
 
 ### Transfer the plots to a png file; the format as suggested in the question
-png(filename = "Plot03.png",width = 480, height = 480, units = "px", pointsize = 12,)
+png(filename = "Plot04.png",width = 480, height = 480, units = "px", pointsize = 12,)
 
 ### Create 2*2 Graphs
 par(mfrow=c(2,2),mar=c(2,4,2,2),oma=c(0,0,2,0),cex.axis=0.9)
