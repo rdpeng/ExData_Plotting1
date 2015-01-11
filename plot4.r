@@ -1,6 +1,6 @@
 ## Exploratory Data Analysis  -  Donald J Reilly
 ## Course Project 1 - Electric Power Consumption
-## Plot 3 - 
+## Plot 4 - 
 ##
 setwd("C:/Users/DJR/My Documents/Coursera R/Exploratory Data Analysis/Course Project 1")
 column.names <- c("Date", "Time", "GAP", "GRP", "Voltage", "GI", "SM1", "SM2", "SM3")
@@ -10,17 +10,23 @@ EPC_DF <- read.table("household_power_consumption.txt", header=TRUE, sep=";", na
 EPC_DF <- subset(EPC_DF, Date == "1/2/2007" | Date == "2/2/2007")
 EPC_DF$DTstamp <- as.POSIXct(paste(EPC_DF$Date, EPC_DF$Time), "%d/%m/%Y %H:%M:%S", tz="") 
 par(mfcol=c(2,2))
+par(cex.lab=0.7) # Turn down the label font
 png(filename="plot4.png", width=480, height=480, units="px")
+
 ##plot 1
 plot(EPC_DF$DTstamp, EPC_DF$GAP, type="l", ylab="Global Active Power", xlab=" ")
+
 ##plot 2
 plot(EPC_DF$DTstamp, EPC_DF$SM1, type="l", ylab="Energy sub metering", xlab=" ")
 lines(EPC_DF$DTstamp, EPC_DF$SM2, col="red", type="l", lwd=2)
 lines(EPC_DF$DTstamp, EPC_DF$SM3, col="blue", type="l", lwd=2)
 legend("topright", legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"),
        lty=1, lwd=2, col=c("black", "red", "blue"))
+
 ##plot 3
 plot(EPC_DF$DTstamp, EPC_DF$Voltage, type="l", ylab="Voltage", xlab="datetime")
+
 ##plot 4
+par(cex.axis=0.6) #Turn the font down on the numbers
 plot(EPC_DF$DTstamp, EPC_DF$GRP, type="l", ylab="Global_Reactive_Power", xlab="datetime")
 dev.off()
