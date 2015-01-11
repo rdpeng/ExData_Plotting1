@@ -13,7 +13,7 @@ power$datetime <- as.POSIXlt(power$datetime,format="%Y-%m-%d %H:%M:%S")
 power <- power[order(power$datetime),]
 
 png(filename="plot2.png",width=480,height=480,units="px",bg="white")
-plot(as.numeric(power$Global_active_power)/500,type="l",xlab="",breaks=c("Thu","Fri"),ylab="Global Active Power (kilowatts)",xaxt="n")
+plot(as.numeric(power$Global_active_power)/500,type="l",xlab="",ylab="Global Active Power (kilowatts)",xaxt="n")
 axis(1,at=c("0","1500","2900"),labels=c("Thu","Fri","Sat"))
 dev.off()
 
