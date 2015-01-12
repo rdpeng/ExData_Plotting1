@@ -1,0 +1,14 @@
+read.table("household_power_consumption.txt", header=TRUE, as.is = TRUE,
+           na.string="?", sep=";") -> power
+power$Date <- as.Date(power$Date, "%d/%m/%Y")
+
+ind <- with(power, (Date > as.Date("2007-1-31")) * (Date < as.Date("2007-2-3")))
+subdata <- power[ind>0,]
+rm(power, ind)
+
+#----------------------------------------------
+# plot1
+with(subdata, hist(Global_active_power, col="red", xlab="Global Active Power (kilowatts)", 
+                   main="Global Active Power"))  ## Create plot on screen device
+dev.copy(png, file = "plot1.png")        ## Copy my plot to a PNG file
+dev.off()                                ## Don't forget to close the PNG device!
