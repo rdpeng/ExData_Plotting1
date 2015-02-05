@@ -1,0 +1,18 @@
+Columns <- c(rep("character", 2), rep("numeric", 7))
+output <- read.table("household_power_consumption.txt", header = TRUE, sep=';', na.strings = "?", colClasses = Columns)
+ok <- c(complete.cases(output$Date, output$Time))
+output <- output[ok, ]
+output$DateTime <- as.POSIXct(paste(output$Date, output$Time), format="%d/%m/%Y %H:%M:%S")
+keeps <- c((output$DateTime >= "2007-02-01 00:00:00") & (output$DateTime <= "2007-02-02 24:00:00"))
+output <- output[keeps, 3:10]
+png(filename = "plot4.png", width = 480, height = 480, units = "px", bg = "transparent")
+par(mar = c(4, 4, 2, 2))
+par(mfrow = c(2, 2))
+plot(output$DateTime, output$Global_active_power, type = "l", xlab = "", ylab = "Global Active Power")
+plot(output$DateTime, output$Voltage, type = "l", xlab = "dateTime", ylab = "Voltage")
+plot(output$DateTime, output$Sub_metering_1, type = "l", xlab = "", ylab = "Energy sub metering")
+points(output$DateTime, output$Sub_metering_2, type = "l", col = "red")
+points(output$DateTime, output$Sub_metering_3, type = "l", col = "blue")
+legend('topright', names(output)[c(5:7)],lty=1, col=c('black', 'red', 'blue'))
+plot(output$DateTime, output$Global_reactive_power, type = "l", xlab = "dateTime", ylab = "Global Reactive Power")
+dev.off()
