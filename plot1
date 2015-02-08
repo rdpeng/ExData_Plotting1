@@ -1,0 +1,9 @@
+#This code reads the household_power_consumption.txt and plots the global active power frequncy during the period 1 Feb 07 through 2 Feb 07.  The output is a file plot1.png with size 480 by 480.  This is plot 1.
+power<- read.table("household_power_consumption.txt", na.strings = "?", header=TRUE,sep=";")
+power_sub <-power[power$Date == "1/2/2007" | power$Date == "2/2/2007",]
+
+#Plot 1
+png(filename="plot1.png", width = 480, height = 480)
+hist(power_sub$Global_active_power, main="Global Active Power", xlab="Global Active Power (kilowatts)", col="red")
+dev.off()
+

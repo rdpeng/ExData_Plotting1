@@ -1,0 +1,13 @@
+#This code reads the household_power_consumption.txt and plots the Global_active_power during the period 1 Feb 07 through 2 Feb 07.  The output is a file plot2.png with size 480 by 480.  This is plot 2.
+power<- read.table("household_power_consumption.txt", na.strings = "?", header=TRUE,sep=";")
+power_sub <-power[power$Date == "1/2/2007" | power$Date == "2/2/2007",]
+
+#Plot 2
+format(Sys.time(), "%d/%m/%y %H:%M:%S")
+date <- power_sub$Date
+time <- power_sub$Time
+dateTime <- paste(power_sub$Date, power_sub$Time)
+power_sub$DateTime <- strptime(dateTime, "%d/%m/%Y %H:%M:%S")
+png(filename="plot2.png", width = 480, height = 480)
+plot(power_sub$DateTime, power_sub$Global_active_power, type="l", xlab=NA, ylab="Global Active Power (kilowatts)")
+dev.off()
