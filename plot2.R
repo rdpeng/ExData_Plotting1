@@ -1,6 +1,6 @@
 # plot2.R: Project 1, part 2 of Exploratory Data Analysis (Johns Hopkins / Coursera)
 # 
-# updated for January 2015 session of EDA
+# updated for February 2015 session of EDA
 #
 # Reads electrical power consumption data and creates a png file of power over time
 # 
