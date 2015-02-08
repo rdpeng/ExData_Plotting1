@@ -1,4 +1,4 @@
-
+# plot 4
 
 tabla <- read.csv(file="data/household_power_consumption.txt", 
                   header = TRUE, sep=";", na.strings = "?" )
@@ -14,11 +14,11 @@ png(filename="plot4.png")
 par(mfrow = c(2,2))
 
 plot( x = subtabla$fechaHora, y=subtabla$Global_active_power, type = "l", xaxp=c(1,2880,2), xlab ="",
-     ylab = "Global Active Power (kilowats)")
+      ylab = "Global Active Power (kilowats)")
 
 
 plot( x = subtabla$fechaHora, y=subtabla$Voltage, type = "l", xlab ="datetime",
-     ylab = "Voltage")
+      ylab = "Voltage")
 
 plot( x = subtabla$fechaHora, y=subtabla$Sub_metering_1, type = "l", 
       col="black", xlab =" " , ylab = "Energy sub mettering")

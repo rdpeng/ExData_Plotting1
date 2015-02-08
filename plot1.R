@@ -1,4 +1,4 @@
-
+# Plot 1
 
 tabla <- read.csv(file="data/household_power_consumption.txt", 
                   header = TRUE, sep=";", na.strings = "?" )
