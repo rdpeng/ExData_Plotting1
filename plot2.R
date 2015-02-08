@@ -1,4 +1,4 @@
-# plot 2
+
 
 tabla <- read.csv(file="data/household_power_consumption.txt", 
                   header = TRUE, sep=";", na.strings = "?" )
@@ -18,3 +18,4 @@ plot(x = subtabla$fechaHora, y=subtabla$Global_active_power, type = "l", xaxp=c(
      ylab = "Global Active Power (kilowats)")
 
 dev.off()
+
