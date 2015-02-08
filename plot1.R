@@ -10,13 +10,13 @@ textFile <- unzip("./household_power_consumption.zip", exdir = "./") # unzipping
 data_file <- c("./household_power_consumption.txt")
 data <- read.table(data_file, sep = ";", header = T, na.strings = "?")
 data$Date <- as.Date(data$Date, format="%d/%m/%Y") # setting class as date
-data <-na.omit(data) ## omitting na values
+data <- na.omit(data) ## omitting na values
 subset_data <-subset(data, (data$Date == "2007-02-01") | (data$Date == "2007-02-02")) ## subsetting by date, use date format as indicated by head(data$Date)
 
 # Introducing Time_and_Date variable
-temp<-paste(subset_data$Date, subset_data$Time)
+temp <- paste(subset_data$Date, subset_data$Time)
 datetime <- strptime(temp, format="%Y-%m-%d %H:%M:%S")
-dataset<-data.frame(subset_data,datetime) # create new dataset merging the subsetted data frame and datetime variable
+dataset<- data.frame(subset_data,datetime) # create new dataset merging the subsetted data frame and datetime variable
 
 # Plot1
 hist(dataset$Global_active_power, main = paste("Global Active Power"), col="red", xlab="Global Active Power (kilowatts)")
