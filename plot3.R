@@ -1,4 +1,4 @@
-
+# plot 3
 
 tabla <- read.csv(file="data/household_power_consumption.txt", 
                   header = TRUE, sep=";", na.strings = "?" )
@@ -15,7 +15,7 @@ par(mfrow = c(1,1))
 png(filename="plot3.png")
 
 plot(x= subtabla$fechaHora, y= subtabla$Sub_metering_1, type = "l", col="black", xaxp=c(1,2880,2), xlab ="",
-     ylab = "Energy sub mettering")
+     ylab = "Energy sub mettering.")
 points(x= subtabla$fechaHora, y= subtabla$Sub_metering_2, type = "l", col="red")
 points(x= subtabla$fechaHora, y= subtabla$Sub_metering_3, type = "l", col="blue")
 legend("topright", col = c("black","red","blue"), pch="-",
