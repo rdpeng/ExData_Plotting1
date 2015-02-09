@@ -1,0 +1,36 @@
+# Place the household_power_consumption file in the working directory set.
+#set the working directory of R to C:/Data
+setwd("C:/Data")
+
+file <- c("./household_power_consumption.txt")
+#Extratract and load only the required data into R. i.e., data between  from the dates 2007-02-01 and 2007-02-02.
+install.packages("sqldf")
+library(sqldf)
+data_subset <- read.csv.sql(file, header = T, sep=";", sql = "select * from file where (Date == '1/2/2007' OR Date == '2/2/2007')" )
+
+dateTime  <- as.POSIXlt(paste(as.Date(data_subset$Date, format="%d/%m/%Y"), data_subset$Time, sep=" "))
+png(filename = "plot4.png")
+
+par(mfrow = c(2, 2))
+
+# plot 1 (NW)
+plot(dateTime, data_subset$Global_active_power, type = "l", ylab = "Global Active Power", 
+     xlab = "")
+
+# plot 2 (NE)
+plot(dateTime, data_subset$Voltage, type = "l", ylab = "Voltage", xlab = "datetime")
+
+# plot 3 (SW)
+plot(dateTime, data_subset$Sub_metering_1, type = "l", ylab = "Energy sub metering", 
+     xlab = "", col = "black")
+points(dateTime, data_subset$Sub_metering_2, type = "l", xlab = "", ylab = "Sub_metering_2", 
+       col = "red")
+points(dateTime, data_subset$Sub_metering_3, type = "l", xlab = "", ylab = "Sub_metering_3", 
+       col = "blue")
+legend("topright", lty = 1,col = c("black", "red", "blue"), legend = c("Sub_metering_1","Sub_metering_2","Sub_metering_3"), bty = "n", )
+
+# plot 4 (SE)
+plot(dateTime, data_subset$Global_reactive_power, type = "l", xlab = "datetime", 
+     ylab = "Global_reactive_power", ylim = c(0, 0.5))
+dev.off() 
+
