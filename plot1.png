@@ -10,7 +10,7 @@ data<-subset(data,data$Date>=prb[1])
 data<-subset(data,data$Date<=prb[2])
 bad<-is.na(data$Global_active_power)
 x<-as.numeric(data$Global_active_power[!bad])
-png(file = "Plot1.png", bg = "transparent")
+png(file = "Plot1.png", bg = "transparent",width=480,height=480)
 hist(x,xlab="Global Active Energy (kilowatts)",ylab="Frequency",main="Global Active Energy",col="red")
 dev.off()
 }
