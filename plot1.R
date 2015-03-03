@@ -6,7 +6,7 @@ cnames <- readLines(file, 1)
 cnames <- strsplit(cnames, ";", fixed = TRUE)
 names(cp1_data) <- cnames[[1]]
 cp1_data <- cp1_data[cp1_data$Date %in% c("1/2/2007", "2/2/2007"), 
-                                 ]
+                                 
 head(cp1_data)
 
 
