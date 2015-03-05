@@ -1,3 +1,4 @@
+
 new_hpc = read.table('household_power_consumption.txt', sep=';', header = TRUE,
                      colClasses = c('character', 'character', 'numeric', 'numeric',
                                     'numeric', 'numeric','numeric', 'numeric', 'numeric'), 
