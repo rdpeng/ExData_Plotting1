@@ -1,4 +1,4 @@
-setwd("~/Desktop/coursera") ## set working directory
+ setwd("~/Desktop/coursera /ExData_Plotting1") ## set working directory
 rm(list=ls()) ##remove files fr clarity
 summary("household_power_consumption.txt")
 
