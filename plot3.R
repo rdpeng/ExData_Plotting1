@@ -1,5 +1,5 @@
-setwd("~/Desktop/coursera")
-rm(list=ls())## reove files for clarity
+ setwd("~/Desktop/coursera /ExData_Plotting1")
+rm(list=ls())## remove files for clarity
 summary("household_power_consumption.txt")
 
 hpc <- read.csv("household_power_consumption.txt",
