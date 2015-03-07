@@ -34,3 +34,5 @@ plot(as.numeric(power$Global_reactive_power)/500,type="l",xlab="datetime",ylab="
 axis(1,at=c("0","1500","2900"),labels=c("Thu","Fri","Sat"))
 
 dev.off()
+
+
