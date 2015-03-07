@@ -11,3 +11,4 @@ png(filename="plot1.png",width=480,height=480,units="px",bg="white")
 hist(as.numeric(power$Global_active_power)/500,col="red",xlab="Global Active Power (kilowatts)",main="Global Active Power")
 dev.off()
 
+
