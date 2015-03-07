@@ -17,3 +17,4 @@ plot(as.numeric(power$Global_active_power)/500,type="l",xlab="",ylab="Global Act
 axis(1,at=c("0","1500","2900"),labels=c("Thu","Fri","Sat"))
 dev.off()
 
+
