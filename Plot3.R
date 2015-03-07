@@ -20,3 +20,5 @@ legend("topright",legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),p
 axis(1,at=c("0","1500","2900"),labels=c("Thu","Fri","Sat"))
 axis(2,at=c("10","20","30"),labels=c("10","20","30"))
 dev.off()
+
+
