@@ -1,6 +1,9 @@
-household_power<-read.csv("household_power_consumption.txt",sep=";",na.strings="?")
-missing <-na.omit(household_power)
-missing1 <- missing[missing$Date %in% c("1/2/2007", "2/2/2007"),]
+##plot1
+household_power<-read.csv("household_power_consumption.txt",sep=";",na.strings="?") 
+ ## remove missing values if any
+ missing <-na.omit(household_power)
+missing1 <- missing[missing$Date %in% c("1/2/2007", "2/2/2007"),] 
+## select dates
 finalfeb<-missing1
 png("plot1.png", width = 480, height = 480, units = "px", bg = "white")
 with(finalfeb, hist(Global_active_power, main = "Global Active Power",xlab = "Global Active Power (kilowatts)", ylab = "Frequency", col = "red"))
