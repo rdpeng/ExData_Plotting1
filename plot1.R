@@ -4,8 +4,6 @@ library(datasets)
 consumption <- subset(read.table("household_power_consumption.txt", sep=";", header=TRUE, na.strings="?", dec=".", stringsAsFactors=FALSE), Date =="1/2/2007"| Date =="2/2/2007")
 consumption$Date <- as.Date(consumption$Date, format="%d/%m/%Y")
 consumption$Time <- hms(consumption$Time)
-##consumption$Time <- strptime(consumption$Time, format="%T")
-##consumption$Time <- strptime(consumption$Time, "%H:%M:%S")
 
 ##Plot the histogram and save it to a png file
 png(file = "plot1.png", width = 480, height = 480) ##Open PNG file and create file in working directory
