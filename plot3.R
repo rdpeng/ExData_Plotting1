@@ -20,7 +20,10 @@ dt$Sub_metering_3<-as.numeric(as.character(dt$Sub_metering_3))
 #Combine Date and Time
 dt$date.and.time<-strptime(paste(dt$Date, dt$Time), "%d/%m/%Y %H:%M:%S")
 
-png(file="ExData_Plotting1/plot2.png", width=480, height=480)
-plot(dt$date.and.time, dt$Global_active_power, type="n", ylab="Global Active Power (kilowatts)", xlab="")
-lines(dt$date.and.time, dt$Global_active_power, col="black")
+png(file="ExData_Plotting1/plot3.png", width=480, height=480)
+plot(dt$date.and.time, dt$Sub_metering_1, type="n", ylab="Energy sub metering", xlab="")
+lines(dt$date.and.time, dt$Sub_metering_1, col="black")
+lines(dt$date.and.time, dt$Sub_metering_2, col="red")
+lines(dt$date.and.time, dt$Sub_metering_3, col="blue")
+legend("topright", c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), col = c("black", "red", "blue") )
 dev.off()

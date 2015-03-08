@@ -17,6 +17,6 @@ dt$Sub_metering_1<-as.numeric(as.character(dt$Sub_metering_1))
 dt$Sub_metering_2<-as.numeric(as.character(dt$Sub_metering_2))
 dt$Sub_metering_3<-as.numeric(as.character(dt$Sub_metering_3))
 
-png(file="Assignment 1/plot1.png", width=480, height=480)
+png(file="ExData_Plotting1/plot1.png", width=480, height=480)
 hist(dt$Global_active_power, col="red", breaks=12, xlab="Global Active Power (kilowatts)", main="Global Active Power")
 dev.off()
