@@ -21,6 +21,7 @@ finalfeb$Date_Time <- paste(finalfeb$Date, finalfeb$Time)
 finalfeb$Date_Time <- strptime(finalfeb$Date_Time, "%F %H:%M:%S")
 png("plot2.png", width = 480, height = 480, units = "px", bg = "white")
 plot(x = finalfeb$Date_Time, y = finalfeb$Global_active_power, type = "l",xlab = "", ylab = "Global Active Power (kilowatts)")
+dev.off()
 
 ##Plot3
 png("plot3.png", width = 480, height = 480, units = "px", bg = "white")
@@ -31,6 +32,7 @@ lines(x = finalfeb$Date_Time, y = finalfeb$Sub_metering_2, col = "red")
 lines(x = finalfeb$Date_Time, y = finalfeb$Sub_metering_3, col = "blue")
 legend("topright", legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"),lty = 1, col = c("black", "red", "blue"))
 dev.off()
+
 ##Plot 4
 
 png("plot4.png", width = 480, height = 480, units = "px", bg = "white")
