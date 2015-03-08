@@ -1,5 +1,3 @@
-# Don't forget to set working directory
-
 # Create a proejct diretory if it doesn't exist already
 if(!file.exists("project1")) {
         dir.create("project1")
