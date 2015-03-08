@@ -28,7 +28,7 @@ Sub_metering_2: energy sub-metering No. 2 (in watt-hour of active energy). It co
 Sub_metering_3: energy sub-metering No. 3 (in watt-hour of active energy). It corresponds to an electric water-heater and an air-conditioner.  
 
 ### Output
-Output of the four R scripts plot1.R, plot2.R, plot3.R, and plot4.R is the four graphical plots plot1.png, plot2.png, plot3.png, and plot4.png respectively. 
+Output of the four R scripts plot1.R, plot2.R, plot3.R, and plot4.R is four graphical plots named plot1.png, plot2.png, plot3.png, and plot4.png respectively. 
 
 
 
