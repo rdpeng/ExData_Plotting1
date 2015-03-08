@@ -1,3 +1,5 @@
+##README FILE FOR PROJECT 1
+
 ## Introduction
 The assumption is that the script will be run in the same folder as the dataset. 
 
@@ -6,12 +8,11 @@ The assumption is that the script will be run in the same folder as the dataset.
 The script is useful to examine how household energy usage
 varies over a 2-day period in February, 2007. 
 
-This assignment uses data from
+This assignment uses the "Individual household
+electric power consumption Data Set" from
 the <a href="http://archive.ics.uci.edu/ml/">UC Irvine Machine
 Learning Repository</a>, a popular repository for machine learning
-datasets. In particular, we will be using the "Individual household
-electric power consumption Data Set" which I have made available on
-the course web site:
+datasets. 
 
 ## Dataset
 
