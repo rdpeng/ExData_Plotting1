@@ -1,6 +1,6 @@
 # plot1.R: Project 1, part 1 of Exploratory Data Analysis (Johns Hopkins / Coursera)
 # 
-# updated for February 2015 session of EDA
+# updated for March 2015 session of EDA
 #
 # Reads electrical power consumption data and creates a png file with a histogram
 # showing Global Active Power used over two days (1-2 February 2007).
