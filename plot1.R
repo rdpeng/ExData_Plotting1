@@ -2,12 +2,12 @@
 ## This function creates a histogram of Global Active Power versus frequency.
 ## for the dates 1/2/2007 and 2/2/2007
 plot1 <- function(){
-  #dataUrl <- "https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip"
+  dataUrl <- "https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip"
   ## Read the data
-  #download.file(dataUrl, ".\\household_power_consumption.zip", mode="wb")
+  download.file(dataUrl, ".\\household_power_consumption.zip", mode="wb")
   
   ## Extract compressed file
-  #unzip(".\\household_power_consumption.zip")
+  unzip(".\\household_power_consumption.zip")
   
   ## Read Data   
   data <- read.table(".\\household_power_consumption.txt", sep=";", header=TRUE, colClasses="character", na.strings="?")
