@@ -1,3 +1,5 @@
+## Course Project 1: Using the base plotting system in R, re-create graphs of household power consumption
+####################################################################################################################
 ## Introduction
 
 This assignment uses data from
