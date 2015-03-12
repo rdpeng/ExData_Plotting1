@@ -11,7 +11,7 @@ plot4 <- function() {
   e$datetime<-strptime(paste(e$Date, e$Time), "%d/%m/%Y %H:%M:%S")
   
   ## get the graphics device ready
-  png("figure/plot4.png", width = 480, height = 480, units = "px")
+  png("plot4.png", width = 480, height = 480, units = "px")
   
   # multiplot
   par(mfrow = c(2, 2))

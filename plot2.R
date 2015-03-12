@@ -11,7 +11,7 @@ plot2 <- function() {
   e$datetime<-strptime(paste(e$Date, e$Time), "%d/%m/%Y %H:%M:%S")
   
   ## get the graphics device ready
-  png("figure/plot2.png", width = 480, height = 480, units = "px")
+  png("plot2.png", width = 480, height = 480, units = "px")
   ## plotting
   plot(e$datetime,e$Global_active_power, xlab ="", 
        ylab = "Global Active Power (kilowatts)", type ="l")

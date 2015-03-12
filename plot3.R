@@ -11,7 +11,7 @@ plot3 <- function() {
   e$datetime<-strptime(paste(e$Date, e$Time), "%d/%m/%Y %H:%M:%S")
   
   ## get the graphics device ready
-  png("figure/plot3.png", width = 480, height = 480, units = "px")
+  png("plot3.png", width = 480, height = 480, units = "px")
   ## plotting
   plot(e$datetime, e$Sub_metering_1, xlab = "", 
        ylab = "Energy sub metering", col = "black", type = "l")
