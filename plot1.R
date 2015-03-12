@@ -9,7 +9,7 @@ load(hpc.dataFile)
 
 ## Actual plot
 # Set graphic device
-png(file='figure/plot1.png', width=480, height=480, type="cairo")
+png(file='figure/plot1.png', width=480, height=480, bg= "transparent", type="cairo")
 
 # Draw figure
 hist(hpc$Global_active_power,

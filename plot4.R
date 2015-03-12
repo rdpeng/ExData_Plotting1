@@ -9,7 +9,7 @@ load(hpc.dataFile)
 
 ## Actual plot
 # Set graphic device
-png(file='figure/plot4.png', width=480, height=480, type="cairo")
+png(file='figure/plot4.png', width=480, height=480, bg= "transparent", type="cairo")
 
 Sys.setlocale("LC_TIME", "C")
 par(mfrow = c(2, 2))
