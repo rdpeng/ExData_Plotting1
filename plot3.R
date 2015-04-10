@@ -14,7 +14,7 @@ data<-subset(data,data$Date>=prb[1])
 data<-subset(data,data$Date<=prb[2])
 y<-data$Sub_metering_1
 png(file = "Plot3.png", bg = "transparent",width=480,height=480)
-plot(data$x, y, type="l", ylab="Energy sub metering")
+plot(data$x, y, type="l",xlab="", ylab="Energy sub metering")
 with(data, points(data$x, data$Sub_metering_2,type="l", col="red"))
 with(data, points(data$x, data$Sub_metering_3, type="l", col="blue"))
 lgndcol<-c("black","red","blue")
@@ -22,3 +22,4 @@ lgndprm<-c("sub_metering_1","sub_metering_2","sub_metering_3")
 legend("topright", lty=c(1,1,1), col=lgndcol, legend=lgndprm)
 dev.off()
 }
+
