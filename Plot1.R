@@ -12,7 +12,7 @@ globalActivePower <- as.numeric(graphdata$Global_active_power)
 ## set the output device
 png("plot1.png", width=480, height=480)
 ## plot histogram
-hist(globalActivePower, col="orange", main="Global Active Power", xlab="Global Active Power (kilowatts)")
+hist(globalActivePower, col="red", main="Global Active Power", xlab="Global Active Power (kilowatts)")
 ## device off
 dev.off()
 
