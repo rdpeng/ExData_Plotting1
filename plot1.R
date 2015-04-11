@@ -1,7 +1,7 @@
 library(lubridate)
 library(dplyr)
 
-##reading data from working directory
+##reading data from the working directory
 p<-read.table("household_power_consumption.txt",sep=";",header=TRUE)
 
 ##reshaping data
