@@ -1,3 +1,4 @@
+
 plot1<-with (pow2, 
       hist(Global_active_power, 
            main = "Global Active Power", 
