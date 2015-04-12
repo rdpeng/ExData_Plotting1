@@ -7,3 +7,4 @@ power$Time<- strptime(power$Time, format = "%H:%M:%S")
 startdate<- as.Date("01/02/2007", format = "%d/%m/%Y")
 enddate<- as.Date ("02/02/2007",format ="%d/%m/%Y")
 pow2<- power[power$Date>= startdate & power$Date <=enddate,]
+
