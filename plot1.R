@@ -10,8 +10,6 @@
 ##  Create a plot showing Frequency (from 0 to 1200) vs. Global Active Power (from 0 to 6 kilowatts)
 
 
-## do i need to load the graphics library?
-
   # Load the data, and keeping only the data for 2/1/2007 and 2/2/2007, 
   # and adding a converted DateTime column created from the date and time columns
   setwd("C:/Users/Jennifer/Documents/Coursera/Exploring Data")
