@@ -1,5 +1,5 @@
 setwd("~/Desktop/coursera /eda")##set local directory
-rm(list=ls())## reove files for clarity
+rm(list=ls())## remove files for clarity
 
 hpc <- read.csv("household_power_consumption.txt",
                 sep=";",
