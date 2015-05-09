@@ -20,6 +20,6 @@ plot <- as.numeric(subSet_hpc$Global_active_power)
 hist(plot, main="Global Active Power", xlab="Global Active Power (kilowatts)", ylab="Frequency", col="Red")
 dev.off() ##turning device off saves plot
 hist(plot, main="Global Active Power", xlab="Global Active Power (kilowatts)", ylab="Frequency", col="Red")
-## show plot in device, *Rememberr to turn device off again
+## show plot in device, *Remember to turn device off again
 
 
