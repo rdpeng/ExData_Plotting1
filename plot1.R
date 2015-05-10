@@ -26,7 +26,7 @@ plot1 <- function(){
   ## Construct the plot and save it to a PNG file with a width of 480 pixels 
   ## and a height of 480 pixels.
   
-  hist(as.numeric(gapValid), main="Global Active Power", xlab="Global Active Power", col="red")
+  hist(as.numeric(gapValid), main="Global Active Power", xlab="Global Active Power (kilowatts)", col="red")
   dev.copy(png, file="plot1.png")
   dev.off()
   
