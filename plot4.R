@@ -1,0 +1,22 @@
+#graph 4
+with(subData, {
+    png("plot4.png",height=480,width=480)
+    globalActivePower<-as.numeric(Global_active_power)
+    globalReactivePower<-as.numeric(Global_reactive_power)
+    dateTime<-strptime(paste(Date,Time,sep=" "),
+                      "%d/%m/%Y %H:%M:%S")
+    dateTime<-as.POSIXct(dateTime)
+    voltage<-as.numeric(Voltage)
+    subMeter1<-as.numeric(Sub_metering_1)
+    subMeter2<-as.numeric(Sub_metering_2)
+    subMeter3<-as.numeric(Sub_metering_3)
+    par(mfrow=c(2,2))
+    plot(globalActivePower~dateTime,type="l",xlab="",ylab="Global Active Power",cex=0.2)
+    plot(voltage~dateTime,type="l",ylab="Voltage",xlab="")
+    plot(subMeter1~dateTime,type="l",ylab="Energy Submetering",xlab="")
+    lines(dateTime,subMeter2,type="l",col="red")
+    lines(dateTime,subMeter3,type="l",col="blue")
+    legend("topright",c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),lwd=2.5,col=c("black","red","blue"))
+    plot(globalReactivePower~dateTime,type="l",xlab="datetime",ylab="Global_reactive_power")
+    dev.off()
+})
