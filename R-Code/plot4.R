@@ -13,3 +13,7 @@ with(Data, {
   plot(Global_reactive_power ~ Datetime, type = "l",
        ylab = "Global_rective_power", xlab = "datetime")
 })
+
+## Saves data to file
+dev.copy(png, file = "plot4.png", height = 480, width = 480)
+dev.off()
