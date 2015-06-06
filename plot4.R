@@ -1,4 +1,4 @@
-#This creates the Plot3
+#This creates the Plot4
 datos=read.csv('household_power_consumption.txt',header=T, sep=';') ##This reads the cvs file
 datos$Datetime = paste(as.character(datos[,1]) , datos[,2])  ##Combines Date and Time in 1 column
 datos[,1]=as.Date(datos$Date,'%d/%m/%Y') ##Change the attribute form text to Date
@@ -21,3 +21,5 @@ with(datos, { ##this will plot the 4 graphics
   plot(y=datos$Global_reactive_power,x=datos$fecha, type="l",
        ylab="Global Rective Power (kilowatts)",xlab="")
 })
+dev.copy(png, file="plot4.png",width=480, height=480, units="px", pointsize=12, type="windows", antialias="none")##Copy to PNG
+dev.off() ##Close the Device
