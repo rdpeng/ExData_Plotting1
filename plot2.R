@@ -1,6 +1,6 @@
 Sys.setlocale("LC_TIME","eng")
 library(dplyr)
-# missing values are coded as "?" - NA ë¡? ë°”ê¿”?†”?•¼ê² ë‹¤.
+# missing values are coded as "?"
 original <- read.table('household_power_consumption.txt', sep=';', header = T)
 
 ## We will only be using data from the dates 2007-02-01 and 2007-02-02.
