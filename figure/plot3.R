@@ -13,9 +13,9 @@ data <- subset (data, data$Date=="2007-02-01"|data$Date=="2007-02-02")
 attach(data)
 
 
-# Plot4
+# Plot3
 
-png("plot4.png", width=480, height=480, units="px")
+png("plot3.png", width=480, height=480, units="px")
 plot (date_time,Sub_metering_1, type="l", xlab="",ylab="Energy sub metering")
 lines (date_time,Sub_metering_2, type="l", col='red')
 lines (date_time,Sub_metering_3, type="l", col='blue')
