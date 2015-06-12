@@ -1,7 +1,7 @@
 library(lubridate)
 library(sqldf)
 
-plot1 <- function(){
+readFebData <- function(){
 #================================================
 #This function returns data required for plotting
 #================================================ 
@@ -14,15 +14,7 @@ plot1 <- function(){
   #now store downloaded file in data directory
   download.file(dataFileURL, destfile = ".\\data\\data.zip", mode ="wb")#mode set to "wb" because this is binary data
   unzip (".\\data\\data.zip")
-  fileList = list.files()
-  print ("getting file list")
-  for (i in fileList){
-     print (i)
-  }
-  if  (!"household_power_consumption.txt" %in% fileList){
-    print("file not found")
-	return
-	}
+  
     
   #if we come here that means the folder exists that means unzip has worked :)
     
@@ -41,5 +33,5 @@ plot1 <- function(){
   DateTime <- dmy_hms(paste( feb_data$Date, feb_data$Time))
   #add this to the data frame
   newsub = cbind(DateTime, feb_data)
-  return newsub  
+  newsub  
  }
