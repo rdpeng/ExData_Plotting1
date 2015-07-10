@@ -1,7 +1,6 @@
-# Change the working directory so you can easily find where the data and plots are
-#  For example setwd("C:/Users/username/My Documents/R/")
-#  Obviously, if you don't change the dir below, you'll get an error 
-setwd("C:\Users\alex\OneDrive\My Docs (HP Laptop)\GitHub\ExData_Plotting1")
+# Change the working directory so you find the data and plots
+#  Obviously, if you use my dir below, you'll get an error 
+# setwd("C:\Users\alex\OneDrive\My Docs (HP Laptop)\GitHub\ExData_Plotting1")
 
 # Check if "data" directory exists and if not, create it 
 if (!file.exists("data")) { 
@@ -27,6 +26,7 @@ head(powerData)   # review the data
 str(powerData)    # review the data types of each field
 
 # Create Plot 2 -  of Global Active Power frequency
+#  Note - plots are in /data subfolder relative to the working dir
 plot(powerData$Date, powerData$Global_active_power, type = "l", ylab = "Global Active Power (kilowatts)", xlab = "")
 dev.copy(png, file = "data/plot2.png") # Copy plot to PNG file
 dev.off()

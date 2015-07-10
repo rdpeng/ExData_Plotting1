@@ -1,7 +1,6 @@
-# Change the working directory so you can easily find where the data and plots are
-#  For example setwd("C:/Users/username/My Documents/R/")
-#  Obviously, if you don't change the dir below, you'll get an error 
-setwd("C:\Users\alex\OneDrive\My Docs (HP Laptop)\GitHub\ExData_Plotting1")
+# Change the working directory so you find the data and plots
+#  Obviously, if you use my dir below, you'll get an error 
+# setwd("C:\Users\alex\OneDrive\My Docs (HP Laptop)\GitHub\ExData_Plotting1")
 
 # Check if "data" directory exists and if not, create it 
 if (!file.exists("data")) { 
@@ -18,7 +17,7 @@ head(powerData)   # preview the data
 str(powerData)    # review the data types of each field
 
 # Clean up data: subset for dates, combine date & time, convert types, etc.
-powerData$Date; <- as.Date(powerData$Date, "%d/%m/%Y")
+powerData$Date <- as.Date(powerData$Date, "%d/%m/%Y")
 powerData <- subset(powerData, powerData$Date >= '2007-02-01' & powerData$Date <= '2007-02-02')
 powerData$Date <- as.POSIXct(paste(powerData$Date, powerData$Time), format="%Y-%m-%d %H:%M:%S")
 powerData$Time <- NULL
@@ -27,6 +26,7 @@ head(powerData)   # review the data
 str(powerData)    # review the data types of each field
 
 # Create Plot 1 - histogram of Global Active Power frequency
+#  Note - plots are in /data subfolder relative to the working dir
 hist(powerData$Global_active_power, xlab = "Global Active Power (kilowatts)", main = "Global Active Power", col = "red")
 dev.copy(png, file = "data/plot1.png") # Copy plot to PNG file
 dev.off()

@@ -1,7 +1,6 @@
-# Change the working directory so you can easily find where the data and plots are
-#  For example setwd("C:/Users/username/My Documents/R/")
-#  Obviously, if you don't change the dir below, you'll get an error 
-setwd("C:\Users\alex\OneDrive\My Docs (HP Laptop)\GitHub\ExData_Plotting1")
+# Change the working directory so you find the data and plots
+#  Obviously, if you use my dir below, you'll get an error 
+# setwd("C:\Users\alex\OneDrive\My Docs (HP Laptop)\GitHub\ExData_Plotting1")
 
 # Check if "data" directory exists and if not, create it 
 if (!file.exists("data")) { 
@@ -32,8 +31,9 @@ head(powerData)   # review the data
 str(powerData)    # review the data types of each field
 
 # Create Plot 4 -  2 x 2 grid of plots
-#  Note - Text in legend does not copy well using dev.copy()
-#  So legend text formats correctly, made explicit call to png() function
+#  Note - plots are in /data subfolder relative to the working dir
+#  Also - text in legend does not copy well using dev.copy()
+#  Made explicit call to png() function so legend text formats correctly
 png(filename = "data/plot4.png", width = 480, height = 480)
 par(mfrow = c(2, 2))
 
