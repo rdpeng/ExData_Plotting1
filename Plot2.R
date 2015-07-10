@@ -1,7 +1,7 @@
 # Change the working directory so you can easily find where the data and plots are
 #  For example setwd("C:/Users/username/My Documents/R/")
 #  Obviously, if you don't change the dir below, you'll get an error 
-setwd("C:/Users/alex/OneDrive/My Docs (HP Laptop)/R/Johns Hopkins - Exploring Data")
+setwd("C:\Users\alex\OneDrive\My Docs (HP Laptop)\GitHub\ExData_Plotting1")
 
 # Check if "data" directory exists and if not, create it 
 if (!file.exists("data")) { 
