@@ -26,7 +26,7 @@ powerData$Global_reactive_power <- as.numeric(levels(powerData$Global_reactive_p
 powerData$Voltage <- as.numeric(levels(powerData$Voltage)[powerData$Voltage])
 powerData$Global_intensity <- as.numeric(levels(powerData$Global_intensity)[powerData$Global_intensity])
 powerData$Sub_metering_1 <- as.numeric(levels(powerData$Sub_metering_1)[powerData$Sub_metering_1])
-powerData$Sub_metering_1 <- as.numeric(levels(powerData$Sub_metering_1)[powerData$Sub_metering_1])
+powerData$Sub_metering_2 <- as.numeric(levels(powerData$Sub_metering_2)[powerData$Sub_metering_2])
 head(powerData)   # review the data
 str(powerData)    # review the data types of each field
 

@@ -17,7 +17,7 @@ head(powerData)   # preview the data
 str(powerData)    # review the data types of each field
 
 # Clean up data: subset for dates, combine date & time, convert types, etc.
-powerData$Date; <- as.Date(powerData$Date, "%d/%m/%Y")
+powerData$Date <- as.Date(powerData$Date, "%d/%m/%Y")
 powerData <- subset(powerData, powerData$Date >= '2007-02-01' & powerData$Date <= '2007-02-02')
 powerData$Date <- as.POSIXct(paste(powerData$Date, powerData$Time), format="%Y-%m-%d %H:%M:%S")
 powerData$Time <- NULL
