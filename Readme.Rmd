@@ -1,0 +1,11 @@
+"ExData_plotting1 Readme"
+
+This is the first course project for Jul 2015 Exploratory Data anaylsis.
+
+To run this script, please do the following:
+
+Download the scripts (plot1.R, plot2.R, plot3.R, plot4.R) into the working directory
+Download the data from https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip
+Extract the data into the working directory
+
+Run the scripts

@@ -1,28 +1,18 @@
 # First, assuming that the .txt file is in the working directorry, load the file into R.
-epc_data <-read.table("./household_power_consumption.txt",h=TRUE,sep=";") 
+x0 <- read.table("household_power_consumption.txt", sep = ";", na.strings="?", stringsAsFactors = FALSE, header = TRUE)
 
-# Get names of variables based on the first line of the file.
-attach(epc_data)
-
-# Transform the Date format
-epc_data$Date <-as.Date(epc_data$Date,format='%d/%m/%Y')
+# Transform the Date into real 'Date' format
+x0$Date <- as.Date(x0$Date, "%d/%m/%Y")
 
 # Select the rows corresponding of the date between 2007-02-01 and 2007-02-02
-t_epc_data <-epc_data[which(epc_data$Date == "2007-02-01" | epc_data$Date == "2007-02-02"), ]
+x1 <- subset(x0, subset=(Date >= "2007-02-01" & Date <= "2007-02-02"))
+# OR
+# x1 <-x0[which(x0$Date == "2007-02-01" | epc_data$Date == "2007-02-02")] can be OK
 
-# Change the tz from South Korea to English
-Sys.setlocale(category = "LC_TIME", locale = "C")
-
-# Bind the two columns (Date + Time)
-DateTime <- paste(t_epc_data$Date,t_epc_data$Time, sep = " ")
-t_epc_data <-cbind(t_epc_data,DateTime)
-
-# Prepare labels for the x axis
-Date_at <-list(t_epc_data$DateTime[1],t_epc_data$DateTime[1441],t_epc_data$DateTime[2880])
-Date_label <- c("Thu","Fri","Sat")
-
-# Transform Global_active_power in numeric type
-t_epc_data$Global_active_power <-as.numeric(t_epc_data$Global_active_power)
+# Integrate and Transform the Date and Time format
+x1$DateTime <- paste(x1$Date, x1$Time, sep=",")
+x1$DateTime <- strptime(x1$DateTime, format = "%Y-%m-%d,%H:%M:%S")
+x1$DateTime <- as.numeric(x1$DateTime)
 
 # open the image device
 png(filename = "plot2.png", width = 480, height = 480, units = "px")
@@ -30,10 +20,12 @@ png(filename = "plot2.png", width = 480, height = 480, units = "px")
 # Set a white background
 par(bg = 'white')
 
-# Create a plot on screen device (title, color, etc.)
-plot(t_epc_data$DateTime,t_epc_data$Global_active_power,ylab="Global Active Power (kilowatts)",xaxt = "n")
-lines(t_epc_data$DateTime,t_epc_data$Global_active_power)
-axis(side = 1,at=Date_at,labels=Date_label)
+# Create a plot on screen device
+plot(x1$DateTime, x1$Global_active_power, xlab = " ", ylab ="Global Active Power (kilowatts)", xaxt = "n", type ="l")
+
+# Create a x-axis label Thu / Fri / Sat
+Date_at <- list(x1$DateTime[1], x1$DateTime[1441], x1$DateTime[2880])
+axis(side = 1, at = Date_at, labels = c("Thu","Fri","Sat"))
 
 # Close the PNG file
 dev.off()

@@ -1,51 +1,38 @@
 # First, assuming that the .txt file is in the working directorry, load the file into R.
-epc_data <-read.table("./household_power_consumption.txt",h=TRUE,sep=";") 
+x0 <- read.table("household_power_consumption.txt", sep = ";", na.strings="?", stringsAsFactors = FALSE, header = TRUE)
 
-# Get names of variables based on the first line of the file.
-attach(epc_data)
-
-# Transform the Date format
-epc_data$Date <-as.Date(epc_data$Date,format='%d/%m/%Y')
+# Transform the Date into real 'Date' format
+x0$Date <- as.Date(x0$Date, "%d/%m/%Y")
 
 # Select the rows corresponding of the date between 2007-02-01 and 2007-02-02
-t_epc_data <-epc_data[which(epc_data$Date == "2007-02-01" | epc_data$Date == "2007-02-02"), ]
+x1 <- subset(x0, subset=(Date >= "2007-02-01" & Date <= "2007-02-02"))
+# OR
+# x1 <-x0[which(x0$Date == "2007-02-01" | epc_data$Date == "2007-02-02")] can be OK
 
-# Change the tz from South Korea to English
-Sys.setlocale(category = "LC_TIME", locale = "C")
-
-# Bind the two columns (Date + Time)
-DateTime <- paste(t_epc_data$Date,t_epc_data$Time, sep = " ")
-t_epc_data <-cbind(t_epc_data,DateTime)
-
-# Prepare labels for the x axis
-Date_at <-list(t_epc_data$DateTime[1],t_epc_data$DateTime[1441],t_epc_data$DateTime[2880])
-Date_label <- c("Thu","Fri","Sat")
-
-# Transform the 3 variables sub_metering_1, sub_metering_2 and sub_metering_3 in numeric type
-t_epc_data$Sub_metering_1 <-as.numeric(t_epc_data$Sub_metering_1)
-t_epc_data$Sub_metering_2 <-as.numeric(t_epc_data$Sub_metering_2)
-t_epc_data$Sub_metering_3 <-as.numeric(t_epc_data$Sub_metering_3)
-
-# Set a white background
-par(bg = 'white')
+# Integrate and Transform the Date and Time format
+x1$DateTime <- paste(x1$Date, x1$Time, sep=",")
+x1$DateTime <- strptime(x1$DateTime, format = "%Y-%m-%d,%H:%M:%S")
+x1$DateTime <- as.numeric(x1$DateTime)
 
 # open the image device
 png(filename = "plot3.png", width = 480, height = 480, units = "px")
 
-# Create a plot on screen device (title, color, etc.)
-plot(t_epc_data$DateTime, t_epc_data$Sub_metering_1, 
-     ylab="Energy sub metering",
-     type="l", 
-     xaxt = "n",
-     col = "Black")
+# Set a white background
+par(bg = 'white')
 
-lines(t_epc_data$DateTime,t_epc_data$Sub_metering_1)
-lines(t_epc_data$DateTime,t_epc_data$Sub_metering_2,col="Red")
-lines(t_epc_data$DateTime,t_epc_data$Sub_metering_3,col="Blue")
-axis(side = 1,at=Date_at,labels=Date_label)
+# Create a plot with first Data on screen device
+plot(x1$DateTime, x1$Sub_metering_1, xlab = " ", ylab ="Energy sub metering", col = "black", type = "l", xaxt = "n")
 
-legend("topright", lty=1, lwd=1, col=c("Black","Red","Blue"), 
-       legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"))
+# Add the second and third Data on screen device
+lines(x1$DateTime, x1$Sub_metering_2, col = "red")
+lines(x1$DateTime, x1$Sub_metering_3, col = "blue")
+
+# Add legend
+legend("topright", lty = "solid", col = c("black", "red", "blue"), legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
+
+# Create a x-axis label Thu / Fri / Sat
+Date_at <- list(x1$DateTime[1], x1$DateTime[1441], x1$DateTime[2880])
+axis(side = 1, at = Date_at, labels = c("Thu","Fri","Sat"))
 
 # Close the PNG file
 dev.off()
