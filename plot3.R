@@ -14,5 +14,5 @@ with(days,(lines(Time,Sub_metering_3,col="blue")))
 legend("topright", legend = c("Sub_metering_1","Sub_metering_2","Sub_metering_3"), col = colors, lty=1, xjust=1, xpd=F)
 
 ## Copy plot to a PNG file
-dev.copy(png, file = "plot3.png")
+dev.copy(png, file = "plot3.png", height=480, width=480, units="px")
 dev.off()

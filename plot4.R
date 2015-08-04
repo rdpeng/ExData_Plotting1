@@ -16,10 +16,10 @@ with(days, plot(Time,Voltage,type="l", xlab="", ylab="Voltage"))
 with(days, plot(Time,Sub_metering_1,type="l", xlab="", ylab="Energy sub metering"))
 with(days,(lines(Time,Sub_metering_2,col="red")))
 with(days,(lines(Time,Sub_metering_3,col="blue")))
-legend("topright", legend = c("Sub_metering_1","Sub_metering_2","Sub_metering_3"), col = colors, lty=1, xjust=1, bty="n")
+legend("topright", legend = c("Sub_metering_1","Sub_metering_2","Sub_metering_3"), col = colors, lty=1, xjust=1, xpd=F,bty = "n")
 #bottom right
 with(days, plot(Time,Global_reactive_power,type="l", xlab=""))
 
 ## Copy plot to a PNG file
-dev.copy(png, file = "plot4.png")
+dev.copy(png, file = "plot4.png", height=480, width=480, units="px")
 dev.off()
