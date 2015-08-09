@@ -1,7 +1,7 @@
-## jteed
+## Author: jteed
 ## Exploratory Data Analysis class at Coursera
 ## Assignment 1
-## written: May 5, 2015
+## written: August 9, 2015
 
 
 ##  plot4.R
@@ -34,7 +34,7 @@ plot(consumption$Global_active_power ~ consumption$DateTime, type="l", xlab="", 
 plot(consumption$Sub_metering_1 ~ consumption$DateTime, xlab="", ylab="Energy sub metering", pch=15, type="l")
 points(consumption$Sub_metering_3 ~ consumption$DateTime, col="blue", pch=15, type="l")
 points(consumption$Sub_metering_2 ~ consumption$DateTime, col="red", pch=15, type="l")
-legend(x='topright', legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=1, col=c("black", "red", "blue"))
+legend(x='topright', legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), bty="n", lty=1, col=c("black", "red", "blue"))
 
 #c
 plot(consumption$Voltage ~ consumption$DateTime, ylab="Voltage", xlab="datetime", pch=15, type="l")
