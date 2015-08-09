@@ -52,7 +52,7 @@ rather than reading in the entire dataset and subsetting to those
 dates.
 
 * You may find it useful to convert the Date and Time variables to
-Date/Time classes in R using the `strptime()` and `as.Date()`
+Date/Time classes in R using the `strptime()` and `as.POSIXct()`
 functions.
 
 * Note that in this dataset missing values are coded as `?`.
