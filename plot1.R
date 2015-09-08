@@ -1,0 +1,7 @@
+library(dplyr)
+header <- read.table("household_power_consumption.txt", nrows = 1, header = TRUE, sep =';', stringsAsFactors = FALSE)
+data<-read.table("household_power_consumption.txt",skip=66637,nrows = 2880,sep=";")
+colnames( data ) <- names(header)
+hist(data$Global_active_power,xlab="Global Active Power (kilowatts)",main="Global Active Power",col = "red")
+dev.copy(png,file="plot1.png")
+dev.off() 
