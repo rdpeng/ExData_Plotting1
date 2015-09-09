@@ -14,5 +14,5 @@ plot(subset_data$DateTime, as.numeric(subset_data$Sub_metering_1), type="line", 
 lines(subset_data$DateTime, as.numeric(subset_data$Sub_metering_2), type="line", col="red")
 lines(subset_data$DateTime, as.numeric(subset_data$Sub_metering_3), type="line", col="blue")
 legend("topright", c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=1, lwd=2.5, col=c("black", "red", "blue"))
-dev.copy(png,  file="F:/R_Coding/Exploratory Data Analysis/exdata-data-household_power_consumption/plot3.png", height=480, width=480)
+dev.copy(png,  file="plot3.png", height=480, width=480)
 dev.off()
