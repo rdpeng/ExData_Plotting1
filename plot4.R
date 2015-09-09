@@ -23,5 +23,5 @@ lines(subset_data$DateTime, as.numeric(subset_data$Sub_metering_3), type="line",
 legend("topright", c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=1, lwd=, bty="n", col=c("black", "red", "blue"))
 plot(subset_data$DateTime, as.numeric(subset_data$Global_reactive_power), type="l", xlab="datetime", ylab="Global_reactive_power")
 
-dev.copy(png, file="F:/R_Coding/Exploratory Data Analysis/exdata-data-household_power_consumption/plot4.png", height=480, width=480)
+dev.copy(png, file="plot4.png", height=480, width=480)
 dev.off()
