@@ -1,5 +1,5 @@
 #Take input of Household Power consumption file.
-filepath <- "F:/R_Coding/Exploratory Data Analysis/exdata-data-household_power_consumption/household_power_consumption.txt"
+filepath <- "./Data/household_power_consumption.txt"
 inputdata <- read.table(filepath, header = TRUE, sep = ";", dec=".", stringsAsFactors = FALSE)
 
 #Make the Date column as Date Data type
