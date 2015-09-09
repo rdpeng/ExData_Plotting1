@@ -17,5 +17,5 @@ subset_data$DateTime <- as.POSIXct(paste(as.Date(subset_data$Date), subset_data$
 hist(as.numeric(subset_data$Global_active_power), col="red", main="Global Active Power", xlab="Global Active Power (kilowatts)", ylab="Frequency")
 
 ## Saving to a file
-dev.copy(png, file="F:/R_Coding/Exploratory Data Analysis/exdata-data-household_power_consumption/plot1.png", height=480, width=480)
+dev.copy(png, file="plot1.png", height=480, width=480)
 dev.off()
