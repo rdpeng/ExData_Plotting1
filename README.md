@@ -1,114 +1,47 @@
 ## Introduction
 
-This assignment uses data from
-the <a href="http://archive.ics.uci.edu/ml/">UC Irvine Machine
-Learning Repository</a>, a popular repository for machine learning
-datasets. In particular, we will be using the "Individual household
-electric power consumption Data Set" which I have made available on
-the course web site:
+The code in this branch is my own code, written in R using RStudio version Version 0.98.1102 – © 2009-2014 RStudio, Inc. on a Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/600.8.9 (KHTML, like Gecko) system.
 
+The code produces four plots, the first three of which contain one graph each and the last contains four graphs.
 
-* <b>Dataset</b>: <a href="https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip">Electric power consumption</a> [20Mb]
+Data was obtained from the [UC Irvine Machine Learning Repository](http://archive.ics.uci.edu/ml/).
 
-* <b>Description</b>: Measurements of electric power consumption in
-one household with a one-minute sampling rate over a period of almost
-4 years. Different electrical quantities and some sub-metering values
-are available.
+The specific data that is used is a subset from the [Electric power consumption](https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip), a file of size 20Mb.
 
+The subset is only the data from the two days of the 1st and 2nd of February, 2007.
+##Modifications to the original data##
+The code reads in the data as a combination of character and numeric vectors. 
+```
+classes <- sapply(tab5rows, class)
+classes[1:2] <- "character"
+```
+The data in the Date and Time columns are combined and converted to POSIXlt format.
+```
+Date <- AllData$Date
+Time <- AllData$Time
+AllData$DateTime <- strptime(paste(Date, Time), format = "%d/%m/%Y %H:%M:%S")
+```
 
-The following descriptions of the 9 variables in the dataset are taken
-from
-the <a href="https://archive.ics.uci.edu/ml/datasets/Individual+household+electric+power+consumption">UCI
-web site</a>:
+The Date data is furthermore converted to as.Date() and is used to subset the whole data set into the data for the two days required using:
+```
+FirstDayData <- AllData[AllData$Date == "2007-02-01", ]
+SecondDayData <- AllData[AllData$Date == "2007-02-02", ]
+```
+These two subsets are combined using rbind.
 
-<ol>
-<li><b>Date</b>: Date in format dd/mm/yyyy </li>
-<li><b>Time</b>: time in format hh:mm:ss </li>
-<li><b>Global_active_power</b>: household global minute-averaged active power (in kilowatt) </li>
-<li><b>Global_reactive_power</b>: household global minute-averaged reactive power (in kilowatt) </li>
-<li><b>Voltage</b>: minute-averaged voltage (in volt) </li>
-<li><b>Global_intensity</b>: household global minute-averaged current intensity (in ampere) </li>
-<li><b>Sub_metering_1</b>: energy sub-metering No. 1 (in watt-hour of active energy). It corresponds to the kitchen, containing mainly a dishwasher, an oven and a microwave (hot plates are not electric but gas powered). </li>
-<li><b>Sub_metering_2</b>: energy sub-metering No. 2 (in watt-hour of active energy). It corresponds to the laundry room, containing a washing-machine, a tumble-drier, a refrigerator and a light. </li>
-<li><b>Sub_metering_3</b>: energy sub-metering No. 3 (in watt-hour of active energy). It corresponds to an electric water-heater and an air-conditioner.</li>
-</ol>
+The graphs are saved in .png format and represent the following:
 
-## Loading the data
+##Plot 1##
+Global Active Power frequency histogram of household global minute-averaged active power (in kilowatt)
 
+## Plot 2##
+Global active power in kilowats as a function of the day of the week, abbreviated as Thu, Fri and Sat, respectively.
 
+##Plot 3##
+Energy sub metering as a function of the day of the week, abbreviated as Thu, Fri and Sat, respectively.
 
+##Plot 4##
+Four graphs are shown in this plot, the ones on the top left and bottom left being repeats of plots 2 and 3, respectively. The plots on the top right and bottom right show the voltage and global reactive power per household as a function of the day of the week, in abbreviated format.
 
-
-When loading the dataset into R, please consider the following:
-
-* The dataset has 2,075,259 rows and 9 columns. First
-calculate a rough estimate of how much memory the dataset will require
-in memory before reading into R. Make sure your computer has enough
-memory (most modern computers should be fine).
-
-* We will only be using data from the dates 2007-02-01 and
-2007-02-02. One alternative is to read the data from just those dates
-rather than reading in the entire dataset and subsetting to those
-dates.
-
-* You may find it useful to convert the Date and Time variables to
-Date/Time classes in R using the `strptime()` and `as.Date()`
-functions.
-
-* Note that in this dataset missing values are coded as `?`.
-
-
-## Making Plots
-
-Our overall goal here is simply to examine how household energy usage
-varies over a 2-day period in February, 2007. Your task is to
-reconstruct the following plots below, all of which were constructed
-using the base plotting system.
-
-First you will need to fork and clone the following GitHub repository:
-[https://github.com/rdpeng/ExData_Plotting1](https://github.com/rdpeng/ExData_Plotting1)
-
-
-For each plot you should
-
-* Construct the plot and save it to a PNG file with a width of 480
-pixels and a height of 480 pixels.
-
-* Name each of the plot files as `plot1.png`, `plot2.png`, etc.
-
-* Create a separate R code file (`plot1.R`, `plot2.R`, etc.) that
-constructs the corresponding plot, i.e. code in `plot1.R` constructs
-the `plot1.png` plot. Your code file **should include code for reading
-the data** so that the plot can be fully reproduced. You should also
-include the code that creates the PNG file.
-
-* Add the PNG file and R code file to your git repository
-
-When you are finished with the assignment, push your git repository to
-GitHub so that the GitHub version of your repository is up to
-date. There should be four PNG files and four R code files.
-
-
-The four plots that you will need to construct are shown below. 
-
-
-### Plot 1
-
-
-![plot of chunk unnamed-chunk-2](figure/unnamed-chunk-2.png) 
-
-
-### Plot 2
-
-![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3.png) 
-
-
-### Plot 3
-
-![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-4.png) 
-
-
-### Plot 4
-
-![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5.png) 
-
+###Note###
+While three days are plotted on the x-axis for the relevant graphs, only the data from the two days (Thursday and Friday) is used. Saturday is shown as a right cap to the axis.
