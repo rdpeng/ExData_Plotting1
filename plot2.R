@@ -1,3 +1,5 @@
+## Plot Global Active Power by date from UCI data
+## Plot 2 for course project 1 for courera subject exdata-032
 ## setwd("~/Documents/uni/courserarprog/exploratory")
 
 filename="household_power_consumption.txt"
