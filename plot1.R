@@ -15,7 +15,7 @@ names(newdata)[1]<-"ctTime"
 
 # create a graph of global active power, as a png file
 pngname="plot1.png"
-# png(filename=pngname,width=480, height=480)
+png(filename=pngname,width=480, height=480)
 Power.name <- "Global Active Power (kilowatts)"
 Graph.name <- "Global Active Power"
 hist(newdata$Global_active_power,col="Red",xlab=Power.name,main=Graph.name)
