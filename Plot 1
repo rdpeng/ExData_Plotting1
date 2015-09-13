@@ -12,3 +12,11 @@ df <- transform(df, timestamp=as.POSIXct(paste(Date, Time)), "%d/%m/%Y %H:%M:%S"
 df$Sub_metering_1 <- as.numeric(as.character(df$Sub_metering_1))
 df$Sub_metering_2 <- as.numeric(as.character(df$Sub_metering_2))
 df$Sub_metering_3 <- as.numeric(as.character(df$Sub_metering_3))
+
+plot1 <- function() {
+    hist(df$Global_active_power, main = paste("Global Active Power"), col="red", xlab="Global Active Power (kilowatts)")
+    dev.copy(png, file="plot1.png", width=480, height=480)
+    dev.off()
+    cat("Plot1.png has been saved in", getwd())
+}
+plot1()
