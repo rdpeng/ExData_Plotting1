@@ -1,4 +1,4 @@
-# reading data
+# loading data
 data <- read.table("household_power_consumption.txt", header = TRUE, sep=";", na.strings="?")
 library(dplyr)
 data2 <- filter(data, Date=="1/2/2007" | Date=="2/2/2007")
