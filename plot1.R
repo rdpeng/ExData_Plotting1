@@ -21,7 +21,7 @@ plot1 <- function() {
   # turning into killowats measure
   variavel$Global_active_power <- variavel$Global_active_power / 1000
   ### BUILDING PLOT1 ###########
-  par(mar=c(2,5,2,2)+0.1)
+  par(mar=c(4,4,4,4)+0.1)
   hist(variavel$Global_active_power, main = "Global Active Power", xlab="Global Active Power (killowats)", 
        col = "red", breaks = 14, xlim = c(0,8), ylim = c(0,1200))
 }
