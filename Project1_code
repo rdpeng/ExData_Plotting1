@@ -30,3 +30,5 @@ plot(data2$DateTime, as.numeric(as.character(data2$Voltage)),type='l',
 
 plot(data2$DateTime, as.numeric(as.character(data2$Global_reactive_power)),type='l', 
     ylab="Global_reactive_power",xlab="datetime" )
+
+
