@@ -1,5 +1,5 @@
 
-setwd("C:\\Users\\jmugeiro\\Documents\\R_Working_Directory\\Coursera")
+##setwd("C:\\Users\\jmugeiro\\Documents\\R_Working_Directory\\Coursera")
  
 
 
