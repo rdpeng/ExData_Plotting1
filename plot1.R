@@ -1,5 +1,5 @@
 
-## Sets detination directory where data file exists.
+## Sets destination directory where data file exists.
 destdir <- "household_power_consumption.txt"
 
 ## reads data from the text files and puts into a data frame.
