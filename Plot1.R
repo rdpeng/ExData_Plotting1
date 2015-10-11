@@ -1,4 +1,4 @@
-File_Path <- "c:/users/mg185234/Documents/R/household_power_consumption.txt"
+File_Path <- "c:/users/Mark/Documents/R/household_power_consumption.txt"
 Power_Data <- read.table(File_Path, header = TRUE, sep = ";")
 
 Power_Data$Date <- as.Date(Power_Data$Date, format = "%d/%m/%Y")
