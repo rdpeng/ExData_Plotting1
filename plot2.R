@@ -25,7 +25,7 @@ y <- as.numeric(as.character(reqData$Global_active_power))
 
 
 ## Code to save the file as plot1.png
-pngFilelocation <- ("C://Sudha//Data Science - Coursera//Exploratory Data Analysis//Project 1//plot2.png")
+pngFilelocation <- ("C://XXX//Data Science - Coursera//Exploratory Data Analysis//Project 1//plot2.png")
 png(file = pngFilelocation ,width = 480, height = 480, units = "px", bg = "transparent")
 
 ## Generates the Line Plot
