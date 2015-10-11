@@ -19,7 +19,7 @@ x <- as.numeric(as.character(reqData$Global_active_power))
 ##dev.off()
 
 ## Code to save the file as plot1.png
-pngFilelocation <- ("C://Sudha//Data Science - Coursera//Exploratory Data Analysis//Project 1//plot1.png")
+pngFilelocation <- ("C://XXX//Data Science - Coursera//Exploratory Data Analysis//Project 1//plot1.png")
 png(file = pngFilelocation ,width = 480, height = 480, units = "px", bg = "transparent")
 
 ## Generates the Histogram
