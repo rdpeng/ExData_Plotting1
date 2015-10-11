@@ -37,7 +37,7 @@ y <- as.numeric(as.character(reqData$Sub_metering_1))
 
 
 ## Code to save the file as plot1.png
-pngFilelocation <- ("C://Sudha//Data Science - Coursera//Exploratory Data Analysis//Project 1//plot3.png")
+pngFilelocation <- ("C://XXX//Data Science - Coursera//Exploratory Data Analysis//Project 1//plot3.png")
 png(file = pngFilelocation ,width = 480, height = 480, units = "px", bg = "transparent")
 
 ## Generates the Line Plot for all three sub metering plots
