@@ -1,3 +1,4 @@
+
 ## Create the third plot in the working directory
 plot3 <- function() {
         plot(df$timestamp,df$Sub_metering_1, type="l", xlab="", ylab="Energy sub metering")
