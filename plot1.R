@@ -12,5 +12,5 @@ mysubset$datatime <- strptime(mysubset$datatime, "%Y-%m-%d %H:%M:%S")
 # Printing to PNG file
 
 png(filename="plot1.png",height = 480,width = 480)
-hist(mysubset$Global_active_power,col="green",main="Global Active Power",xlab = "Global Active Power (kilowatts)")
+hist(mysubset$Global_active_power,col="red",main="Global Active Power",xlab = "Global Active Power (kilowatts)")
 dev.off()
