@@ -8,7 +8,7 @@ if (!file.exists("./household_power_consumption.txt")) {
     
     # unzip file
     unzip(fileName)
-}
+    }
 
 # read data  
 data <- read.table("./household_power_consumption.txt", header = TRUE, sep = ";", na.strings = "?", colClasses = c("character", "character", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric"))
