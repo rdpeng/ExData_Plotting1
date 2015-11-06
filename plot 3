@@ -1,0 +1,8 @@
+ plot(hpc_FEB$Time, hpc_FEB$Sub_metering_1, color = "black")
+> plot(hpc_FEB$Time, hpc_FEB$Sub_metering_2, color = "red")
+> plot(hpc_FEB$Time, hpc_FEB$Sub_metering_3, color = "blue")
+> plot(hpc_FEB$Time, hpc_FEB$Sub_metering_1, color = "black")
+> plot(hpc_FEB$Time, hpc_FEB$Sub_metering_1, col = "black")
+> lines(hpc_FEB$Time, hpc_FEB$Sub_metering_2, col = "red")
+> lines(hpc_FEB$Time, hpc_FEB$Sub_metering_3, col = "blue")
+> ylab = "Energy sub metering"
