@@ -1,4 +1,12 @@
-# Check and install data.table package if req'd
+###########################
+# plot1.R
+# Produce a histogram of global active power
+#
+###########################
+
+### Read the data in and prep it for plotting
+
+# Check for and install data.table package if req'd
 if(!require("data.table")){
  install.packages("data.table")   
 }
@@ -22,11 +30,19 @@ fileName <- "./household_power_consumption.txt"
 # Read data
 dat <- fread(input = fileName, na.strings = "?")
 
-# Subset data to only dates 2007-02-01 and 2007-02-02
-# subsetDat <- dat[dat$Date == "01/02/2007" | dat$Date == "02/02/2007", ]
+## Subset data to only dates 2007-02-01 and 2007-02-02
 
 # convert Date variable to Date class
 dat$Date <- as.Date(dat$Date, "%d/%m/%Y")
 
 # return subset data
 subsetDat <- dat[dat$Date == "2007/02/01" | dat$Date == "2007/02/02", ]
+
+### Create plot
+
+with(subsetDat, {
+    png("plot1.png", width = 480, height = 480)
+    hist(subsetDat$Global_active_power, col = "red", 
+         main = "Global Active Power", xlab = "Global Active Power (kilowatts)")
+    dev.off()
+})
