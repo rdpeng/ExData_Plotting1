@@ -3,6 +3,11 @@
 # 6/11/2015
 # by Cocu23
 
+
+# Set Working Directory
+setwd("/Users/christiankukuk/R Workspace/Exploratory Data Analysis")
+getwd()
+
 # Read Data
 powerconsumption <- read.table("household_power_consumption.txt",header = TRUE, sep = ";",na.strings="?")
 
