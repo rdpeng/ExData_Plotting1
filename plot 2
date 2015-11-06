@@ -1,0 +1,1 @@
+> plot(hpc_FEB$Time, hpc_FEB$Global_active_power, lty = 1, ylab = " Global Active Power (kilowatts)")
