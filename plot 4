@@ -1,0 +1,8 @@
+> par(mfrow = c(2,2))
+> plot(hpc_FEB$Time, hpc_FEB$Global_active_power, lty = 1)
+> plot(hpc_FEB$Time, hpc_FEB$Voltage)
+> plot(hpc_FEB$Time, hpc_FEB$Sub_metering_1, col = "black")
+> lines(hpc_FEB$Time, hpc_FEB$Sub_metering_2, col = "red")
+> lines(hpc_FEB$Time, hpc_FEB$Sub_metering_3, col = "blue")
+> plot(hpc_FEB$Time, hpc_FEB$Global_reactive_power, lty = 1)
+> 
