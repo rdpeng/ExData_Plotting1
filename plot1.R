@@ -16,7 +16,7 @@ house_frame3[order(house_frame3$date_time),]
 house_frame3$date_time2<-dmy_hms(house_frame3$date_time)
 house_frame3[order(house_frame3$date_time2),]
 ##Plot1
-par(bg='grey',cex.lab=0.8, cex.axis=0.7,cex.main=0.8)
+par(cex.lab=0.8, cex.axis=0.7,cex.main=0.8)
 hist(house_frame3$Global_active_power,xlab = "Global Active Power (kilowatts)",col = "Red",
      main="Global Active Power",las=1,
      ylim=c(0,1200))
