@@ -5,7 +5,7 @@ res=res[res$Date<as.Date("2007/02/03"),]
 
 ## Plot3
 
-png("Plot3.png", width=4, height=4, units="in", res=300)
+png("Plot4.png", width=480, height=480, units="px")
 
 par(mar = c(2,2,2,1))
 
