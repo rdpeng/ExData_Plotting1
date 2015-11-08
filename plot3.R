@@ -1,4 +1,4 @@
-# Plot 3: Line chart of Energy Sub-metering vs. Thu / Fir / Sat from "household_power_consumption.txt" dataset
+# Plot 3: Line chart of Energy Sub-metering vs. Thu / Fri / Sat from "household_power_consumption.txt" dataset
 setwd("C:/Users/Michelle/dataScience/ExploratoryData")
 
 # Read the text file and handle missing dataset values which are coded as "?" 
@@ -17,10 +17,9 @@ subsetdata$datetime <- as.POSIXct(datetime)
 plot(subsetdata$Sub_metering_1~subsetdata$datetime, type="l", ylab="Global Active Power (kilowatts)", xlab="")
 lines(subsetdata$Sub_metering_2~subsetdata$datetime, col="Red")
 lines(subsetdata$Sub_metering_3~subsetdata$datetime, col="Blue")
+legend("topright", col=c("black", "red", "blue"), lty=1, lwd=2, bty="n",
+       legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
 
-# Save Plot 3 to a PNG file named "plot1.png" which has a width of 480 pixels and a height of 480 pixels
+# Save Plot 3 to a PNG file named "plot3.png" which has a width of 480 pixels and a height of 480 pixels
 dev.copy(png, file='plot3.png', height=480, width=480)
-plot(subsetdata$Sub_metering_1~subsetdata$datetime, type="l", ylab="Global Active Power (kilowatts)", xlab="")
-lines(subsetdata$Sub_metering_2~subsetdata$datetime, col="Red")
-lines(subsetdata$Sub_metering_3~subsetdata$datetime, col="Blue")
 dev.off()

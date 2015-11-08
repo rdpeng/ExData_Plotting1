@@ -1,4 +1,4 @@
-# Plot 2: Line chart of Global Active Power vs. Thu / Fir / Sat from "household_power_consumption.txt" dataset
+# Plot 2: Line chart of Global Active Power vs. Thu / Fri / Sat from "household_power_consumption.txt" dataset
 setwd("C:/Users/Michelle/dataScience/ExploratoryData")
 
 # Read the text file and handle missing dataset values which are coded as "?" 
@@ -16,8 +16,7 @@ subsetdata$datetime <- as.POSIXct(datetime)
 # Plot 2: no title, x-axis label, y-axis label 
 plot(subsetdata$Global_active_power~subsetdata$datetime, type="l", ylab="Global Active Power (kilowatts)", xlab="")
 
-# Save Plot 2 to a PNG file named "plot1.png" which has a width of 480 pixels and a height of 480 pixels
+# Save Plot 2 to a PNG file named "plot2.png" which has a width of 480 pixels and a height of 480 pixels
 dev.copy(png, file='plot2.png', height=480, width=480)
-plot(subsetdata$Global_active_power~subsetdata$datetime, type="l", ylab="Global Active Power (kilowatts)", xlab="")
 dev.off()
 
