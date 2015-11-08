@@ -3,7 +3,7 @@ source("LoadData.R")
 plot3 <- function() {
         data <- load_data() # Load Data using load_data function.
         
-        png("plot3.png", width=490, height=490) #Initialize png function
+        png("plot3.png", width=480, height=480) #Initialize png function
         
         plot(data$Time, data$Sub_metering_1, type="l", col="black",  ##Plotting against the sub_metering1
              xlab="", ylab="Energy sub metering")

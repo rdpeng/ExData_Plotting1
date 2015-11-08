@@ -3,7 +3,7 @@ source("LoadData.R")
 plot4 <- function() {
         data <- load_data() # Load Data using load_data function.
         
-        png("plot4.png", width=490, height=490) #Initialize png function
+        png("plot4.png", width=480, height=480) #Initialize png function
         
         par(mfrow=c(2,2))
        
