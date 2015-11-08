@@ -20,23 +20,23 @@ with(subsetdata, {
   
 # Upper left quadrent is a line chart of Global Active Power vs. Thu / Fri / Sat  (same as Lot 2 assignment)
   plot(Global_active_power~subsetdata$datetime, type="l", 
-       ylab="Global Active Power (kilowatts)", xlab="")
+       ylab="Global Active Power", xlab="")
   
 # Upper right quadrent is a line chart of Voltage vs. datetime   
   plot(Voltage~subsetdata$datetime, type="l", 
-       ylab="Voltage (volt)", xlab="")
+       ylab="Voltage", xlab="")
   
 # Lower left quadrent is a line chart of Energy Sub-metering vs. Thu / Fri / Sat with a legend
   plot(Sub_metering_1~subsetdata$datetime, type="l", 
-       ylab="Global Active Power (kilowatts)", xlab="")
+       ylab="Global sub metering", xlab="")
   lines(Sub_metering_2~subsetdata$datetime,col='Red')
   lines(Sub_metering_3~subsetdata$datetime,col='Blue')
   legend("topright", col=c("black", "red", "blue"), lty=1, lwd=2, bty="n",
-         legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
+         legend=c("Sub metering 1", "Sub metering 2", "Sub metering 3"))
   
 # Lower right quadrent is a line chart of Global Reactive Power vs. Thu / Fri / Sat
   plot(Global_reactive_power~subsetdata$datetime, type="l", 
-       ylab="Global Rective Power (kilowatts)",xlab="")
+       ylab="Global_Reactive_Power",xlab="")
 })
 
 # Save Plot 4 to a PNG file named "plot4.png" which has a width of 480 pixels and a height of 480 pixels
