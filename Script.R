@@ -15,6 +15,9 @@ myData$myDateTime <- strptime(paste(myData$Date, myData$Time, sep = " "), format
 myData["myDay"] <- NA
 myData$myDay <- format(myData$myDateTime, "%a")
 
+# Adjusting margins for pretty plotting
+par(mar= c(4,5,2,1))
+
 # strptime("01/02/2007", "%d/%m/%Y")
 # strptime("00:03:00", "%T")
 # as.Date("01/02/2007", "%d/%m/%Y")
@@ -40,7 +43,29 @@ hist(myData$Global_active_power, col="red", xlab = "Global Active Power (kilowat
 dev.copy(png, file="plot1.png")
 dev.off()
 
-#Plot2
+# Plot2
 plot(myData$myDateTime, myData$Global_active_power, type = "l", ylab = "Global Active Power (kilowatts)", xlab = "")
 dev.copy(png, file="plot2.png")
+dev.off()
+
+# Plot3
+plot(myData$myDateTime, myData$Sub_metering_1, type = "l", xlab = "", ylab = "Energy sub metering")
+lines(myData$myDateTime, myData$Sub_metering_2, col = "red")
+lines(myData$myDateTime, myData$Sub_metering_3, col = "blue")
+legend("topright", lty = 1, col = c("black", "red", "blue"), legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), cex=0.7, xjust = 1)
+dev.copy(png, file="plot3.png")
+dev.off()
+
+# Plot4
+par(mfrow=c(2,2), mar= c(5,5,2,1))
+with(myData, {
+    plot(myDateTime, Global_active_power, type = "l", ylab = "Global Active Power", xlab = "", cex.lab = 0.7)
+    plot(myDateTime, Voltage, type = "l", ylab = "Voltage", xlab = "datetime", cex.lab = 0.7)
+    plot(myDateTime, Sub_metering_1, type = "l", xlab = "", ylab = "Energy sub metering", cex.lab = 0.7)
+	lines(myDateTime, Sub_metering_2, col = "red")
+	lines(myDateTime, Sub_metering_3, col = "blue")
+	legend("topright", lty = 1, col = c("black", "red", "blue"), legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), xpd = 1, seg.len= 1, cex=0.4, xjust = 1, bty = "n")
+	plot(myDateTime, Global_reactive_power, type = "l", ylab = "Global_reactive_power", xlab = "datetime", cex.lab = 0.7)
+})
+dev.copy(png, file="plot4.png")
 dev.off()
