@@ -6,10 +6,10 @@ November 2015
 This is a first project for the **Exploratory Data Analysis** course in Coursera's Data Science specialization Course with an objective to create a series of plots.
  
 ##Background
-The goal here was simply to examine household energy usage varies over a 2-day period in February, 2007 by reproducing a series of four plots. 
+The goal here is to examine household energy usage varies over a 2-day period in February, 2007 by reproducing a series of four plots. 
 
 ##Data
-This project used data from the [UC Irvine Machine Learning Repository](http://archive.ics.uci.edu/ml/), a popular repository for machine learning datasets. The "Individual household electric power consumption Data Set" was used and made available on the course web site:
+This project is using data from the [UC Irvine Machine Learning Repository](http://archive.ics.uci.edu/ml/), a popular repository for machine learning datasets. The "Individual household electric power consumption Data Set" was used and made available on the course web site:
 
 * [Electric power consumption Dataset (20Mb)](https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip)
 
