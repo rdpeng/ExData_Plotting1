@@ -5,7 +5,7 @@ res=res[res$Date<as.Date("2007/02/03"),]
 
 ## Plot4
 
-png("Plot4.png", width=4, height=4, units="in", res=300)
+png("Plot4.png", width=480, height=480, units="px")
 
 par(mfrow = c(2,2))
 plot(1:2880, res$Global_active_power, type = "l", xaxt = "n", xlab="", ylab = "Global Active Power (kilowatts)")
