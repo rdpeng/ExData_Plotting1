@@ -1,7 +1,8 @@
 libraries <- c("dplyr")
 lapply(libraries,library,character.only=TRUE)
 
-dir <- 'C:/Users/seitui/Desktop/R/Coursera/exploratory data analysis/'
+dir <- 'C:/Users/seitui/Desktop/R/Coursera/exploratory data analysis'
+outdir <- 'C:/Users/seitui/Documents/GitHub/ExData_Plotting1/'
 setwd(dir)
 
 lowercolnames <- function(df) {
@@ -21,12 +22,11 @@ power_consump_subset$date_time <- with(power_consump_subset,
                                        strptime(paste(date,time),format='%Y-%m-%d %T'))
 
 #plot2
-png(filename=paste0(dir,'ExData_Plotting1/figure/','plot2.png'),height=480,width=480)
+png(filename=paste(outdir,'plot2.png',sep="/"),height=480,width=480)
 with(power_consump_subset,
      plot(x=date_time,
           y=global_active_power,type='l',
-          xlab="test",
-          ylab="Global Active Power"))
-with(power_consump_subset,
-     lines(x=date_time,y=sub_metering_2,type='l',col='red'))
+          xlab=" ",
+          ylab="Global Active Power (kilowatts)"))
+
 dev.off()

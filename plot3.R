@@ -1,7 +1,8 @@
 libraries <- c("dplyr")
 lapply(libraries,library,character.only=TRUE)
 
-dir <- 'C:/Users/seitui/Desktop/R/Coursera/exploratory data analysis/'
+dir <- 'C:/Users/seitui/Desktop/R/Coursera/exploratory data analysis'
+outdir <- 'C:/Users/seitui/Documents/GitHub/ExData_Plotting1/'
 setwd(dir)
 
 lowercolnames <- function(df) {
@@ -21,12 +22,12 @@ power_consump_subset$date_time <- with(power_consump_subset,
                                        strptime(paste(date,time),format='%Y-%m-%d %T'))
 
 #plot three
-png(filename=paste0(dir,'ExData_Plotting1/figure/','plot3.png'),height=480,width=480)
+png(filename=paste(outdir,'plot3.png',sep="/"),height=480,width=480)
 with(power_consump_subset,
-     plot(x=date_time, y=sub_metering_1,type='l',col='black',ylab="Energy Sub-Metering",xlab=""))
+     plot(x=date_time, y=sub_metering_1,type='l',col='black',ylab="Energy sub metering",xlab=""))
 with(power_consump_subset,
      lines(x=date_time,y=sub_metering_2,type='l',col='red'))
 with(power_consump_subset,
      lines(x=date_time,y=sub_metering_3,type='l',col='blue'))
-legend('topright',c("sub_metering_1","sub_metering_2","sub_metering_3"),lty=1,col=c('black','red','blue'))
+legend('topright',c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),lty=1,col=c('black','red','blue'))
 dev.off()
