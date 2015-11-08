@@ -1,5 +1,5 @@
 # Plot 1: Bar chart of Global Active Power vs. Frequency for 2007-02-01 and 2007-02-02 from "household_power_consumption.txt" dataset
-setwd("C:/Users/Michelle/Desktop/ExploratoryData")
+setwd("C:/Users/Michelle/dataScience/ExploratoryData")
 
 # Read the text file and handle missing dataset values which are coded as "?" 
 mydata <- read.csv("household_power_consumption.txt", header=TRUE, sep=";", na.strings="?")
