@@ -84,7 +84,7 @@ the `plot1.png` plot. Your code file **should include code for reading
 the data** so that the plot can be fully reproduced. You should also
 include the code that creates the PNG file.
 
-* Added the PNG file and R code file to your git repository
+* Added PNG file and R code file to your git repository
 
 Pushed git repository to GitHub so that the GitHub version of your repository is up to date. 
 
@@ -94,20 +94,20 @@ The four plots constructed are shown below.
 ### Plot 1
 
 
-![plot of chunk unnamed-chunk-2](figure/unnamed-chunk-2.png) 
+![Plot 1](plot1.png) 
 
 
 ### Plot 2
 
-![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3.png) 
+![Plot 2](plot2.png) 
 
 
 ### Plot 3
 
-![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-4.png) 
+![Plot3](plot3.png) 
 
 
 ### Plot 4
 
-![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5.png) 
+![Plot4](plot4.png) 
 
