@@ -9,7 +9,7 @@ mydata <- subset(mydata, Date %in% as.Date(c("2007-02-01", "2007-02-02"), "%Y-%m
   
 png("plot1.png")
   
-hist(data$Global_active_power,
+hist(mydata$Global_active_power,
     main="Global Active Power",
     xlab="Global Active Power (kilowatts)",
     ylab="Frequency",
