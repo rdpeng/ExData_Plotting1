@@ -7,6 +7,6 @@ res=res[res$Date<as.Date("2007/02/03"),]
 
 ## Plot1
 
-png("Plot1.png", width=4, height=4, units="in", res=300)
+png("Plot4.png", width=480, height=480, units="px")
 hist(as.numeric(as.vector(res$Global_active_power)),col = "red")
 dev.off()
