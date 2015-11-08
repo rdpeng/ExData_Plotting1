@@ -13,3 +13,9 @@ dev.copy(png, file="plot1.png")
 dev.off()
 
 #Plot2
+strptime("01/02/2007", "%d/%m/%Y")
+strptime("00:03:00", "%T")
+as.Date("01/02/2007", "%d/%m/%Y")
+format(as.Date("1/2/2007 00:03:00", "%d/%m/%Y %T"), "%a %b %d %X %Y %Z")
+
+format(as.Date("1/2/2007", "%d/%m/%Y"), "%a %b %d %X %Y %Z")
