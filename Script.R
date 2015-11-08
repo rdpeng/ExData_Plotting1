@@ -6,3 +6,6 @@ day2Lines <- grep("^2/2/2007", readLines(myFile))
 toBeReadLines <- c(day1Lines, day2Lines)
 myData <- read.table(myFile, header = FALSE, skip=(day1Lines[1]-1), nrows = length(toBeReadLines), sep = ";")
 colnames( myData ) <- unlist(header)
+
+# Plot1
+hist(myData$Global_active_power, col="red", xlab = "Global Active Power (kilowatts)", main = "Global Active Power")
