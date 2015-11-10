@@ -1,0 +1,4 @@
+> hpc_FEB <- read.csv("C:/R_data/hpc_FEB.txt", sep=";")
+> summary(hpc_FEB$Voltage)
+> hist(hpc_FEB$Global_active_power, col = "red", xlab = "Global active power (kilowatts)", ylab = "Frequeny", main = "Global Active Power")
+ 
