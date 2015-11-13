@@ -1,4 +1,4 @@
-source("data.R")
+source("input_data.R")
 
 plot1 <- function(data=NULL) {
     if(is.null(data))
