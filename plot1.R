@@ -81,6 +81,9 @@ hpcTimeSeries <- hpcNoDateTime
 
 hpcTimeSeries<- as.data.frame(sapply(hpcTimeSeries, as.numeric))
 
+# order.by
+# a corresponding vector of unique times/dates - must be of a known time-based class.
+
 hpcXTS <- xts(hpcTimeSeries, order.by=hpcDateTime)
 
 # Making Plots
