@@ -51,7 +51,7 @@ library(dplyr)
 library(lubridate)
 
 #Set path to csv
-path2txt <- paste0(getwd(),"/ExData_Plotting1/household_power_consumption.txt")
+path2txt <- paste0(getwd(),"/household_power_consumption.txt")
 
 
 #read in csv as a dataframe
@@ -120,6 +120,6 @@ lines(hpcXTS[,7],
      col="blue",
      major.format = as.character(unique(weekday)))
 
-legend("topright",c("black","red","blue"),names(hpcXTS[,5:7]))
+legend("topright",lty = 1, c("black","red","blue"),names(hpcXTS[,5:7]))
 
 dev.off()

@@ -51,7 +51,7 @@ library(dplyr)
 library(lubridate)
 
 #Set path to csv
-path2txt <- paste0(getwd(),"/ExData_Plotting1/household_power_consumption.txt")
+path2txt <- paste0(getwd(),"/household_power_consumption.txt")
 
 
 #read in csv as a dataframe
