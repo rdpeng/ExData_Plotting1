@@ -74,7 +74,7 @@ hpcDateTime <- paste( hpc$Date, hpc$Time,sep = " ")
 
 hpcDateTime <- strptime( hpcDateTime,"%d/%m/%Y %H:%M:%S")
 
-### The R compiler shows error in sntax here, but it is not real
+### The R compiler shows error in syntax here, but it is not real
 ## this line executes as it should dispite the compile time error
 weekday <- wday(x = hpcDateTime,abbr = TRUE,label = TRUE)
 
@@ -110,16 +110,14 @@ plot(hpcXTS[,5],
      major.ticks='days',
      minor.ticks=FALSE,
      col="black",
-     major.format = as.character(unique(weekday)))
+     major.format = as.character(unique(weekday)),main="")
 
 lines(hpcXTS[,6],
-     col="red",
-     major.format = as.character(unique(weekday)))
+     col="red")
 
 lines(hpcXTS[,7],
-     col="blue",
-     major.format = as.character(unique(weekday)))
+     col="blue")
 
-legend("topright",lty = 1, c("black","red","blue"),names(hpcXTS[,5:7]))
+legend("topright",lty = 1, col=c("black","red","blue"),legend = names(hpcXTS[,5:7]))
 
 dev.off()

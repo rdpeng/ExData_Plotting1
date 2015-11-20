@@ -108,7 +108,7 @@ par(mfcol = c(2, 2), mar = c(5, 4, 2, 1))
 # Construct the plot
 plot(hpcXTS[,1],
      main = "Global Active Power",
-     xlab = "Global Active Power (kilowatts)",
+     ylab = "Global Active Power (kilowatts)",
      major.ticks='days',
      minor.ticks=FALSE,
      col=1,
@@ -116,22 +116,19 @@ plot(hpcXTS[,1],
 
 # Construct the plot
 plot(hpcXTS[,5],
-     main = NULL,
      ylab = "Energy sub meterings",
      major.ticks='days',
      minor.ticks=FALSE,
      col="black",
-     major.format = as.character(unique(weekday)))
+     major.format = as.character(unique(weekday)),main="")
 
 lines(hpcXTS[,6],
-      col="red",
-      major.format = as.character(unique(weekday)))
+      col="red")
 
 lines(hpcXTS[,7],
-      col="blue",
-      major.format = as.character(unique(weekday)))
+      col="blue")
+legend("topright",lty = 1, col=c("black","red","blue"),legend = names(hpcXTS[,5:7]))
 
-legend("topright",c("black","red","blue"),names(hpcXTS[,5:7]))
 
 # Construct the plot
 plot(hpcXTS[,3],
