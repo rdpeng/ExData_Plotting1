@@ -101,7 +101,7 @@ hpcXTS <- xts(hpcTimeSeries, order.by=hpcDateTime)
 # Save it to a PNG file
 #
 # Name each of the plot files as plot1.png, plot2.png, etc.
-png(filename = paste0(getwd(),"/ExData_Plotting1/plot4.png"), width = 480, height = 480)
+png(filename = paste0(getwd(),"/plot4.png"), width = 480, height = 480)
 # with a width of 480 pixels and a height of 480 pixels.
 
 par(mfcol = c(2, 2), mar = c(5, 4, 2, 1))
