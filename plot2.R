@@ -107,7 +107,7 @@ png(filename = paste0(getwd(),"/ExData_Plotting1/plot2.png"), width = 480, heigh
 # Construct the plot
 plot(hpcXTS[,1],
      main = "Global Active Power",
-     xlab = "Global Active Power (kilowatts)",
+     ylab = "Global Active Power (kilowatts)",
      major.ticks='days',
      minor.ticks=FALSE,
      col=1,
