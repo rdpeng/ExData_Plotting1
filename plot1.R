@@ -59,6 +59,9 @@ mydf <- read.csv2(path2txt,
                   skip=grep("^1/2/2007", readLines(path2txt)), nrows=2*24*60,
                   stringsAsFactors = FALSE,header = FALSE )
 
+# data1 <- read.table(pipe('grep "^[1-2]/2/2007" "household_power_consumption.txt"'),
+                    # sep = ";", stringsAsFactors = FALSE)
+
 #create data frame table
 hpc<-tbl_df(mydf)
 
