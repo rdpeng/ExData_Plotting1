@@ -30,12 +30,13 @@ Type 'q()' to quit R.
 > df$Sub_metering_1 <- as.numeric(as.character(df$Sub_metering_1))
 > df$Sub_metering_2 <- as.numeric(as.character(df$Sub_metering_2))
 > df$Sub_metering_3 <- as.numeric(as.character(df$Sub_metering_3))
-> hist(df$Global_active_power, main = paste("Global Active Power"), col="red", xlab="Global Active Power (kilowatts)")
-> dev.copy(png, file="plot1.png", width=480, height=480)
+> plot(df$timestamp,df$Global_active_power, type="l", xlab="", ylab="Global Active Power (kilowatts)")
+> dev.copy(png, file="plot2.png", width=480, height=480)
 png 
   3 
 > dev.off()
 windows 
       2 
-> cat("Plot1.png has been saved in", getwd())
-Plot1.png has been saved in C:/Users/khollis/Documents/R/data> 
+> cat("plot2.png has been saved in", getwd())
+plot2.png has been saved in C:/Users/khollis/Documents/R/data> 
+> 
