@@ -1,3 +1,6 @@
+## This was edited by Jeremy Chad Hess as a part of the Coursera Data Science Specialization Course 4 Project 1
+* The goal of this project was to learn about plotting by replicating four provided charts
+
 ## Introduction
 
 This assignment uses data from
