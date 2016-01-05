@@ -20,7 +20,7 @@ extractdata <- function(data){
 
 drawplot1 <- function(dataset){
         png(filename = "plot1.png", width = 480, height = 480)
-        with(dataset, hist(Global_active_power, xlim = c(0,6), col = 2, xlab = "Global Active Power (kilowatts)", ylim = c(0, 1200), main = "Global Active Power"))
+        with(dataset, hist(Global_active_power, xlim = c(0,6),  col = 2, xlab = "Global Active Power (kilowatts)", ylim = c(0, 1200), main = "Global Active Power"))
         dev.off()
         
 }
