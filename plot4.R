@@ -1,0 +1,13 @@
+data <- read.table("household_power_consumption.txt",header= TRUE, sep =';', colClasses = "character", na.strings = "?")
+data <- subset(data, as.Date(data$Date, "%d/%m/%Y") >= "2007-02-01" & as.Date(data$Date, "%d/%m/%Y") <= "2007-02-02")
+cols <- c(3:9)
+data [, cols]<- apply (data[ ,cols], 2, function (x) as.numeric (x))
+temp<- paste (as.Date(data$Date, "%d/%m/%Y"), data$Time)
+data$daytime <- as.POSIXct (temp)
+png (file="plot3.png")
+plot (data$daytime, data$Sub_metering_1, type= "l", xlab='', ylab="Energy sub metering") 
+lines(data$daytime, data$Sub_metering_2, col="red")
+lines(data$daytime, data$Sub_metering_3, col="blue")
+legend ("topright", legend= c("sub_meteting_1","sub_meteting_2", "sub_meteting_3" ), col = c("black", "red", "blue"), lty=1, lwd=1)
+dev.off()
+
