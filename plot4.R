@@ -15,8 +15,7 @@ household[,1]<-as.Date(household[,1],"%d/%m/%Y")
 
  houseSet <-household$Date>="2007-02-01"&household$Date <"2007-02-03"
  
- 
-h<-cbind(strptime(paste(houseData$Date,houseData$Time),"%Y-%m-%d %H:%M:%S"),houseData) 
+h<-cbind(strptime(paste(household$Date,household$Time),"%Y-%m-%d %H:%M:%S"),household) 
 names(h)[1]=paste("datetime")
 
 
