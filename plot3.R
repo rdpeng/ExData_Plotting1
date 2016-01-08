@@ -10,10 +10,7 @@ names(household)[8]=paste("Sub_metering_2")
 names(household)[9]=paste("Sub_metering_3")
 
 household[,1]<-as.Date(household[,1],"%d/%m/%Y")
-
-
-
- houseSet <-household$Date>="2007-02-01"&household$Date <"2007-02-03"
+houseSet <-household$Date>="2007-02-01"&household$Date <"2007-02-03"
  
  
 h<-cbind(strptime(paste(houseData$Date,houseData$Time),"%Y-%m-%d %H:%M:%S"),houseData) 
