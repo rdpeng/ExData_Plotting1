@@ -1,0 +1,8 @@
+setwd("~/Documents/Coursera/Exploratory Data/Task 1")
+data=read.table("household_power_consumption.txt",sep = ";",header = TRUE,na.strings = "?")
+head(data)
+dim(data)
+data$Date <- as.Date(data$Date, format="%d/%m/%Y")
+dataday<-subset(data, subset=(Date >= "2007-02-01" & Date <= "2007-02-02"))
+dataday$Time <- strptime(paste(dataday$Date, dataday$Time), format="%Y-%m-%d %H:%M:%S")
+Sys.setlocale("LC_ALL", "en_US")
