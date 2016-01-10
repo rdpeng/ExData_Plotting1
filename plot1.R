@@ -1,5 +1,5 @@
 #data reads in a single variable unless I set the colClasses
-#I read the first row in, then calculated
+#I read the first row in, then calculated figuring out how many minutes were in between the first entry and Feb 1
 mydata <- read.table("household_power_consumption.txt",header=TRUE,sep=";",colClasses=c(rep("character",2), rep("numeric",7)),skip= 66636 , nrows = 2*60*24, na="?")
 #not really sure why the colnames messed up, but oh well...
 
