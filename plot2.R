@@ -1,0 +1,11 @@
+library(sqldf)
+info <- read.csv('household_power_consumption.txt', sep = ';', na.strings = "?")
+library(lubridate)
+info$DateStr <- info$Date
+info$DateParsed <- dmy(info$Date)
+filtered <- subset(info, DateParsed == ymd("2007-02-01") | DateParsed == ymd("2007-02-02"))
+filtered$Global_active_power <- as.numeric(filtered$Global_active_power)
+filtered$datetime <- dmy_hms(paste(filtered$DateStr, filtered$Time))
+png(filename = "plot2.png", width = 480, height = 480)
+ggplot(aes(datetime, Global_active_power), data = filtered) + geom_line()
+dev.off()
