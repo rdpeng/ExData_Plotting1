@@ -1,0 +1,7 @@
+PowerConsData <- read.table("household_power_consumption.txt", skip=66637, nrows=2880, sep=";")
+headernames <- read.table("household_power_consumption.txt", skip=0, nrows=1, sep=";", stringsAsFactors = FALSE)
+colnames(PowerConsData) <- unlist(headernames)
+par(mfrow=c(1,1))
+hist(PowerConsData$Global_active_power, xlab="Global Active Power (kilowatts)", main = "Global Active Power", col="red")
+dev.copy(png, file="plot1.png")
+dev.off()
