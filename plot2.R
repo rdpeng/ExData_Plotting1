@@ -12,5 +12,4 @@ par(mfrow=c(1,1))
 # Specifying 480x480 pixels as per requirement
 png('plot2.png',width=480,height=480)
 with(new_power_consumption,plot(strptime(paste(Date,Time),"%d/%m/%Y %H:%M:%S"),as.numeric(Global_active_power),type="l",xlab="",ylab="Global Active Power (kilowatts)"))
-#dev.copy(png,'plot2.png')
 dev.off()
