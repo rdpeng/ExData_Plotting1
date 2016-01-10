@@ -1,0 +1,10 @@
+library(sqldf)
+info <- read.csv('household_power_consumption.txt', sep = ';', na.strings = "?")
+library(lubridate)
+info$DateStr <- info$Date
+info$Date <- dmy(info$Date)
+filtered <- subset(info, Date == ymd("2007-02-01") | Date == ymd("2007-02-02"))
+filtered$Global_active_power <- as.numeric(filtered$Global_active_power)
+png(filename = "plot1.png", width = 480, height = 480)
+hist(filtered$Global_active_power, col = "red", main = "Global Active Power", xlab = "Global Active Power (kilowatts)")
+dev.off()
