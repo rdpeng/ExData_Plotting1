@@ -1,21 +1,15 @@
 
 
 ### Reading and preparing data
-hpc <- read.csv('household_power_consumption.txt', na.strings = '?', sep=';', colClasses = c('character','character','numeric','numeric','numeric','numeric','numeric','numeric','numeric' ) ) 
+hpc <- read.csv('household_power_consumption.txt', na.strings = '?', sep=';', colClasses = c('character','character','numeric','numeric','numeric','numeric','numeric','numeric','numeric' ), skip = 66637, nrows = 2880)
 
-hpc$Date = as.Date(hpc$Date, format='%d/%m/%Y')
+colnames(hpc) = c ('Date','Time','Global_active_power','Global_reactive_power','Voltage','Global_intensity','Sub_metering_1','Sub_metering_2','Sub_metering_3')
 
-colnames(hpc) = c('Date','Time','Global_active_power','Global_reactive_power','Voltage','Global_intensity','Sub_metering_1','Sub_metering_2','Sub_metering_3')
+hpc$datetime <- strptime(paste(hpc$Date, hpc$Time, sep = " "), format="%d/%m/%Y %H:%M:%S")   
 
-hpc = subset(hpc, Date == '2007-02-01' | Date == '2007-02-02')
-
-# weekdays
-wd <- unique(weekdays(as.Date(hpc$Date,'%d-%m-%Y'), abbreviate = TRUE))
-wd <- c(wd, weekdays(as.Date(tail(hpc$Date,1)+1,'%d-%m-%Y'),abbreviate = TRUE))
-     
 # plot 2
 par(pty='s')
-png(file='plot2.png', width = 480, height = 480, units = 'px')
-plot( seq(1,length(hpc$Global_active_power)), hpc$Global_active_power, type='l', xaxt='n', xlab = '', ylab='Global Active Power (Kws)') 
-axis (1, at = c(0,length(hpc$Date)/2,length(hpc$Date)), labels=wd) 
+png(file='plot2.png')
+with(hpc, plot(datetime, Global_active_power, type='l', xlab = '', ylab='Global Active Power (Kws)'))
 dev.off()
+
