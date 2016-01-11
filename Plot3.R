@@ -12,3 +12,7 @@ legend("topright", lty= 1, col = c("Black", "red", "blue"), legend = c( "Sub_met
 
 
 
+
+####   Refer unnamed-chunk-4.png
+
+
