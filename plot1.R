@@ -23,3 +23,5 @@ pwrcons$Timestamp <-paste(pwrcons$Date, pwrcons$Time)
 #Create histogram for Global Active Power
 hist(pwrcons$Global_active_power, col = "red", main = "Global Active Power", 
      xlab = "Global Active Power (kilowatts)")
+
+##  Refer plot unnamed-chunk-2.png   
