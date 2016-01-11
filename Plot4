@@ -32,3 +32,5 @@ plot(strptime(pwrcons$Timestamp, "%d/%m/%Y %H:%M:%S"), pwrcons$Global_reactive_p
      
      
      
+###  Refer Plot  unnamed-chunk-5.png
+     
