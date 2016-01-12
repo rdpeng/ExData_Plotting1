@@ -6,8 +6,7 @@ library(sqldf)
 con <- dbConnect(SQLite(), dbname = "sample_db.sqlite")
 
 #read csv file into sql database (this is one time process to load a table so it will be commented always except first run)
-#dbWriteTable(con, name="sample_table", value="household_power_consumption.txt", 
-#row.names=FALSE, header=TRUE, sep = ";")
+dbWriteTable(con, name="sample_table", value="household_power_consumption.txt",row.names=FALSE, header=TRUE, sep = ";")
 
 #Creating data set with required data
 mydata <- dbGetQuery(con, "SELECT * FROM sample_table WHERE Date IN ('1/2/2007','2/2/2007')")
