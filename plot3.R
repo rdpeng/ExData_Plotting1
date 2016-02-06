@@ -1,4 +1,15 @@
 
+
+#download data set
+if (!file.exists("household power consumption.zip")) {
+  fileURL <<- "https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip"
+  download.file(fileURL, "household power consumption.zip", method = "curl")
+}
+if(!file.exists("household power consumption")) {
+  unzip("household power consumption.zip")
+}
+
+
 # Line plot of Sub_metetering_{1,2,3} in {black,red,blue} with no x-label or title, explicit y-label, and a legend using colored lines of type 1.
 do.plot3 <- function(x) {
   with(x, {

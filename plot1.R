@@ -1,5 +1,15 @@
 
 
+#download data set
+if (!file.exists("household power consumption.zip")) {
+  fileURL <<- "https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip"
+  download.file(fileURL, "household power consumption.zip", method = "curl")
+}
+if(!file.exists("household power consumption")) {
+  unzip("household power consumption.zip")
+}
+
+
 # Red histogram of global active power with explicit x-label and title, default y-label, and no legend
 do.plot1 <- function(x) {
   hist(x$Global_active_power, col="red",

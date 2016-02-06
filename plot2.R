@@ -1,5 +1,15 @@
 
 
+#download data set
+if (!file.exists("household power consumption.zip")) {
+  fileURL <<- "https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip"
+  download.file(fileURL, "household power consumption.zip", method = "curl")
+}
+if(!file.exists("household power consumption")) {
+  unzip("household power consumption.zip")
+}
+
+
 # Line plot of global active power with no x-label or title, explicit y-label, and no legend
 do.plot2 <- function(x) {
   with(x, {
