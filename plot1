@@ -1,0 +1,26 @@
+## Set working directory
+setwd("~/R/EDA_1")
+
+## Read in dataset
+data_full <- read.csv("~/R/EDA_1/household_power_consumption.txt", sep=";")
+data_full$Date <- as.Date(data_full$Date, format="%d/%m/%Y")
+
+## Subset the data
+data <- subset(data_full, subset=(Date >= "2007-02-01" & Date <= "2007-02-02"))
+rm(data_full)
+
+## Convert dates
+datetime <- paste(as.Date(data$Date), data$Time)
+data$Datetime <- as.POSIXct(datetime)
+data$Global_active_power <- as.numeric(data$Global_active_power)
+
+#Convert Global Active Power to numeric
+data$Global_active_power <- as.numeric(as.character(data$Global_active_power))
+
+## Plot 1
+hist(data$Global_active_power, main="Global Active Power", 
+     xlab="Global Active Power (kilowatts)", ylab="Frequency", col="Red")
+
+## Save to file
+dev.copy(png, file="~/R/EDA_1/plot1.png", height=480, width=480)
+dev.off()
