@@ -1,0 +1,12 @@
+#Plot1
+#Read the text file and subset to get to the right dataset for plotting graphs
+
+df<-read.table("household_power_consumption.txt",sep=';',header=TRUE)
+df1<-subset(df,Date=="1/2/2007" | Date=="2/2/2007")
+df1$Date<-as.Date(df1$Date)
+df1$Global_active_power<-as.numeric(as.character(df1$Global_active_power))
+
+hist(df1$Global_active_power, col="red",xlab=NULL,main=NULL)
+xlab<-"Global Ative Power (kilowatts)"
+title(main="Global Active Power",xlab="Global Active Power(kilowatts)")
+dev.copy(png,file="plot1.png")
