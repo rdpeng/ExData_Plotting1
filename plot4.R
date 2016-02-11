@@ -21,6 +21,7 @@ cb3<-t(cbind(t(data51),t(data52)))
 cb4<-t(cbind(t(data61),t(data62)))
 
 par(mfrow=c(2,2))
+x<-seq(1:length(cb))
 
 4.1
 plot(x,cb,type="l",xaxt="n",xlab="datetime",ylab="Global Active Power (kilowatts)")
