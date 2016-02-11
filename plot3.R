@@ -14,6 +14,7 @@ cb1<-t(cbind(t(data31),t(data32)))
 cb2<-t(cbind(t(data41),t(data42)))
 cb3<-t(cbind(t(data51),t(data52)))
 
+x<-seq(1:length(cb))
 plot(x,cb1,type="l",col="1",xaxt="n",xlab="datetime",ylab="Energy sub metering")
 lines(x,cb2,type="l",col="2")
 lines(x,cb3,type="l",col="4")
