@@ -1,15 +1,15 @@
-## Modified by:
-Daniel Rosquete, the included files are:
-resume.csv -> The resumed data
-readData.R -> The script that makes all the cleaning job
-plot1.R    -> The script that makes the plot1.png, requires readData.R
-plot2.R    -> The script that makes the plot2.png, requires readData.R
-plot3.R    -> The script that makes the plot3.png, requires readData.R
-plot4.R    -> The script that makes the plot4.png, requires readData.R
-plot1.png  -> The first plot asked, you can check it at the bottom of the readme
-plot2.png  -> The second plot asked, you can check it at the bottom of the readme
-plot3.png  -> The third plot asked, you can check it at the bottom of the readme
-plot4.png  -> The fourth plot asked, you can check it at the bottom of the readme
+## Modified by: Daniel Rosquete
+The included files are:
+* resume.csv -> The resumed data
+* readData.R -> The script that makes all the cleaning job
+* plot1.R    -> The script that makes the plot1.png, requires readData.R
+* plot2.R    -> The script that makes the plot2.png, requires readData.R
+* plot3.R    -> The script that makes the plot3.png, requires readData.R
+* plot4.R    -> The script that makes the plot4.png, requires readData.R
+* plot1.png  -> The first plot asked, you can check it at the bottom of the readme
+* plot2.png  -> The second plot asked, you can check it at the bottom of the readme
+* plot3.png  -> The third plot asked, you can check it at the bottom of the readme
+* plot4.png  -> The fourth plot asked, you can check it at the bottom of the readme
 
 ## Introduction
 
