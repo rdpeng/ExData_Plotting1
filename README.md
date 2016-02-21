@@ -107,31 +107,31 @@ The four plots that you will need to construct are shown below.
 
 ### Plot 1
 
-Asked:
+* Asked:
 ![plot of chunk unnamed-chunk-2](figure/unnamed-chunk-2.png) 
-Mine
+* Mine
 ![plot of chunk unnamed-chunk-2](plot1.png) 
 
 
 ### Plot 2
 
-Asked:
+* Asked
 ![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3.png) 
-Mine
+* Mine
 ![plot of chunk unnamed-chunk-2](plot2.png) 
 
 
 ### Plot 3
 
-Asked:
+* Asked:
 ![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-4.png) 
-Mine
+* Mine
 ![plot of chunk unnamed-chunk-2](plot3.png) 
 
 
 ### Plot 4
 
-Asked:
+* Asked:
 ![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5.png) 
-Mine
+* Mine
 ![plot of chunk unnamed-chunk-2](plot4.png) 
