@@ -1,3 +1,16 @@
+## Modified by: Daniel Rosquete
+The included files are:
+* resume.csv -> The resumed data
+* readData.R -> The script that makes all the cleaning job
+* plot1.R    -> The script that makes the plot1.png, requires readData.R
+* plot2.R    -> The script that makes the plot2.png, requires readData.R
+* plot3.R    -> The script that makes the plot3.png, requires readData.R
+* plot4.R    -> The script that makes the plot4.png, requires readData.R
+* plot1.png  -> The first plot asked, you can check it at the bottom of the readme
+* plot2.png  -> The second plot asked, you can check it at the bottom of the readme
+* plot3.png  -> The third plot asked, you can check it at the bottom of the readme
+* plot4.png  -> The fourth plot asked, you can check it at the bottom of the readme
+
 ## Introduction
 
 This assignment uses data from
@@ -94,21 +107,31 @@ The four plots that you will need to construct are shown below.
 
 ### Plot 1
 
-
+* Asked:
 ![plot of chunk unnamed-chunk-2](figure/unnamed-chunk-2.png) 
+* Mine
+![plot of chunk unnamed-chunk-2](plot1.png) 
 
 
 ### Plot 2
 
+* Asked
 ![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3.png) 
+* Mine
+![plot of chunk unnamed-chunk-2](plot2.png) 
 
 
 ### Plot 3
 
+* Asked:
 ![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-4.png) 
+* Mine
+![plot of chunk unnamed-chunk-2](plot3.png) 
 
 
 ### Plot 4
 
+* Asked:
 ![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5.png) 
-
+* Mine
+![plot of chunk unnamed-chunk-2](plot4.png) 
