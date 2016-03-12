@@ -1,6 +1,10 @@
 # This code produces the plot 1
 # Please ensure household_power_consumption.txt is in the working directory
-
+if(!file.exists("household_power_consumption.txt")) {
+        Url <- "https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip"
+        download.file(Url,destfile="./hd.zip",method="curl")
+        unzip(zipfile="./hd.zip")
+}
 # Code for reading the data
 hd <- read.table("household_power_consumption.txt", header=TRUE, sep=";", na.strings="?")
 hd[,1]<- as.Date(hd[,1], format="%d/%m/%Y")
