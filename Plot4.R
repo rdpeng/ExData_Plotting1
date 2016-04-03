@@ -33,7 +33,7 @@ plot4 <- function(data) {
 
 plot_graphs <- function(data_file, png_file) {
   data <- read_and_datetime(data_file)
-  png(png_file)
+  png(png_file, width = 480, height = 480)
   par(mfrow = c(2,2))
   plot1(data)
   plot2(data)

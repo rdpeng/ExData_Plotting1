@@ -1,7 +1,7 @@
 # This will plot the frequency of Global Active power in the dataset
 plot.subm <- function(data_file, png_file) {
   data <- read_data(data_file)
-  png(png_file)
+  png(png_file, width = 480, height = 480)
   data$datetime <- as.POSIXct(paste(data$Date, data$Time))
   data$maxSubMeter <- apply(data[,7:9], 1, max)
   plot(data$datetime, data$maxSubMeter, 
