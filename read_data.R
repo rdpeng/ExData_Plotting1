@@ -7,6 +7,6 @@ read_data <- function(file) {
   dataset$Date <- as.Date(dataset$Date, format = "%d/%m/%Y");
   dataset$Time <- format(dataset$Time, format = "%H:%M:%S");
   valid.dataset <- subset(dataset, 
-                          Date >= as.Date('2007-02-01') & Date <= as.Date('2007-02-02'))
+                          Date >= as.Date('2007-02-01') & Date <= as.Date('2007-02-02'));
   return (valid.dataset);
 }
