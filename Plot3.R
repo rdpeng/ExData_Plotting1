@@ -16,4 +16,5 @@ plot.subm <- function(data_file, png_file) {
   dev.off()
   
 }
-plot.subm('required.csv', 'plot3.png')
+source('./read_data.R');
+plot.subm('household_power_consumption.txt', 'plot3.png')

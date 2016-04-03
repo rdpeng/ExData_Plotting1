@@ -7,4 +7,5 @@ plot.gap <- function(data_file, png_file) {
   dev.off()
   
 }
+source('./read_data.R');
 plot.gap('household_power_consumption.txt', 'plot1.png')
