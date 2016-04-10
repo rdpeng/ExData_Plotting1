@@ -1,3 +1,357 @@
+chartSeries(to.weekly(XLE),type='matchsticks',subset='last 6 months', chartTheme(theme="white"),TA=c(addVo(),addBBands(),addRSI(),addMACD(slow=16,fast=8)))
+chartSeries(to.daily(XLE),type='matchsticks',subset='last 6 months', chartTheme(theme="white"),TA=c(addVo(),addBBands(),addRSI(),addMACD(slow=16,fast=8)))
+getSymbols('XOM')
+chartSeries(to.daily(XOM),type='matchsticks',subset='last 6 months', chartTheme(theme="dark"),TA=c(addVo(),addBBands(),addRSI(),addMACD(slow=16,fast=8)))
+chartSeries(to.daily(XOM),type='matchsticks',subset='last 6 months', chartTheme(theme="blue"),TA=c(addVo(),addBBands(),addRSI(),addMACD(slow=16,fast=8)))
+chartSeries(to.daily(XOM),type='matchsticks',subset='last 6 months', chartTheme(theme="yellow"),TA=c(addVo(),addBBands(),addRSI(),addMACD(slow=16,fast=8)))
+chartSeries(to.daily(XOM),type='matchsticks',subset='last 6 months', chartTheme('white'),TA=c(addVo(),addBBands(),addRSI(),addMACD(slow=16,fast=8)))
+chartSeries(to.daily(XOM),type='candlesticks',subset='last 6 months', chartTheme('white'),TA=c(addVo(),addBBands(),addRSI(),addMACD(slow=16,fast=8)))
+chartSeries(to.daily(XLE),type='candlesticks',subset='last 6 months', chartTheme('white'),TA=c(addVo(),addBBands(),addRSI(),addMACD(slow=16,fast=8)))
+library(quantmod)
+getSymbols('XLE','XOM','DJIA','HACK','INTC')
+getSymbols('XOM')
+getSymbols('XLE','DJIA')
+getSymbols()
+chartSeries(to.daily(XLE),type='candlesticks',subset='last 6 months', chartTheme('white'),TA=c(addVo(),addBBands(),addRSI(),addMACD(slow=16,fast=8)))
+getSymbols('XLE','DJIA')
+library(quantstrat)
+ls()
+dir()
+cd /Public
+cd Public
+dir(Public)
+library(quantmod)
+ls()
+dm
+ls()
+k
+wc
+DJIA
+ls()
+XOM
+INTC
+library(ggplot2)
+ggplot(INTC)
+chartSeries(INTC)
+HLOVERCO <- (Hi(DJIA)-Lo(DJIA))/(Cl(DJIA)-Op(DJIA))
+HLOVERCO
+chartSeries(to.daily(HLOVERCO))
+chartSeries(HLOVERCO)
+qplot(HLOVERCO)
+HLOVERCO
+chartSeries((Hi(DJIA)-Lo(DJIA))/(Cl(DJIA)-Op(DJIA)))
+chartSeries(to.weekly(DJIA),type='matchsticks',subset='last 24 months', chartTheme(theme="white"),TA=c(addVo(),addBBands(),addRSI(),addMACD(slow=16,fast=8)))
+chartSeries(to.weekly(DJIA),type='line',subset='last 24 months', chartTheme(theme="white"),TA=c(addVo(),addBBands(),addRSI(),addMACD(slow=16,fast=8)))
+chartSeries(to.daily(DJIA),type='line',subset='last 24 months', chartTheme(theme="white"),TA=c(addVo(),addBBands(),addRSI(),addMACD(slow=16,fast=8)))
+chartSeries(to.daily(DJIA),type='line',subset='last 14 months', chartTheme(theme="white"),TA=c(addVo(),addBBands(),addRSI(),addMACD(slow=16,fast=8)))
+/theme
+/chartTheme
+??chartTheme
+library(quantmod)#
+#
+#Create an array 'symbols' to reference desired ts data#
+symbols <- c('INTC','XLE','HACK','DJIA')#
+#Retrieve data for symbols#
+getSymbols(symbols)
+chartSeries(to.daily(DJIA),type='line',subset='last 14 months', chartTheme(theme="white"),TA=c(addVo(),addBBands(),addRSI(),addMACD(slow=16,fast=8)))
+library(quantmod)#
+#
+#Create an array 'symbols' to reference desired ts data#
+symbols <- c('INTC','XLE','HACK','DJIA')#
+#Retrieve data for symbols#
+getSymbols(symbols)
+chartSeries(to.daily(DJIA),type='line',subset='last 6 months', chartTheme(chartTheme('white',up.col='blue',dn.col='red')), TA=c(addVo(),addBBands(),addRSI(),addMACD(slow=16,fast=8)))
+chartSeries(to.daily(DJIA),type='candlesticks',subset='last 6 months', chartTheme(chartTheme('white',up.col='blue',dn.col='red')), TA=c(addVo(),addBBands(),addRSI(),addMACD(slow=16,fast=8)))
+library(quantmod)#
+#
+#Create an array 'symbols' to reference desired ts data#
+symbols <- c('INTC','XLE','HACK','DJIA')#
+#Retrieve data for symbols#
+getSymbols(symbols)
+chartSeries(to.daily(DJIA),type='candlesticks',subset='last 6 months', chartTheme(chartTheme('white',up.col='blue',dn.col='red')), TA=c(addVo(),addBBands(),addRSI(),addMACD(slow=16,fast=8)))
+library(quantmod)#
+#
+#Create an array 'symbols' to reference desired ts data#
+symbols <- c('INTC','XLE','HACK','DJIA','FRO')#
+#Retrieve data for symbols#
+getSymbols(symbols)
+candleChart(to.daily(FRO),type='candlesticks',subset='last 6 months',TA=c(addVo(),addBBands(),addRSI(),addMACD(slow=24,fast=8)),theme='beige')
+par(mfrow=c(2,2))
+candleChart(DJIA,multi.col=TRUE,theme='beige',subset='2007-12::2008')#
+candleChart(to.monthly(DJIA),multi.col=TRUE,theme='white',type='candles',subset='2010-01::2015')#
+#
+candleChart(to.daily(DJIA),type='candlesticks',subset='last 6 months',TA=c(addVo(),addBBands(),addRSI(),addMACD(slow=16,fast=8)),theme='beige')#
+#
+candleChart(to.daily(DJIA),type='candlesticks',subset='last 6 months',TA=c(addVo(),addBBands(),addRSI(),addMACD(slow=24,fast=8)),theme='beige')
+op <- par(mfrow=c(3,2))#
+for(i in 1:6) {#
+  chartSeries(#
+    DJIA["2014-01"], "candlesticks", #
+    TA=NULL, # No volume plot#
+    layout=NULL, #
+    yrange=c(15,18)#
+  )#
+}#
+par(op)
+par(mfrow=c(2,2))
+symbols[1]
+len(symbols)
+??length
+length(symbols)
+op <- par(mfrow=c(4,3))#
+for(i in length(symbols)) {#
+  chartSeries(#
+    symbols[i], "candlesticks", #
+    TA=NULL, # No volume plot#
+    layout=NULL#
+  )#
+}#
+par(op)
+symbols
+symb <-c(INTC,XLE,HACK,DJIA,FRO)
+symb
+symbp[1]
+symb[1]
+colnames(symb)
+symb
+INTC
+DJIA
+symb
+ls(0)
+ls()
+tdm
+op <- par(mfrow=c(4,3))#
+for(i in length(symbols)) {#
+  chartSeries(#
+    symbols[i], "candlesticks", #
+    TA=NULL, # No volume plot#
+    layout=NULL#
+  )#
+}#
+par(op)
+labels
+labels(intc)
+labels(INTC)
+symbols
+labels(symbols)
+labels(symbols) <- c("INTC","XLE","HACK","DJIA","FRO")
+labels()
+names(symbols)
+names(symbols)<-c("INTC","XLE","HACK","DJIA","FRO")
+symbols
+##For loop multicharting.........................................##
+#
+library(quantmod)#
+getSymbols("DJIA")#
+#
+op <- par(mfrow=c(4,3))#
+for(i in length(symbols)) {#
+  chartSeries(#
+    symbols[i], "candlesticks", #
+    TA=NULL, # No volume plot#
+    layout=NULL#
+  )#
+}#
+par(op)
+names(symbols[i])
+##For loop multicharting.........................................##
+#
+library(quantmod)#
+getSymbols("DJIA")#
+#
+op <- par(mfrow=c(4,3))#
+for(i in length(symbols)) {#
+  chartSeries(#
+    names(symbols[i]), "candlesticks", #
+    TA=NULL, # No volume plot#
+    layout=NULL#
+  )#
+}#
+par(op)
+names(symbols[i])
+symbols[1]
+labels(symbols[1])
+colnames(symbols)
+labels(symbols)
+library(quantmod)#
+#
+#Create an array 'symbols' to reference desired ts data#
+# ARKW <- ETF investing in BitCoins#
+##
+# MMJ Stocks <- 'TRTC','CNAB', 'GWPH'#
+# MMJ Descr <- ('TerraTech','United C Corp','GW Pharmaceuticals')#
+symbols <- c('INTC','XLE','HACK','DJIA','FRO','GE','MMM','BA','ARKW','TRTC')#
+#Retrieve data for symbols#
+getSymbols(symbols)
+candleChart(DJIA,multi.col=TRUE,theme='beige',subset='last 5 months')#
+addBBands(slow=10,fast=5)`
+''
+``
+chartSeries(to.daily(DJIA),type='candlesticks',subset='last 6 months', chartTheme(chartTheme('beige',up.col='blue',dn.col='red')), TA=c(addVo(),addBBands(),addRSI(),addMACD(slow=16,fast=8)))
+library(quantmod)
+symbols <- c('XLE','XOM','DJIA','GE')#
+#
+getSymbols(symbols)
+candleChart(to.daily(DJIA),type='candlesticks',subset='last 6 months',TA=c(addVo(),addBBands(),addRSI(),addMACD(slow=24,fast=8)),theme='beige')
+7.6*19
+/4
+7.6*19
+144.4/9
+library(quantmod)#
+#
+#Create an array 'symbols' to reference desired ts data#
+# #
+##
+#Core symbol array#
+symbols <- c('XLE','XOM','DJIA','GE')#
+#
+getSymbols(symbols)
+library(quantmod)#
+#
+#Create an array 'symbols' to reference desired ts data#
+# #
+##
+#Core symbol array#
+symbols <- c('XLE','XOM','DJIA','GE')
+getSymbols(symbols)
+candleChart(to.daily(DJIA),type='candlesticks',subset='last 6 months',TA=c(addVo(),addBBands(),addRSI(),addMACD(slow=24,fast=8)),theme='beige')
+library(quantmod)#
+#
+#Create an array 'symbols' to reference desired ts data#
+# #
+##
+#Core symbol array#
+symbols <- c('XLE','XOM','DJIA','GE')#
+#
+getSymbols(symbols)
+candleChart(to.daily(DJIA),type='candlesticks',subset='last 6 months',TA=c(addVo(),addBBands(),addRSI(),addMACD(slow=24,fast=8)),theme='beige')
+library(quantmod)
+ls()
+DJIA
+getSymbols('DJIA','XLE')
+getSymbols(DJIA,XLE)
+getSymbols('XLE')
+symbols <- c('XLE','XOM','DJIA','GE')#
+#
+getSymbols(symbols)
+chartSeries(to.weekly(DJIA),subset='last 3 months')
+chartSeries(to.weekly(DJIA),subset='last 12 months')
+chartSeries(to.daily(DJIA),subset='last 12 months')
+chartSeries(to.weekly(DJIA),subset='last 3 years')
+addBBands()
+addMACD()
+addRSI()
+Vo(DJIA)
+chartSeries(Op(DJIA)/Vo(DJIA))
+chartSeries(Op(DJIA)/Vo(DJIA),subset='last 3 weeks')
+addBBands()
+addMACD()
+chartSeries(Op(DJIA)/Vo(DJIA),subset='last 6 months')
+addBBands()
+addMACD()
+new()
+window()
+p
+# create document term matrix applying some transformations#
+tdm = TermDocumentMatrix(x_corpus,#
+   control = list(removePunctuation = TRUE,#
+   stopwords = c("crude","oil",stopwords("SMART"),stopwords("english")),#
+   removeNumbers = TRUE, tolower = TRUE))#
+#
+# define tdm as matrix#
+m = as.matrix(tdm)#
+# get word counts in decreasing order#
+word_freqs = sort(rowSums(m), decreasing=TRUE) #
+# create a data frame with words and their frequencies#
+dm = data.frame(word=names(word_freqs), freq=word_freqs)#
+#
+sortie <- data.frame(dm$word[1:5],sort(dm$freq[1:5],decreasing=TRUE))#
+#
+# plot wordcloud#
+wordcloud(dm$word, dm$freq, random.order=FALSE, colors=brewer.pal(7, "Dark2"))
+library(tm)#
+library(wordcloud)#
+library(RColorBrewer)
+# create document term matrix applying some transformations#
+tdm = TermDocumentMatrix(x_corpus,#
+   control = list(removePunctuation = TRUE,#
+   stopwords = c("crude","oil",stopwords("SMART"),stopwords("english")),#
+   removeNumbers = TRUE, tolower = TRUE))#
+#
+# define tdm as matrix#
+m = as.matrix(tdm)#
+# get word counts in decreasing order#
+word_freqs = sort(rowSums(m), decreasing=TRUE) #
+# create a data frame with words and their frequencies#
+dm = data.frame(word=names(word_freqs), freq=word_freqs)#
+#
+sortie <- data.frame(dm$word[1:5],sort(dm$freq[1:5],decreasing=TRUE))#
+#
+# plot wordcloud#
+wordcloud(dm$word, dm$freq, random.order=FALSE, colors=brewer.pal(7, "Dark2"))
+# create document term matrix applying some transformations#
+tdm = TermDocumentMatrix(x_corpus,#
+   control = list(removePunctuation = TRUE,#
+   stopwords = c("crude","oil","stock","stocks","market","price","prices",stopwords("SMART"),stopwords("english")),#
+   removeNumbers = TRUE, tolower = TRUE))#
+#
+# define tdm as matrix#
+m = as.matrix(tdm)#
+# get word counts in decreasing order#
+word_freqs = sort(rowSums(m), decreasing=TRUE) #
+# create a data frame with words and their frequencies#
+dm = data.frame(word=names(word_freqs), freq=word_freqs)#
+# Store top x='5' most frequent words#
+sortie <- data.frame(dm$word[1:5],sort(dm$freq[1:5],decreasing=TRUE))#
+#
+# plot wordcloud#
+wordcloud(dm$word, dm$freq, random.order=FALSE, colors=brewer.pal(7, "Dark2"))
+function??
+??function
+sdf
+function()??
+sdf
+??function()
+dswfsd
+ls
+ls()
+GE
+sortie
+library(twitteR)
+library(tm)
+library(wordcloud)
+RColorBrewer
+cat("EXAMPLE 1: sin(x) for a vector --\n")#
+# Suppose you have a vector x --#
+x = c(0.1,0.6,1.0,1.5)#
+#
+# The bad way --#
+n = length(x)#
+r = numeric(n)#
+for (i in 1:n) {#
+  r[i] = sin(x[i])#
+}#
+print(r)
+n
+r
+print(sin(x))
+N=4; M=100;#
+r = matrix(runif(N*M), N, M)
+r
+library(quantmod)
+tm
+tdm
+text
+ls
+ls()
+stemrw
+x_tweets
+library(wordcloud)
+library(NLP)
+library(twitteR)
+wordcloud(dm$word,dm$freq,random.order=FALSE,colors=brewer.pal(7,"Dark2"), main="Title")#
+}
+sortie
 INTC
 library(quantmod)
 ls()
@@ -240,191 +594,100 @@ sysdate()
 sys.date()
 date()
 date()-12/01/2015
-getwd()
-setwd('./Documents/project')
-dir()
-setwd('../')
-getwd()
-dir()
-setwd('../')
 setwd('./Github')
-getwd()
-dir()
-setwd('./ExData_Plotting1')
-dir()
-hpcdata<-read.csv('household_power_consumption.txt')
-max(hpcdata$Date)
-subset(hpcdata, Date >= '2007-02-01' & Date <= '2007-02-02')
-subset(hpcdata, hpcdata$Date >= '2007-02-01' & hpcdata$Date <= '2007-02-02')
-hpcdata$NewDate <- as.Date(hpcdata$Date)
-febdata <- subset(hpcdata, hpcdata$Date >= '2007-02-01' & hpcdata$Date <= '2007-02-02')
-febdata <- subset(hpcdata, hpcdata$NewDate >= '2007-02-01' & hpcdata$NewDate <= '2007-02-02')
-febdata
-hpcdata[2]
-hpcdata <- read.txt('household_power_consumption.txt')
-hpcdata <- read.table('household_power_consumption.txt')
-hpcdata$NewDate <- as.Date(hpcdata$Date)
-class(hpcdata)
-class(hpcdata$Date)
-colnames(hpcdata)
-hpcdata <- read.table('household_power_consumption.txt',sep=';')
-colnames(hpcdata)
-hpcdata <- read.table('household_power_consumption.txt',sep=';',header=TRUE)
-colnames(hpcdata)
-hpcdata$NewDate <- as.Date(hpcdata$Date)
-febdata <- subset(hpcdata, hpcdata$NewDate >= '2007-02-01' & hpcdata$NewDate <= '2007-02-02')
-febdata
-nrow(hpcdata)
-febdata <- subset(hpcdata, hpcdata$NewDate >= 2007-02-01 & hpcdata$NewDate <= 2007-02-02)
-febdata$NewDate
-hpcdata$NewDae
-hpcdata$NewDate
-init <- read.table('household_power_consumption.txt',nrows=100)
-classes <- sapply(init,class)
-full <- read.table('household_power_consumption.txt',colClasses=classes)
-colnames(full)
-init <- read.table('household_power_consumption.txt',nrows=100,sep=';',header=TRUE)
-classes <- sapply(init,class)
-classes
-full <- read.table('household_power_consumption.txt',colClasses=classes)
-full <- read.table('household_power_consumption.txt',colClasses=classes,sep=';',header=TRUE)
-init <- read.table('household_power_consumption.txt',nrows=100,sep=';',header=TRUE,na.strings='?')
-classes <- sapply(init,class)
-full <- read.table('household_power_consumption.txt',colClasses=classes,sep=';',header=TRUE,na.strings='?')
-febdata <- subset(full, full$NewDate >= 2007-02-01 & full$NewDate <= 2007-02-02)
-febdata
-febdata <- subset(full, full$Date >= '2007-02-01' & full$Date <= '2007-02-02')
-init <- read.table('household_power_consumption.txt',nrows=100,sep=';',header=TRUE,na.strings='?',stringsAsFactors=FALSE)
-classes <- sapply(init,class)
-classes
-classes <- sapply(init,class)
-full <- read.table('household_power_consumption.txt',colClasses=classes,sep=';',header=TRUE,na.strings='?',stringsAsFactors=FALSE)
-febdata <- subset(full, full$Date >= '2007-02-01' & full$Date <= '2007-02-02')
-febdata
-full[2,]
-febdata <- subset(full, full$Date >= '01/02/2007' & full$Date <= '02/02/2007')
-febdata
-full[2,]
-full[2000,]
-febdata <- subset(full, full$Date > 01/02/2007)
-febdata
-clear()
-clr()
-cl()
-clear
-new9)
-hi()
-febdata <- subset(full, full$Date >= 01/02/2007 & full$Date <= 02/02/2007)
-febdata
-febdata <- subset(full, full$Date >= 01/02/2007 & full$Date <= 02/03/2007)
-febdata
-febdata <- subset(full, Date >= 01/02/2007 & Date <= 02/03/2007)
-febdata
-febdata <- subset(full, Date >= 01/02/2007 & Date <= 02/02/2007)
-febdata
-febdata <- subset(full, Date >= 01/02/2007)
-febdata
-data<-subset(febdata,Date<=02/02/2007)
-data
-febdata <- subset(full, Date >= '01/02/2007')
-febdata
-?between
-febdata <- full[Date>='2007-02-01' & Date<='2007-02-02']
-febdata <- full[full$Date>='2007-02-01' & full$Date<='2007-02-02']
-febdata
-colnames(full)
-febdata <- full[full$Date>='01/02/2007' & full$Date<='01/02/2007']
-febdata
-library(data.table)
-DT <- data.table('full')
-sub <- DT[,{Date>='01/02/2007' & Date<='02/02/2007'}]
-colnames(DT)
-init <- read.table('household_power_consumption.txt',nrows=100,sep=';',header=TRUE,na.strings='?',stringsAsFactors=FALSE)
-classes <- sapply(init,class)
-full <- read.table('household_power_consumption.txt',colClasses=classes,sep=';',header=TRUE,na.strings='?',stringsAsFactors=FALSE)
-library(data.table)
-DT <- data.table('full')
-colnames(DT)
-full <- data.table('household_power_consumption.txt',colClasses=classes,sep=';',header=TRUE,na.strings='?',stringsAsFactors=FALSE)
-nrow(full)
-DT <- data.table('full',header=TRUE)
-colnames(DT)
-DT <- data.table(full)
-DT
-sub <- subset(full,Date=='02/02/2007' & Date=='01/02/2007')
-ls()
-colnames(full)
-init <- read.table('household_power_consumption.txt',nrows=100,sep=';',header=TRUE,na.strings='?',stringsAsFactors=FALSE)
-classes <- sapply(init,class)
-classes
-full <- read.table('household_power_consumption.txt',colClasses=classes,sep=';',header=TRUE,na.strings='?',stringsAsFactors=FALSE)
-colnames(full)
-sub <- subset(full,Date=='02/02/2007' & Date=='01/02/2007')
-sub
-sub <- subset(full,Date==02/02/2007 & Date==01/02/2007)
-sub
-library(lubridate)
-sub <- subset(full,month(Date)==2)
-nrow(sub)
-sub <- subset(full,month(Date)==2 & mday(Date)==c(1,2))
-nrow(sub)
-sub <- subset(full,month(Date)==2)
-data <- subset(sub,mday(Date)==1 | mday(Date)==2)
-nrow(data)
-data <- subset(sub,mday(Date)==01 | mday(Date)==02)
-nrow(data)
-data <- subset(sub,mday(Date)==01)
-data
-data <- subset(sub,mday(Date)==1)
-data
-mday(sub$Date)
-sub <- subset(full,month(Date)==2 & year(Date)==2007)
-nrow(sub)
-full[1:20,]
-class(full$Date)
-classes
-full$newdate <- as.Date(full$newdate)
-full$newdate <- as.Date(full$Date)
-class(full$newdate)
-sub <- subset(full,month(newdate)==2 & year(newdate)==2007)
-sub
-sub <- subset(full,month(newdate)==2)
-nrow(sub)
-sub2 <- subset(sub,year(newdate)==2007)
-nrow(sub2)
-year(newdate)
-year(full$newdate)
-full$newdate[3]
-full <- read.table('household_power_consumption.txt',colClasses=classes,sep=';',header=TRUE)#,na.strings='?',stringsAsFactors=FALSE)
-full <- read.table('household_power_consumption.txt',colClasses=classes,sep=';',header=TRUE,na.strings='?',stringsAsFactors=FALSE)
-full$Date[3]
-subset <- subset(full,Date=="01/02/2007" | Date=="02/02/2007")
-nrow(subset)
-subset <- subset(full,Date=="01/02/2007")
-subset
-subset <- subset(full,Date==01/02/2007)
-subset
-class(full$Date)
-full$newdate <- as.Date(full$Date, "%d.%m.%Y")
-full$newdate[2]
-full$newdate <- as.Date(full$Date, "%d/%m/%Y")
-full$newdate[2]
-subset <- subset(full,newdate>='2007-02-01' & newdate<='2007-02-02')
-subset
-hist(subset)
-hist(subset$Global_active_power)
-hist(subset$Global_active_power,xlab='Global Active Power(kilowatts)',ylab='Frequency',main='Global Active Power')
-hist(subset$Global_active_power,xlab='Global Active Power(kilowatts)',ylab='Frequency',main='Global Active Power')
-hist(subset$Global_active_power,xlab='Global Active Power(kilowatts)',ylab='Frequency',main='Global Active Power',col='red')
-p1 <- hist(subset$Global_active_power,xlab='Global Active Power(kilowatts)',ylab='Frequency',main='Global Active Power',col='red')
-dev.copy(p1,'myplot.png')
-p1
-plot(p1)
-hist(subset$Global_active_power,xlab='Global Active Power(kilowatts)',ylab='Frequency',main='Global Active Power',col='red')
-dev.copy(png,'myplot.png')
+setwd('./ExData_Plotting1')#
+#read data for Exercise 1 into memory#
+init <- read.table('household_power_consumption.txt',nrows=100,sep=';',header=TRUE,na.strings='?',stringsAsFactors=FALSE)#
+classes <- sapply(init,class)#
+full <- read.table('household_power_consumption.txt',colClasses=classes,sep=';',header=TRUE,na.strings='?',stringsAsFactors=FALSE)#
+full$newdate <- as.Date(full$Date, "%d/%m/%Y")#
+full$datetime <- strptime(paste(full$Date,full$Time),'%d/%m/%Y %H:%M:%S')#
+#
+subset <- subset(full,newdate>='2007-02-01' & newdate<='2007-02-02')#
+#
+hist(subset$Global_active_power,xlab='Global Active Power(kilowatts)',xlab='datetime',ylab='Frequency',main='Global Active Power',col='red')#
+dev.copy(png,'myplot1.png')#
+dev.off()#
+#
+#plot 2#
+plot(subset$datetime,subset$Global_active_power,type='l',xlab='datetime',ylab="Global Active Power(kilowatts)")#
+dev.copy(png,'myplot2.png')#
+dev.off()#
+#
+#plot 3#
+plot(subset$datetime,subset$Sub_metering_1,type='l',xlab='datetime',ylab="Energy sub metering")#
+lines(subset$datetime,subset$Sub_metering_2,type='l',col='red')#
+lines(subset$datetime,subset$Sub_metering_3,type='l',col='blue')#
+dev.copy(png,'myplot3.png')#
+dev.off()#
+#
+#plot 4#
+par(mfrow=c(2,2))#
+plot(subset$datetime,subset$Global_active_power,type='l',xlab='datetime',ylab="Global Active Power(kilowatts)")#
+plot(subset$datetime,subset$Voltage,type='l',ylab="Voltage")#
+plot(subset$datetime,subset$Sub_metering_1,type='l',ylab="Energy sub metering")#
+lines(subset$datetime,subset$Sub_metering_2,type='l',col='red')#
+lines(subset$datetime,subset$Sub_metering_3,type='l',col='blue')#
+plot(subset$datetime,subset$Global_reactive_power,type='l',ylab="Global Reactive Power(kilowatts)")#
+dev.copy(png,'myplot3.png')#
 dev.off()
+setwd('./ExData_Plotting1')#
+#read data for Exercise 1 into memory#
+init <- read.table('household_power_consumption.txt',nrows=100,sep=';',header=TRUE,na.strings='?',stringsAsFactors=FALSE)#
+classes <- sapply(init,class)#
+full <- read.table('household_power_consumption.txt',colClasses=classes,sep=';',header=TRUE,na.strings='?',stringsAsFactors=FALSE)#
+full$newdate <- as.Date(full$Date, "%d/%m/%Y")#
+full$datetime <- strptime(paste(full$Date,full$Time),'%d/%m/%Y %H:%M:%S')#
+#
+subset <- subset(full,newdate>='2007-02-01' & newdate<='2007-02-02')#
+#
+hist(subset$Global_active_power,xlab='Global Active Power(kilowatts)',xlab='datetime',ylab='Frequency',main='Global Active Power',col='red')#
+dev.copy(png,'myplot1.png')#
+dev.off()#
+#
+#plot 2#
+plot(subset$datetime,subset$Global_active_power,type='l',xlab='datetime',ylab="Global Active Power(kilowatts)")#
+dev.copy(png,'myplot2.png')#
+dev.off()#
+#
+#plot 3#
+plot(subset$datetime,subset$Sub_metering_1,type='l',xlab='datetime',ylab="Energy sub metering")#
+lines(subset$datetime,subset$Sub_metering_2,type='l',col='red')#
+lines(subset$datetime,subset$Sub_metering_3,type='l',col='blue')#
+dev.copy(png,'myplot3.png')#
+dev.off()#
+#
+#plot 4#
+par(mfrow=c(2,2))#
+plot(subset$datetime,subset$Global_active_power,type='l',xlab='datetime',ylab="Global Active Power(kilowatts)")#
+plot(subset$datetime,subset$Voltage,type='l',xlab='datetime',ylab="Voltage")#
+plot(subset$datetime,subset$Sub_metering_1,type='l',xlab='datetime',ylab="Energy sub metering")#
+lines(subset$datetime,subset$Sub_metering_2,type='l',col='red')#
+lines(subset$datetime,subset$Sub_metering_3,type='l',col='blue')#
+plot(subset$datetime,subset$Global_reactive_power,type='l',xlab='datetime',ylab="Global Reactive Power(kilowatts)")#
+dev.copy(png,'myplot3.png')#
+dev.off()
+#plot 1#
+hist(subset$Global_active_power,xlab='Global Active Power(kilowatts)',xlab='datetime',ylab='Frequency',main='Global Active Power',col='red')#
+dev.copy(png,'myplot1.png')#
+dev.off()
+#plot 1#
 hist(subset$Global_active_power,xlab='Global Active Power(kilowatts)',ylab='Frequency',main='Global Active Power',col='red')#
-png("myplot1.png")
-png("myplot1.png")
-png("plotplot.png")
-dev.copy(png,'myplot1.png')
+dev.copy(png,'myplot1.png')#
+dev.off()
+#plot 3#
+plot(subset$datetime,subset$Sub_metering_1,type='l',xlab='datetime',ylab="Energy sub metering")#
+lines(subset$datetime,subset$Sub_metering_2,type='l',col='red')#
+lines(subset$datetime,subset$Sub_metering_3,type='l',col='blue')#
+dev.copy(png,'myplot3.png')#
+dev.off()
+par(mfrow=c(2,2))#
+plot(subset$datetime,subset$Global_active_power,type='l',xlab='datetime',ylab="Global Active Power(kilowatts)")#
+plot(subset$datetime,subset$Voltage,type='l',xlab='datetime',ylab="Voltage")#
+plot(subset$datetime,subset$Sub_metering_1,type='l',xlab='datetime',ylab="Energy sub metering")#
+lines(subset$datetime,subset$Sub_metering_2,type='l',col='red')#
+lines(subset$datetime,subset$Sub_metering_3,type='l',col='blue')#
+plot(subset$datetime,subset$Global_reactive_power,type='l',xlab='datetime',ylab="Global Reactive Power(kilowatts)")#
+#
+dev.copy(png,'myplot4.png')#
+dev.off()
