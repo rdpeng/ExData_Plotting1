@@ -1,0 +1,430 @@
+INTC
+library(quantmod)
+ls()
+chartSeries(XLE,addBBands())
+chartSeries(XLE)
+hlemx
+HLEMX
+chartSeries(to.daily(INTC),type='candlesticks',subset='last 6 months',TA=c(addVo(),addBBands(),addRSI(),addMACD(slow=16,fast=8)))
+library(quantmod)#
+symbols <- c('BSCFX','FBIOX','HLEMX','POGRX','DJIA','XLE','AAPL','INTC')#
+getSymbols(symbols)#
+#
+chartSeries(to.daily(HLEMX),type='candlesticks',subset='last 6 months',TA=c(addVo(),addBBands(),addRSI(),addMACD(slow=16,fast=8)))
+chartSeries(to.daily(DJIA),type='candlesticks',subset='last 6 months',TA=c(addVo(),addBBands(),addRSI(),addMACD(slow=16,fast=8)))
+chartSeries(to.daily(DJIA),type='candlesticks',subset='last 3 months',TA=c(addVo(),addBBands(),addRSI(),addMACD(slow=16,fast=8)))
+INTC
+ls()
+INTC
+DJIA
+chartSeries(to.daily(DJIA),type='candlesticks',subset='last 3 months',TA=c(addVo(),addBBands(),addRSI(),addMACD(slow=16,fast=8)))
+library(quantmod)
+INTC
+ls()
+AAPL
+library(quantmod)
+aapl
+AAPL
+library(twitteR)#
+setup_twitter_oauth(api_key,api_secret,access_token,access_token_secret)
+runSeq <- function(){#
+library(tm)#
+library(wordcloud)#
+library(RColorBrewer)#
+library(ggplot2)#
+### GET TWITTER DATA via searchTwitter() and apply basic transformations#
+since_var=Sys.Date()-10#
+x_tweets = searchTwitter("interest rate*",n=500,lang="en", since=str(since_var))#
+x_text = sapply(x_tweets, function(x) x$getText())#
+x_text <- iconv(x_text,to="utf-8-mac")#
+#
+### Apply transformations to x_text variable containing tweet text:#
+#
+# remove links NNK 6-2-2015#
+x_text = gsub("http.*", "", x_text)#
+x_text = gsub("(RT|via)((?:\\b\\W*@\\w+)+)", "", x_text)#
+# remove Atpeople#
+x_text = gsub("@\\w+", "", x_text)#
+# remove numbers#
+x_text = gsub("[[:digit:]]", "", x_text)#
+# remove hashtags NNK 6-2-2015#
+x_text = gsub("#.*","", x_text)#
+#remove author names that start with "By" #
+x_text = gsub("by.*","", x_text)#
+# remove punctuation symbols#
+x_text = gsub("[[:punct:]]", "", x_text)#
+# create a corpus#
+x_corpus = Corpus(VectorSource(x_text))#
+# create document term matrix applying some transformations#
+tdm = TermDocumentMatrix(x_corpus,#
+   control = list(removePunctuation = TRUE,#
+   stopwords = c("interest","rate","rates",stopwords("SMART"),stopwords("english")),#
+   removeNumbers = TRUE, tolower = TRUE))#
+#
+# define tdm as matrix#
+m = as.matrix(tdm)#
+# get word counts in decreasing order#
+word_freqs = sort(rowSums(m), decreasing=TRUE) #
+# create a data frame with words and their frequencies#
+dm = data.frame(word=names(word_freqs), freq=word_freqs)#
+#
+# plot wordcloud with Title#
+wordcloud(dm$word,dm$freq,random.order=FALSE,colors=brewer.pal(7,"Dark2"), main="Title")#
+}
+x_text
+since_var=Sys.Date()-10#
+x_tweets = searchTwitter("interest rate*",n=500,lang="en", since=str(since_var))#
+x_text = sapply(x_tweets, function(x) x$getText())#
+x_text <- iconv(x_text,to="utf-8-mac")
+move links NNK 6-2-2015#
+x_text = gsub("http.*", "", x_text)#
+x_text = gsub("(RT|via)((?:\\b\\W*@\\w+)+)", "", x_text)#
+# remove Atpeople#
+x_text = gsub("@\\w+", "", x_text)#
+# remove numbers#
+x_text = gsub("[[:digit:]]", "", x_text)#
+# remove hashtags NNK 6-2-2015#
+x_text = gsub("#.*","", x_text)#
+#remove author names that start with "By" #
+x_text = gsub("by.*","", x_text)#
+# remove punctuation symbols#
+x_text = gsub("[[:punct:]]", "", x_text)#
+# create a corpus#
+x_corpus = Corpus(VectorSource(x_text))#
+# create document term matrix applying some transformations#
+tdm = TermDocumentMatrix(x_corpus,#
+   control = list(removePunctuation = TRUE,#
+   stopwords = c("interest","rate","rates",stopwords("SMART"),stopwords("english")),#
+   removeNumbers = TRUE, tolower = TRUE))#
+#
+# define tdm as matrix#
+m = as.matrix(tdm)#
+# get word counts in decreasing order#
+word_freqs = sort(rowSums(m), decreasing=TRUE) #
+# create a data frame with words and their frequencies#
+dm = data.frame(word=names(word_freqs), freq=word_freqs)#
+#
+# plot wordcloud with Title#
+wordcloud(dm$word,dm$freq,random.order=FALSE,colors=brewer.pal(7,"Dark2"), main="Title")#
+}#
+# ^^
+library(tm)
+library(wordcloud)
+move links NNK 6-2-2015#
+x_text = gsub("http.*", "", x_text)#
+x_text = gsub("(RT|via)((?:\\b\\W*@\\w+)+)", "", x_text)#
+# remove Atpeople#
+x_text = gsub("@\\w+", "", x_text)#
+# remove numbers#
+x_text = gsub("[[:digit:]]", "", x_text)#
+# remove hashtags NNK 6-2-2015#
+x_text = gsub("#.*","", x_text)#
+#remove author names that start with "By" #
+x_text = gsub("by.*","", x_text)#
+# remove punctuation symbols#
+x_text = gsub("[[:punct:]]", "", x_text)#
+# create a corpus#
+x_corpus = Corpus(VectorSource(x_text))#
+# create document term matrix applying some transformations#
+tdm = TermDocumentMatrix(x_corpus,#
+   control = list(removePunctuation = TRUE,#
+   stopwords = c("interest","rate","rates",stopwords("SMART"),stopwords("english")),#
+   removeNumbers = TRUE, tolower = TRUE))#
+#
+# define tdm as matrix#
+m = as.matrix(tdm)#
+# get word counts in decreasing order#
+word_freqs = sort(rowSums(m), decreasing=TRUE) #
+# create a data frame with words and their frequencies#
+dm = data.frame(word=names(word_freqs), freq=word_freqs)#
+#
+# plot wordcloud with Title#
+wordcloud(dm$word,dm$freq,random.order=FALSE,colors=brewer.pal(7,"Dark2"), main="Title")#
+}#
+# ^^
+library(dplyr)#
+library(data.table)#
+library(ggplot2)#
+colsToKeep <- c("ST","SEX","WAGP","OCCP","WKL")
+library(data.table)
+library(dplyr)#
+library(data.table)#
+library(ggplot2)#
+colsToKeep <- c("ST","SEX","WAGP","OCCP","WKL")
+colsToKeep
+ST
+data.table
+ls()
+label
+N
+HLOVERCO
+220 *25
+library(twitteR)
+setup_twitter_oauth(api_key,api_secret,access_token,access_token_secret)
+getwd()
+require("NLP")#
+## Some text.#
+s <- paste(c("Pierre Vinken, 61 years old, will join the board as a ",#
+"nonexecutive director Nov. 29.\n",#
+"Mr. Vinken is chairman of Elsevier N.V., ",#
+"the Dutch publishing group."),#
+collapse = "")#
+s <- as.String(s)#
+## Need sentence and word token annotations.#
+sent_token_annotator <- Maxent_Sent_Token_Annotator()#
+word_token_annotator <- Maxent_Word_Token_Annotator()#
+a2 <- annotate(s, list(sent_token_annotator, word_token_annotator))#
+parse_annotator <- Parse_Annotator()#
+## Compute the parse annotations only.#
+p <- parse_annotator(s, a2)#
+## Extract the formatted parse trees.#
+ptexts <- sapply(p$features, `[[`, "parse")#
+ptexts#
+## Read into NLP Tree objects.#
+ptrees <- lapply(ptexts, Tree_parse)#
+ptrees
+require("NLP"), require("openNLP"),require("openNLPmodels.en")#
+## Some text.#
+s <- paste(c("Pierre Vinken, 61 years old, will join the board as a ",#
+"nonexecutive director Nov. 29.\n",#
+"Mr. Vinken is chairman of Elsevier N.V., ",#
+"the Dutch publishing group."),#
+collapse = "")#
+s <- as.String(s)#
+## Need sentence and word token annotations.#
+sent_token_annotator <- Maxent_Sent_Token_Annotator()#
+word_token_annotator <- Maxent_Word_Token_Annotator()#
+a2 <- annotate(s, list(sent_token_annotator, word_token_annotator))#
+parse_annotator <- Parse_Annotator()#
+## Compute the parse annotations only.#
+p <- parse_annotator(s, a2)#
+## Extract the formatted parse trees.#
+ptexts <- sapply(p$features, `[[`, "parse")#
+ptexts#
+## Read into NLP Tree objects.#
+ptrees <- lapply(ptexts, Tree_parse)#
+ptrees
+require("NLP")
+library("OpenNLP")
+library("openNLP")
+library("openNLPmodels.en")
+require("NLP"), require("openNLP"),require("openNLPmodels.en")#
+## Some text.#
+s <- paste(c("Pierre Vinken, 61 years old, will join the board as a ",#
+"nonexecutive director Nov. 29.\n",#
+"Mr. Vinken is chairman of Elsevier N.V., ",#
+"the Dutch publishing group."),#
+collapse = "")#
+s <- as.String(s)#
+## Need sentence and word token annotations.#
+sent_token_annotator <- Maxent_Sent_Token_Annotator()#
+word_token_annotator <- Maxent_Word_Token_Annotator()#
+a2 <- annotate(s, list(sent_token_annotator, word_token_annotator))#
+parse_annotator <- Parse_Annotator()#
+## Compute the parse annotations only.#
+p <- parse_annotator(s, a2)#
+## Extract the formatted parse trees.#
+ptexts <- sapply(p$features, `[[`, "parse")#
+ptexts#
+## Read into NLP Tree objects.#
+ptrees <- lapply(ptexts, Tree_parse)#
+ptrees
+install.packages("sqldf")
+library(sqldf)
+library("sqldf")
+today()
+now()
+now
+time()
+sysdate()
+sys.date()
+date()
+date()-12/01/2015
+getwd()
+setwd('./Documents/project')
+dir()
+setwd('../')
+getwd()
+dir()
+setwd('../')
+setwd('./Github')
+getwd()
+dir()
+setwd('./ExData_Plotting1')
+dir()
+hpcdata<-read.csv('household_power_consumption.txt')
+max(hpcdata$Date)
+subset(hpcdata, Date >= '2007-02-01' & Date <= '2007-02-02')
+subset(hpcdata, hpcdata$Date >= '2007-02-01' & hpcdata$Date <= '2007-02-02')
+hpcdata$NewDate <- as.Date(hpcdata$Date)
+febdata <- subset(hpcdata, hpcdata$Date >= '2007-02-01' & hpcdata$Date <= '2007-02-02')
+febdata <- subset(hpcdata, hpcdata$NewDate >= '2007-02-01' & hpcdata$NewDate <= '2007-02-02')
+febdata
+hpcdata[2]
+hpcdata <- read.txt('household_power_consumption.txt')
+hpcdata <- read.table('household_power_consumption.txt')
+hpcdata$NewDate <- as.Date(hpcdata$Date)
+class(hpcdata)
+class(hpcdata$Date)
+colnames(hpcdata)
+hpcdata <- read.table('household_power_consumption.txt',sep=';')
+colnames(hpcdata)
+hpcdata <- read.table('household_power_consumption.txt',sep=';',header=TRUE)
+colnames(hpcdata)
+hpcdata$NewDate <- as.Date(hpcdata$Date)
+febdata <- subset(hpcdata, hpcdata$NewDate >= '2007-02-01' & hpcdata$NewDate <= '2007-02-02')
+febdata
+nrow(hpcdata)
+febdata <- subset(hpcdata, hpcdata$NewDate >= 2007-02-01 & hpcdata$NewDate <= 2007-02-02)
+febdata$NewDate
+hpcdata$NewDae
+hpcdata$NewDate
+init <- read.table('household_power_consumption.txt',nrows=100)
+classes <- sapply(init,class)
+full <- read.table('household_power_consumption.txt',colClasses=classes)
+colnames(full)
+init <- read.table('household_power_consumption.txt',nrows=100,sep=';',header=TRUE)
+classes <- sapply(init,class)
+classes
+full <- read.table('household_power_consumption.txt',colClasses=classes)
+full <- read.table('household_power_consumption.txt',colClasses=classes,sep=';',header=TRUE)
+init <- read.table('household_power_consumption.txt',nrows=100,sep=';',header=TRUE,na.strings='?')
+classes <- sapply(init,class)
+full <- read.table('household_power_consumption.txt',colClasses=classes,sep=';',header=TRUE,na.strings='?')
+febdata <- subset(full, full$NewDate >= 2007-02-01 & full$NewDate <= 2007-02-02)
+febdata
+febdata <- subset(full, full$Date >= '2007-02-01' & full$Date <= '2007-02-02')
+init <- read.table('household_power_consumption.txt',nrows=100,sep=';',header=TRUE,na.strings='?',stringsAsFactors=FALSE)
+classes <- sapply(init,class)
+classes
+classes <- sapply(init,class)
+full <- read.table('household_power_consumption.txt',colClasses=classes,sep=';',header=TRUE,na.strings='?',stringsAsFactors=FALSE)
+febdata <- subset(full, full$Date >= '2007-02-01' & full$Date <= '2007-02-02')
+febdata
+full[2,]
+febdata <- subset(full, full$Date >= '01/02/2007' & full$Date <= '02/02/2007')
+febdata
+full[2,]
+full[2000,]
+febdata <- subset(full, full$Date > 01/02/2007)
+febdata
+clear()
+clr()
+cl()
+clear
+new9)
+hi()
+febdata <- subset(full, full$Date >= 01/02/2007 & full$Date <= 02/02/2007)
+febdata
+febdata <- subset(full, full$Date >= 01/02/2007 & full$Date <= 02/03/2007)
+febdata
+febdata <- subset(full, Date >= 01/02/2007 & Date <= 02/03/2007)
+febdata
+febdata <- subset(full, Date >= 01/02/2007 & Date <= 02/02/2007)
+febdata
+febdata <- subset(full, Date >= 01/02/2007)
+febdata
+data<-subset(febdata,Date<=02/02/2007)
+data
+febdata <- subset(full, Date >= '01/02/2007')
+febdata
+?between
+febdata <- full[Date>='2007-02-01' & Date<='2007-02-02']
+febdata <- full[full$Date>='2007-02-01' & full$Date<='2007-02-02']
+febdata
+colnames(full)
+febdata <- full[full$Date>='01/02/2007' & full$Date<='01/02/2007']
+febdata
+library(data.table)
+DT <- data.table('full')
+sub <- DT[,{Date>='01/02/2007' & Date<='02/02/2007'}]
+colnames(DT)
+init <- read.table('household_power_consumption.txt',nrows=100,sep=';',header=TRUE,na.strings='?',stringsAsFactors=FALSE)
+classes <- sapply(init,class)
+full <- read.table('household_power_consumption.txt',colClasses=classes,sep=';',header=TRUE,na.strings='?',stringsAsFactors=FALSE)
+library(data.table)
+DT <- data.table('full')
+colnames(DT)
+full <- data.table('household_power_consumption.txt',colClasses=classes,sep=';',header=TRUE,na.strings='?',stringsAsFactors=FALSE)
+nrow(full)
+DT <- data.table('full',header=TRUE)
+colnames(DT)
+DT <- data.table(full)
+DT
+sub <- subset(full,Date=='02/02/2007' & Date=='01/02/2007')
+ls()
+colnames(full)
+init <- read.table('household_power_consumption.txt',nrows=100,sep=';',header=TRUE,na.strings='?',stringsAsFactors=FALSE)
+classes <- sapply(init,class)
+classes
+full <- read.table('household_power_consumption.txt',colClasses=classes,sep=';',header=TRUE,na.strings='?',stringsAsFactors=FALSE)
+colnames(full)
+sub <- subset(full,Date=='02/02/2007' & Date=='01/02/2007')
+sub
+sub <- subset(full,Date==02/02/2007 & Date==01/02/2007)
+sub
+library(lubridate)
+sub <- subset(full,month(Date)==2)
+nrow(sub)
+sub <- subset(full,month(Date)==2 & mday(Date)==c(1,2))
+nrow(sub)
+sub <- subset(full,month(Date)==2)
+data <- subset(sub,mday(Date)==1 | mday(Date)==2)
+nrow(data)
+data <- subset(sub,mday(Date)==01 | mday(Date)==02)
+nrow(data)
+data <- subset(sub,mday(Date)==01)
+data
+data <- subset(sub,mday(Date)==1)
+data
+mday(sub$Date)
+sub <- subset(full,month(Date)==2 & year(Date)==2007)
+nrow(sub)
+full[1:20,]
+class(full$Date)
+classes
+full$newdate <- as.Date(full$newdate)
+full$newdate <- as.Date(full$Date)
+class(full$newdate)
+sub <- subset(full,month(newdate)==2 & year(newdate)==2007)
+sub
+sub <- subset(full,month(newdate)==2)
+nrow(sub)
+sub2 <- subset(sub,year(newdate)==2007)
+nrow(sub2)
+year(newdate)
+year(full$newdate)
+full$newdate[3]
+full <- read.table('household_power_consumption.txt',colClasses=classes,sep=';',header=TRUE)#,na.strings='?',stringsAsFactors=FALSE)
+full <- read.table('household_power_consumption.txt',colClasses=classes,sep=';',header=TRUE,na.strings='?',stringsAsFactors=FALSE)
+full$Date[3]
+subset <- subset(full,Date=="01/02/2007" | Date=="02/02/2007")
+nrow(subset)
+subset <- subset(full,Date=="01/02/2007")
+subset
+subset <- subset(full,Date==01/02/2007)
+subset
+class(full$Date)
+full$newdate <- as.Date(full$Date, "%d.%m.%Y")
+full$newdate[2]
+full$newdate <- as.Date(full$Date, "%d/%m/%Y")
+full$newdate[2]
+subset <- subset(full,newdate>='2007-02-01' & newdate<='2007-02-02')
+subset
+hist(subset)
+hist(subset$Global_active_power)
+hist(subset$Global_active_power,xlab='Global Active Power(kilowatts)',ylab='Frequency',main='Global Active Power')
+hist(subset$Global_active_power,xlab='Global Active Power(kilowatts)',ylab='Frequency',main='Global Active Power')
+hist(subset$Global_active_power,xlab='Global Active Power(kilowatts)',ylab='Frequency',main='Global Active Power',col='red')
+p1 <- hist(subset$Global_active_power,xlab='Global Active Power(kilowatts)',ylab='Frequency',main='Global Active Power',col='red')
+dev.copy(p1,'myplot.png')
+p1
+plot(p1)
+hist(subset$Global_active_power,xlab='Global Active Power(kilowatts)',ylab='Frequency',main='Global Active Power',col='red')
+dev.copy(png,'myplot.png')
+dev.off()
+hist(subset$Global_active_power,xlab='Global Active Power(kilowatts)',ylab='Frequency',main='Global Active Power',col='red')#
+png("myplot1.png")
+png("myplot1.png")
+png("plotplot.png")
+dev.copy(png,'myplot1.png')
