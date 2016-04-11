@@ -1,3 +1,17 @@
+#Exploratory Data Analysis
+
+### @mmblanes 
+### Manuel Martínez
+### Seville, Spain
+
+To run this script you need to do the following:
+
+* Download the scripts (Plot1.R, Plot2.R, Plot3.R, Plot4.R) to your work directory;
+* Download the data from here: https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip;
+* Extract the data into your work directory;
+* Run the scripts
+
+
 ## Introduction
 
 This assignment uses data from
