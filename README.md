@@ -1,5 +1,9 @@
+#Exploratory Data Analysis
 
-## @mmblanes
+### @mmblanes 
+### Manuel Martínez
+### Seville, Spain
+
 To run this script you need to do the following:
 
 * Download the scripts (Plot1.R, Plot2.R, Plot3.R, Plot4.R) to your work directory;
