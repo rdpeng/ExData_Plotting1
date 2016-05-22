@@ -11,10 +11,10 @@ if(!file.exists("household_power_consumption.txt")){
 }
 
 ###STEP-2: CLEANING THE DATA
-data_full$Date<-as.Date(data_full$Date, format="%d/%m/%Y")
-data_cut<-data_full[between(data_full$Date,"2007-02-01","2007-02-02"),]
-data_cut$datetime <- paste(data_cut$Date, data_cut$Time)
-data_cut$datetime <- as.POSIXct(data_cut$datetime)
+data_full$Date<-as.Date(data_full$Date, format="%d/%m/%Y") #Changing into Date format
+data_cut<-data_full[between(data_full$Date,"2007-02-01","2007-02-02"),]  #Cutting down according to the requirement
+data_cut$datetime <- paste(data_cut$Date, data_cut$Time) #Joining date and hours in to datetime format where posixct can be used
+data_cut$datetime <- as.POSIXct(data_cut$datetime) #stripping off the time
 
 data_cut$Global_active_power<-as.numeric(data_cut$Global_active_power)
 data_cut$Global_reactive_power<-as.numeric(data_cut$Global_reactive_power)
