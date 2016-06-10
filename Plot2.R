@@ -14,4 +14,4 @@ subdata$datetime<-as.POSIXlt(subdata$datetime)
 #Plot
 png(filename="plot2.png", width=480, height=480, units="px")
 plot(y= subdata$Global_active_power, x=subdata$datetime, type="l", xlab="", ylab="Global Active Power (kilowatts)")
-dev.off
+dev.off()
