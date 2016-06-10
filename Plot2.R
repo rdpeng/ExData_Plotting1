@@ -7,7 +7,7 @@ data$Date<- strptime(data$Date, "%d/%m/%Y")
 #subset data
 subdata<-data[data$Date>="2007-02-01" & data$Date<= "2007-02-02",]
 
-#Convert date in subsetdata
+#Convert date in subset data
 subdata$datetime <- paste(subdata$Date, subdata$Time, sep = " ") 
 subdata$datetime<-as.POSIXlt(subdata$datetime)
 
