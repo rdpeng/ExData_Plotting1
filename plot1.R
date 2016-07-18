@@ -1,4 +1,6 @@
 generatePlot_1 <- function() {
+rm(list = ls())
+dev.off(dev.list()["RStudioGD"])
 data <- read.table("household_power_consumption.txt", sep = ";",na.strings = "?", header = TRUE)
 head(data)
 subData <- subset(data, as.Date(data$Date, format = "%d/%m/%Y")>= "2007-02-01" & as.Date(data$Date, format = "%d/%m/%Y") <= "2007-02-02" )
