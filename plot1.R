@@ -10,3 +10,4 @@ power_graph <- as.numeric(data_subset$Global_active_power)
 graph_1 <- hist(power_graph, col = "red", main = "Global Active Power",
                 xlab = "Global Active Power (kilowatts)",
                 ylab = "Frequency")
+
