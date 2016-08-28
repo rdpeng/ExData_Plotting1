@@ -32,6 +32,6 @@ with(power.data, {
   })
 
 # Save plot from screen device to png
-dev.copy(png, filename = "plot1.png", bg = "transparent")
+dev.copy(png, filename = "plot1.png")
 dev.off()
 
