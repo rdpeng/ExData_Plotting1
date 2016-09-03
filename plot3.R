@@ -1,5 +1,4 @@
-## Script for plot 4:
-
+## Script for plot 3:
 
 ### Download and unzip file from url.
 
@@ -21,30 +20,12 @@ dataset$Date <- as.Date(dataset$Date, format = "%d/%m/%Y")
 
 dataset <- dataset[dataset$Date >"2007-01-31" & dataset$Date <"2007-02-03",]
 
-## PLOT 4
-
-# set layout parameters
-
-par(mfcol=c(2,2))
-
-# sub plot 1
-plot(dataset$Time,dataset$Global_active_power, type = "l", xlab = "",ylab="")
-title(ylab ="Global Active Power")
-
-# sub plot 2
+## PLOT 3
 
 plot(dataset$Time,dataset$Sub_metering_1,type ="l",ylab = "Energy sub metering", xlab="",main="")
 points(dataset$Time,dataset$Sub_metering_2,type = "l",col="red")
 points(dataset$Time,dataset$Sub_metering_3,type = "l",col="blue")
-legend("topright",legend = c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),
-       lty = c(1,1,1), col= c("black","red","blue"),cex= 0.7, bty = "n")
+legend("topright",legend = c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),lty = c(1,1,1), col= c("black","red","blue"))
 
-# sub plot 3
-plot(dataset$Time,dataset$Voltage,xlab = "Datetime", ylab = "Voltage", type = "l")
-
-# sub plot 4
-plot(dataset$Time,dataset$Global_reactive_power,xlab = "Datetime",ylab = "Global_reactive_power", type = "l")
-
-# make .png copy
-dev.copy(png, "plot4.png",width = 480, height = 480)
+dev.copy(png,"plot3.png",width = 480, height = 480)
 dev.off()
