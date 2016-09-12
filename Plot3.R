@@ -12,7 +12,7 @@ theData<-mutate(theData,dateTime=as.POSIXct(paste(theData$Date,theData$Time),for
 ## Subset
 subData<-filter(theData, wDay == c("Thu", "Fri", "Sat") & dateTime >= as.POSIXct("2007-02-01 00:00:00") & dateTime < as.POSIXct("2007-02-03 00:00:00"))
 ## Open and format png device
-png(file = "Plot3.png", width = 480, height = 480, bg = "transparent")
+png(file = "Plot3.png", width = 480, height = 480, bg = "white")
 ## Arrange plot
 with(subData, plot(dateTime, Sub_metering_1, ylab = "Energy sub metering", xlab="", type="l"))
 with(subData, lines(dateTime, Sub_metering_2,col="red"))
