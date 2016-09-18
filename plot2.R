@@ -1,0 +1,5 @@
+source("data.R")
+png("plot2.png")
+plot(target.house$Global_active_power,ylab="Global Active Power (kilowatts)",xlab="",type ="l",xaxt="n")
+axis(side=1,at=c(1,nrow(target.house)/2,nrow(target.house)),labels = c("Thu","Fri","Sat"))
+dev.off()
