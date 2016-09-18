@@ -1,0 +1,8 @@
+source("data.R")
+png("plot3.png")
+plot(target.house$Sub_metering_1,ylab="Energy sub metering",xlab="",type="l",xaxt="n")
+lines(target.house$Sub_metering_2,col="orange")
+lines(target.house$Sub_metering_3,col="blue")
+axis(side=1,at=c(1,nrow(target.house)/2,nrow(target.house)),labels = c("Thu","Fri","Sat"))
+legend("topright",lty=1,col=c("black","orange","blue"),legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"))
+dev.off()
