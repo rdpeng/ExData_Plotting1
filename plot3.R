@@ -1,42 +1,24 @@
 ## Read in the data
 epcfull <- read.table("household_power_consumption.txt",header = TRUE, sep = ";")
 
-## pull out the dates and times and make a single POSIXct column of date and time
-dates <- epcfull$Date
-times <- epcfull$Time
-x <- paste(dates,times)
-dt <- as.POSIXct(x, format = "%d/%m/%Y %H:%M:%S")
+## Set the dates column to char class to set up the subselection
+dt <- as.character(epcfull$Date)
 epc <- cbind(dt, epcfull)
 
-## Pull out the days in question 
-beg <- as.POSIXct("2007-02-01")
-end <- as.POSIXct("2007-02-03")
-epc <- subset(epc,epc$dt>=beg & epc$dt < end)
+## subselect the days we are interested in
+epc <- subset(epc,epc$dt =="1/2/2007" | epc$dt == "2/2/2007")
 
-## make the Global_active_power column numeric
-epc$Global_active_power <- as.numeric(epc$Global_active_power)
+## Create a POSIXct column for easier analysis
+epc$Time <- as.character(epc$Time)
+epc$dt <- strptime(paste(epc$d, epc$Time, sep =" "),format = "%d/%m/%Y %H:%M:%S")
 
-## Initiate the Histogram
-## Read in the data
-epcfull <- read.table("household_power_consumption.txt",header = TRUE, sep = ";")
-
-## pull out the dates and times and make a single POSIXct column of date and time
-dates <- epcfull$Date
-times <- epcfull$Time
-x <- paste(dates,times)
-dt <- as.POSIXct(x, format = "%d/%m/%Y %H:%M:%S")
-epc <- cbind(dt, epcfull)
-
-## Pull out the days in question 
-beg <- as.POSIXct("2007-02-01")
-end <- as.POSIXct("2007-02-03")
-epc <- subset(epc,epc$dt>=beg & epc$dt < end)
-
-## make the Global_active_power column numeric
-epc$Global_active_power <- as.numeric(epc$Global_active_power)
+## make the Sub Metering columns numeric
+epc$Sub_metering_1 <- as.numeric(as.character(epc$Sub_metering_1))
+epc$Sub_metering_2 <- as.numeric(as.character(epc$Sub_metering_2))
+epc$Sub_metering_3 <- as.numeric(as.character(epc$Sub_metering_3))
 
 ## Set up file to save PNG in
-png('plot3.png, width = 400, height = 400')
+png('plot3.png, width = 480, height = 480')
 
 ## Initiate the Plot
 plot(epc$dt, epc$Sub_metering_1, type = "n", xlab = "", 
@@ -46,6 +28,6 @@ lines(epc$dt, epc$Sub_metering_1, col = "cornsilk4")
 lines(epc$dt, epc$Sub_metering_2, col = "red")
 lines(epc$dt, epc$Sub_metering_3, col = "blue")
 legend("topright", c(names(epc)[8:10]), col = c("cornsilk4", "red", "blue"), 
-         lty = 1, lwd = 1, y.intersp = .75, cex = .8)
+         lty = 1, lwd = 1, y.intersp = .75, cex = 1)
 
 dev.off()
