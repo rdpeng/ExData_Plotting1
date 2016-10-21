@@ -1,3 +1,11 @@
+## Additional comments
+The 8 files found in this repository represent 4 png plots and their corresponding R code. Please view the graphs in each file and determine whether they are correct and if the code has been used to make them. 
+
+More information about this project is taken from Roger D. Peng and can be read below. 
+
+Thank you for your help!
+________________________________________________________________________________________________________________________________
+
 ## Introduction
 
 This assignment uses data from
