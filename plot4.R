@@ -1,7 +1,11 @@
 # plot2.R
 # Goal:
 # -> draw the following four plots in just one canvas:
-#    - 
+#    - Global active power by datetime
+#    - Voltage by datetime
+#    - Energy sub metering by datetime
+#    - Global reactive power by datetime
+#    datetime considers just 1 and 2 of february of 2007
 # -> Draw the plot and save it to a PNG file named plot2.png with a 
 #    width of 480 pixels and a height of 480 pixels
 
@@ -143,7 +147,8 @@ readElectricPowerData <- function(sourceDir){
   ecpData <- read.table(sourceFile,
                         header = TRUE,
                         sep = ";",
-                        stringsAsFactors = FALSE)
+                        stringsAsFactors = FALSE,
+                        na.strings = c("?"))
   
   ecpTargetData <- subset(ecpData, Date == "1/2/2007" | Date == "2/2/2007")
   
@@ -170,15 +175,15 @@ readElectricPowerData <- function(sourceDir){
   ecpTargetData #returning target data set
 }
 
-# setting the direcgtory where source data file is located
-sourceDir <- "/Users/EduardoAndrade/DataScienceSpecialization_Data"
+# setting the directory where "household_power_consumption.txt" file is located
+# while testing the code, please set this folder according to where
+# "household_power_consumption.txt" is located
+sourceDir <- getwd()
 # loading data from source
 ecpTargetData <- readElectricPowerData(sourceDir)
 
 png(filename = "plot4.png", width = 480, height = 480)
-
 plot4(ecpTargetData)
-
 dev.off()
 
 

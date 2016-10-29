@@ -58,7 +58,8 @@ readElectricPowerData <- function(sourceDir){
   ecpData <- read.table(sourceFile,
                         header = TRUE,
                         sep = ";",
-                        stringsAsFactors = FALSE)
+                        stringsAsFactors = FALSE,
+                        na.strings = c("?"))
   
   ecpTargetData <- subset(ecpData, Date == "1/2/2007" | Date == "2/2/2007")
   
@@ -82,8 +83,10 @@ readElectricPowerData <- function(sourceDir){
   ecpTargetData #returning target data set
 }
 
-# directory where source data file is stored
-sourceDir <- "/Users/EduardoAndrade/DataScienceSpecialization_Data"
+# setting the directory where "household_power_consumption.txt" file is located
+# while testing the code, please set this folder according to where
+# "household_power_consumption.txt" is located
+sourceDir <- getwd()
 ecpTargetData <- readElectricPowerData(sourceDir)
 
 png(filename = "plot3.png", width = 480, height = 480)
