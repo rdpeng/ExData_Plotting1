@@ -15,7 +15,7 @@ plot2 <- function(targetData){
   plot(unclass(targetData$DateTime),
        targetData$Global_active_power/500,
        type = "l",
-       ylab = "Global Activy Power (kilowatts)",
+       ylab = "Global Active Power (kilowatts)",
        xlab = "",
        xaxt = "n",
        yaxt = "n",
