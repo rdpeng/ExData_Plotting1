@@ -7,7 +7,7 @@ file.remove("./data.zip")
 
 # read data into R
 SrcFile <- "./household_power_consumption.txt"
-SrcData <- read.table(SrcFile, header=TRUE, sep=";", , as.is = TRUE)
+SrcData <- read.table(SrcFile, header=TRUE, sep=";", as.is = TRUE, na.strings = "?")
 
 # Sebset data for analysis
 SrcData["Date"] <- as.Date(SrcData$Date,"%d/%m/%Y")
