@@ -29,6 +29,7 @@ plot1 <- function(targetData){
 # Function that reads
 # Electric Power Consuption source data
 # and returns just the data set used in plot1
+# sourceDir must receive the path where "household_power_consumption.txt" is stored
 readElectricPowerData <- function(sourceDir){
   
   sourceFile <- paste(sourceDir, "household_power_consumption.txt", sep = "/")

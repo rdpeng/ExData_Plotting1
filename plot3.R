@@ -50,7 +50,7 @@ plot3 <- function(targetData){
 # Function that reads
 # Electric Power Consuption source data
 # and returns just the data set used in plot3
-
+# sourceDir must receive the path where "household_power_consumption.txt" is stored
 readElectricPowerData <- function(sourceDir){
   # setting the direcgtory where source data file is located
   sourceFile <- paste(sourceDir, "household_power_consumption.txt", sep = "/")
@@ -90,7 +90,5 @@ sourceDir <- getwd()
 ecpTargetData <- readElectricPowerData(sourceDir)
 
 png(filename = "plot3.png", width = 480, height = 480)
-
 plot3(ecpTargetData)
-
 dev.off()
