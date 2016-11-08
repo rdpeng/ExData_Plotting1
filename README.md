@@ -1,3 +1,9 @@
+Exploratory-Data-Analysis-Course-Project-1
+First Project for course exploratory data analysis
+
+The plots are created using the R code provided.
+The 4 plots are based off of the following assignment:
+
 ## Introduction
 
 This assignment uses data from
