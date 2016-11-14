@@ -1,0 +1,99 @@
+---
+title: "Course Project 1 - Exploratory Data Analysis"
+author: "Camilla Jensen"
+date: "13 nov 2016"
+output:
+  word_document: default
+  pdf_document: default
+---
+In this assignment we have to generate 4 data plots using the base plotting system in R and using as graphics device a file device (PNG). The graphs must be identical to those drawn by our professor. Besides handing in the plots and the R code I also hand in this markdown document which provides for explanations and integrates all the materials in one file. 
+
+For every plot we have to reread the data file so that the plot can be recreated from scratch every time by the reviewers. There is therefore some repetition of that part of the code where the dataset is read into R studio. The explanations focus on how to draw the graphs for the purposes of exploratory data analysis.
+
+1. Plot 1
+Here we have to generate a histogram using the hist() function in R. There must be a header on the graph (which we get by specificing main=""), the x-axis must also be labelled (using xlab="").
+
+But first the data is subset on the variable that is needed (Global Active Power) for this particular diagram (and after we have already subset the large dataset to fixate it on the two days that we are interested in, the 1st and 2nd of February 2007).
+
+```{r plot1}
+
+    infile <- "household_power_consumption.txt"
+    plots <- read.table(infile, header=TRUE, sep=";", stringsAsFactors=FALSE, dec=".")
+    plot1 <- plots[plots$Date %in% c("1/2/2007", "2/2/2007"),]
+    GAP <- as.numeric(plot1$Global_active_power)
+    png("plot1.png", width=480, height=480)
+    hist(GAP, col="red", xlab="Global Active Power (kilowatts)", main="Global Active Power")
+    dev.off()    
+    
+```
+2. Plot 2
+To make plot 2 we have to pool the date and time information into one var. Hereafter we can use the new var 'datetime' as the x-axis in a scatterplot against the var GAP. This graph is invoked by using the plot() command and specfying first the x var and then the y var.
+
+```{r plot2}
+    infile <- "household_power_consumption.txt"
+    plots <- read.table(infile, header=TRUE, sep=";",stringsAsFactors=FALSE, dec=".")
+    plot2 <- plots[plots$Date %in% c("1/2/2007", "2/2/2007"),]
+    datetime <- strptime(paste(plot2$Date, plot2$Time, sep=" "), "%d/%m/%Y %H:%M:%S")
+    GAP <- as.numeric(plot2$Global_active_power)
+    png("plot2.png", width= 480, height= 480)
+    plot(datetime, GAP, type="l", xlab="",ylab="Global Active Power (kilowatts)")
+    dev.off()
+    
+```
+
+3. Plot 3
+The 3rd plot is similar to the second, except that it is more detailed and shows the submetering which corresponds to the energy consumption in different parts of the household. Again we have to use the scatter plot and then invoke the lines argument to add lines to the plot. In addition detailed legend should be made to make the graph legible.
+
+```{r plot3}
+    infile <- "household_power_consumption.txt"
+    plots <- read.table(infile, header=TRUE, sep=";", stringsAsFactors=FALSE, dec=".")
+    plot3 <- plots[plots$Date %in% c("1/2/2007", "2/2/2007"),]
+    datetime <- strptime(paste(plot3$Date, plot3$Time, sep=" "), "%d/%m/%Y %H:%M:%S")
+    GAP <- as.numeric(plot3$Global_active_power)
+    subMetering1 <- as.numeric(plot3$Sub_metering_1)
+    subMetering2 <- as.numeric(plot3$Sub_metering_2)
+    subMetering3 <- as.numeric(plot3$Sub_metering_3)
+    png("plot3.png", width=480, height=480)
+    plot(datetime, subMetering1, type="l", xlab="", ylab="Energy sub metering")
+    lines(datetime, subMetering2, type="l", col="red")
+    lines(datetime, subMetering3, type="l", col="blue")
+    legend("topright", c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=1, lwd=2.5, col=c("black", "red", "blue"))
+    dev.off()
+```
+
+4. Plot 4
+The fourth plot is complex and involves a row by row or column by column plot of several graphs in one file. From the example file we can see if filling it by columns that we have to start with the first two previous graphs, e.g. the line graph with GAP and the line graph with GAP by sub metering. So these graphs are to be repeated in the first column. The second column has to be filled with two new graphs. The first one (in a column by column fill) is a plot of voltage over time. The last graph plots the global reactive power against time. To do this we use the argument par(mfcol..) and do a 2x2 plot, the mfcol argument ensures that we fill up the diagramme by columns. After this we can just repeat or copy over the R code for Plot 2 and Plot 3. Then finally we draw the two new graphs, they are also line graphs so no new additional arguments or variations are needed here.
+
+```{r plot4}
+    infile <- "household_power_consumption.txt"
+    plots <- read.table(infile, header=TRUE, sep=";", stringsAsFactors=FALSE, dec=".")
+    plot4 <- plots[plots$Date %in% c("1/2/2007", "2/2/2007"),]
+    datetime <- strptime(paste(plot3$Date, plot3$Time, sep=" "), "%d/%m/%Y %H:%M:%S")
+    GAP <- as.numeric(plot4$Global_active_power)
+    GRAP <- as.numeric(plot4$Global_reactive_power)
+    VOL <- as.numeric(plot4$Voltage)
+    subMetering1 <- as.numeric(plot4$Sub_metering_1)
+    subMetering2 <- as.numeric(plot4$Sub_metering_2)
+    subMetering3 <- as.numeric(plot4$Sub_metering_3)
+    png("plot4.png", width=480, height=480)
+    par(mfcol = c(2, 2))
+    
+    plot(datetime, GAP, type="l", xlab="",ylab="Global Active Power (kilowatts)")
+    
+    plot(datetime, subMetering1, type="l", xlab="", ylab="Energy sub metering")
+    lines(datetime, subMetering2, type="l", col="red")
+    lines(datetime, subMetering3, type="l", col="blue")
+    legend("topright", c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=, lwd=2.5, col=c("black", "red", "blue"), bty="o")
+    
+    plot(datetime, VOL, type="l", xlab="datetime", ylab="Voltage")
+    
+    plot(datetime, GRAP, type="l", xlab="datetime", ylab="Global_reactive_power")
+    
+    dev.off()
+    
+
+```
+
+For some reason to do with my language settings the datetime is in Danish, so thursday=torsdag, friday=fredag, saturday=lørdag on the graphs (it did it automatically!!). I cannot figure out how to change it back into English so I hope my reviewers will not mind :-)
+
+SLUT.
