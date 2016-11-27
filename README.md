@@ -1,3 +1,11 @@
+This repo contains the scripts and .png files for Course Project 1 of the Coursera Data Science Specialization course Exploratory Data Analysis.
+
+The scripts (plot1.R, plot2.R, plot3.R, and plot4.R) require the R packages
+**data.table**, **lubridate**, and **dplyr**, and each produces a .png file with a corresponding name.
+
+The instructions for this assignment follow.
+
+# INSTRUCTIONS
 ## Introduction
 
 This assignment uses data from
