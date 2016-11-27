@@ -2,6 +2,11 @@ library(data.table)
 library(lubridate)
 library(dplyr)
 
+# unzip file, if necessary
+if (!file.exists("household_power_consumption.txt")) {
+    unzip("household_power_consumption.zip")
+}
+
 # load and format data
 house_power <- fread("household_power_consumption.txt",
                      sep = ";",
