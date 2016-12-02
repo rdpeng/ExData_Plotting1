@@ -32,3 +32,9 @@ web site</a>:
 <li><b>Sub_metering_2</b>: energy sub-metering No. 2 (in watt-hour of active energy). It corresponds to the laundry room, containing a washing-machine, a tumble-drier, a refrigerator and a light. </li>
 <li><b>Sub_metering_3</b>: energy sub-metering No. 3 (in watt-hour of active energy). It corresponds to an electric water-heater and an air-conditioner.</li>
 </ol>
+
+This repo includes:
+
+<ol>
+<li><b>Folder figure</b>: 4 graphs with names Plot1.png, Plot2.png, Plot3.png and Plot4.png </li>
+<li><b>R code for each graph </li>
