@@ -1,0 +1,8 @@
+#Plot 2
+plot_Data <- read.table("household_power_consumption.txt", header=T, sep=";", na.strings="?")
+period <- plot_Data[plot_Data$Date %in% c("1/2/2007","2/2/2007"),]
+convert_time <-strptime(paste(period$Date, period$Time, sep=" "),"%d/%m/%Y %H:%M:%S")
+period <- cbind(convert_time, period)
+plot(period$convert_time, period$Global_active_power, type="l", col="black", xlab="", ylab="Global Active Power (kilowatts)")
+dev.copy(png,file="plot2.png")
+dev.off()
