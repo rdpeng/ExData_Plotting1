@@ -1,9 +1,9 @@
 ### Coursera Explorator Data Analysis Course Project1
 ### Sylwester Dec
 
-### plot1.R
+### Plot1.R
 
-## Getting data
+## Getting data, download, unzip and create data frame
 
 library(data.table)
 getwd()

@@ -3,7 +3,7 @@
 
 ### plot4.R
 
-## Getting data
+## Getting data, download, unzip and create data frame
 library(data.table)
 getwd()
 download.file("https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip", "PowerCons.zip")
