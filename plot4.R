@@ -21,7 +21,8 @@ data <- subset(data, subset = (Date1>="2007-02-01" & Date1<="2007-02-02"))
 data$datetime = paste(data$Date, data$Time)
 data$datetime = as.POSIXlt(data$datetime,format="%d/%m/%Y %H:%M:%S")
 
-## create plot 2x2 with slots for charts 
+
+## create plot4.png 2x2 with slots for charts 
 png(filename='plot4.png', width=480, height=480, units='px')
 par(mfrow=c(2,2))
 
