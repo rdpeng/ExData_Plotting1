@@ -3,27 +3,13 @@
 
 ### plot4.R
 
-## Getting data
+## Getting data, download, unzip and create data frame
 library(data.table)
 getwd()
 download.file("https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip", "PowerCons.zip")
 unzip(zipfile = "PowerCons.zip", overwrite = TRUE)
 data<-read.table("household_power_consumption.txt",header = TRUE, sep = ';', na.strings = "?")
 
-## Convert Date Column to date format - Date1 column
-data$Date1 <- as.Date(data$Date, format = "%d/%m/%Y")
-
-## Subset data to 2007-02-01 and 2007-02-02
-data <- subset(data, subset = (Date1>="2007-02-01" & Date1<="2007-02-02"))
-
-
-## create plot 2x2
-png(filename='plot4.png', width=480, height=480, units='px')
-par(mfrow=c(2,2))
-
-
-
-## Create 1st plot
 
 ## Convert Date Column to date format - Date1 column
 data$Date1 <- as.Date(data$Date, format = "%d/%m/%Y")
@@ -35,14 +21,20 @@ data <- subset(data, subset = (Date1>="2007-02-01" & Date1<="2007-02-02"))
 data$datetime = paste(data$Date, data$Time)
 data$datetime = as.POSIXlt(data$datetime,format="%d/%m/%Y %H:%M:%S")
 
-## Plot1
+## create plot 2x2 with slots for charts 
+png(filename='plot4.png', width=480, height=480, units='px')
+par(mfrow=c(2,2))
+
+
+## Create Plot1
 plot(data$datetime, data$Global_active_power, type="l", xlab="", ylab="Global Active Power")
 
 
-## Plot2
+## Create Plot2
 plot(data$datetime, data$Voltage, type="l", ylab="Voltage", xlab="datetime")
 
-## Plot3
+## Create Plot3
+## convert datetime to required format
 data$datetime = paste(data$Date1, data$Time)
 data$datetime = as.POSIXct(data$datetime)
 
@@ -57,7 +49,7 @@ legend("topright", col=c("black", "red", "blue"), lty=1, lwd=1,
 
 
 ## Plot4
-plot(data$datetime, data$Global_reactive_power, type="l", ylab="Voltage", xlab="datetime")
+plot(data$datetime, data$Global_reactive_power, type="l", ylab="Global_reactive_power", xlab="datetime")
 
 
 ## Close and save PNG
