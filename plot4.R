@@ -55,3 +55,4 @@ plot(data$datetime, data$Global_reactive_power, type="l", ylab="Global_reactive_
 ## Close and save PNG
 dev.off()
 
+
