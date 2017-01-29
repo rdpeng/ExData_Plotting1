@@ -1,0 +1,10 @@
+setwd("C:/Users/dec260/Desktop/Coursera/ExData_Plotting1/Data")
+
+EnergyData = read.table("household_power_consumption.txt", sep=";", header=TRUE)
+EnergyData$Date = as.Date(EnergyData$Date, format="%d/%m/%Y")
+FebEnergyData = subset(EnergyData, Date == as.Date("2007-02-01", "%Y-%m-%d") | Date == as.Date("2007-02-02", "%Y-%m-%d"))
+rm(EnergyData)
+FebEnergyData$Global_active_power = as.numeric(as.character(FebEnergyData$Global_active_power))
+png(filename = "plot1.png", width=480, height=480)
+hist(FebEnergyData$Global_active_power, col="red", main="Global Active Power", xlab="Global Active Power (kilowatts)")
+dev.off()
