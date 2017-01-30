@@ -1,0 +1,7 @@
+setwd("/Users/sisovina/github/ExData_Plotting1")
+allrows <- read.table("household_power_consumption.txt", header = TRUE, sep = ";")
+dt <- subset(allrows, Date == "1/2/2007" | Date == "2/2/2007")
+gap <- as.numeric(as.character(dt$Global_active_power))
+png(filename = "plot1.png", width = 480, height = 480)
+hist(gap, col = "red", xlab = "Global Active Power (kilowatts)", main = "Global Active Power")
+dev.off()
