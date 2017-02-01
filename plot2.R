@@ -1,0 +1,8 @@
+setwd("/Users/sisovina/github/ExData_Plotting1")
+allrows <- read.table("household_power_consumption.txt", header = TRUE, sep = ";", stringsAsFactors = FALSE, na.strings = "?")
+subdata <- subset(allrows, Date == "1/2/2007" | Date == "2/2/2007")
+rm(allrows)
+datetime <- strptime(paste(subdata$Date, subdata$Time), format = "%d/%m/%Y %H:%M:%S")
+png(filename = "plot2.png", width = 480, height = 480)
+plot(datetime, subdata$Global_active_power, type = "l", ylab = "Global Active Power (kilowatts)", xlab = "")
+dev.off()
