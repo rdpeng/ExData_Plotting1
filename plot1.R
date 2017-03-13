@@ -1,3 +1,5 @@
+#I unzip the file in my working directory, so code begins from there, Same result if I use R functions for unzip
+
 file="./household_power_consumption.txt"
 powerc<-read.csv(file,sep=";",header=TRUE)
 powcfeb2<-powerc[as.Date(powerc$Date,"%d/%m/%Y")==as.Date("02/02/2007","%d/%m/%Y"),]
