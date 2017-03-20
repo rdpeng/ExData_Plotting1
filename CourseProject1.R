@@ -4,7 +4,7 @@
 ############################################################################################
 
 getwd()
-setwd("/Users/vincenthaupt/Desktop/Coursera/Data Science - R/4. Exploratory Data Analysis/Week 1")
+setwd("/Users//Desktop/Coursera/Data Science - R/4. Exploratory Data Analysis/Week 1")
 
 dat<-read.table("household_power_consumption.txt",header = T,sep = ";")
 dat$date_create<- as.Date(dat$Date,"%d/%m/%Y")
