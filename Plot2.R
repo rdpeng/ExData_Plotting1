@@ -1,0 +1,3 @@
+hh.power3 <- read.csv("hh_power_3.csv")
+hh.power3$DateTime <- strptime(paste(hh.power3$Date, hh.power3$Time), "%d/%m/%y%H:%M:%S")
+with(hh.power3, plot(DateTime, Global_active_power, type = "l", ylab = "Global Active Power (kilowatt)", xlab = ""))
