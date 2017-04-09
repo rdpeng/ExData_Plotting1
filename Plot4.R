@@ -1,3 +1,5 @@
+png("Plot4.png", width = 480, height = 480)
+
 hh.power3 <- read.csv("hh_power_3.csv")
 hh.power3$DateTime <- strptime(paste(hh.power3$Date, hh.power3$Time), "%d/%m/%y%H:%M:%S")
 
@@ -16,3 +18,5 @@ legend("topright", col = c("black", "red", "blue"), c("Sub_metering_1","Sub_mete
 
 plot(hh.power3$DateTime,hh.power3$Global_reactive_power, "n", ylab = "Global_reactive_power", xlab = "datetime")
 points(hh.power3$DateTime, hh.power3$Global_reactive_power, type = "l", col = "black")
+
+dev.off()
