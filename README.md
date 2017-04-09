@@ -21,7 +21,7 @@ Hi, below is the plot I made. Cheers! The R-codes can also be found in the folde
 
 ### Plot 4
 
-![plot4](plot4.png) 
+![plot4](plot4.bmp) 
 
 ## -------------- Description of the problem------------------
 
