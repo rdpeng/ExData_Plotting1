@@ -6,17 +6,17 @@ Hi, below is the plot I made. Cheers! The R-codes can also be found in the folde
 ### Plot 1
 
 
-![plot1](plot1.png) 
+![plot1](plot1.bmp) 
 
 
 ### Plot 2
 
-![plot2](plot2.png) 
+![plot2](plot2.bmp) 
 
 
 ### Plot 3
 
-![plot3](plot3.png) 
+![plot3](plot3.bmp) 
 
 
 ### Plot 4
