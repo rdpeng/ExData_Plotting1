@@ -1,0 +1,10 @@
+library("ggplot2")
+data <-read.csv("household_power_consumption.txt", header = TRUE, sep = ";",na.strings = "?")
+data$Date<- as.Date(data$Date,format='%d/%m/%Y')
+my_data <-subset(data, Date == "2007-2-1" | Date == "2007-2-2")
+y<- transform(my_data, combine = paste(Date, Time, sep= " "))
+
+y$combine<- strptime(y$combine, format = "%Y-%m-%d %H:%M:%S")
+ggplot(y, aes(y$combine)) + geom_line(aes(y =y$Sub_metering_1,colour ="y"))+ geom_line(aes(y =y$Sub_metering_2,colour ="z"))+ geom_line(aes(y =y$Sub_metering_3,colour ="r"))
+dev.copy(png,file="Plot3.png")
+dev.off()
