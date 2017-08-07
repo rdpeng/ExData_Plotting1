@@ -1,0 +1,15 @@
+```{r}
+House_elec <- read.csv("household_power_consumption.txt", sep =";")
+House_elec$Date <- as.Date(House_elec$Date, format= "%d/%m/%Y")
+House_elec_sub <- subset(House_elec, Date >= "2007-02-01" & Date <= "2007-02-02")
+House_elec_sub$DateTime <- as.POSIXct(as.character(paste(House_elec_sub$Date, House_elec_sub$Time)))
+House_elec_sub$Global_active_power <- as.numeric(as.character(House_elec_sub$Global_active_power))
+House_elec_sub$Global_reactive_power <- as.numeric(as.character(House_elec_sub$Global_reactive_power))
+House_elec_sub$Voltage <- as.numeric(as.character(House_elec_sub$Voltage))
+House_elec_sub$Global_intensity <- as.numeric(as.character(House_elec_sub$Global_intensity))
+House_elec_sub$Sub_metering_1 <- as.numeric(as.character(House_elec_sub$Sub_metering_1))
+House_elec_sub$Sub_metering_2 <- as.numeric(as.character(House_elec_sub$Sub_metering_2))
+House_elec_sub$Sub_metering_3 <- as.numeric(as.character(House_elec_sub$Sub_metering_3))
+plot(House_elec_sub$DateTime, House_elec_sub$Global_active_power, ylab = "Global Active Power (kilowatts)", type= "line", xlab = "")
+
+```
