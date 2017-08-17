@@ -1,3 +1,19 @@
+# My Plots
+
+This repo contains the R codes and plots for reproducing the figures of Assignment 1 of Exploratory Data Analysis
+
+4 sperat plots are:
+plot1.png
+plot2.png
+plot3.png
+plot4.png
+
+4 R codes to  produce the plots are given respectively:
+plot1.R
+plot2.R
+plot3.R
+plot4.R
+
 ## Introduction
 
 This assignment uses data from
