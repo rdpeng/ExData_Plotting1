@@ -1,0 +1,13 @@
+setwd("C:/Users/dr30094/Coursera - Working Diectory/EDA/Week 1/Peer-Graded Assignment/exdata_data_household_power_consumption")
+powerdata <- read.csv("household_power_consumption.txt", header = T, sep = ';', na.strings = "?", nrows = 2075259, check.names = F, stringsAsFactors = F, comment.char = "", quote = '\"')
+powerdata_subset <- subset(powerdata, Date %in% c("1/2/2007", "2/2/2007"))
+powerdata_subset$Date <- as.Date(powerdata_subset$Date, format = "%d/%m/%y")
+date_sub <- paste(as.Date(powerdata_subset$Date), powerdata_subset$Time)
+powerdata_subset$date_sub <- as.POSIXct(date_sub)
+with(powerdata_subset, {
+  plot(Sub_metering_1 ~ date_sub, type = "l", col = "black", xlab = "", ylab = "Energy sub metering")
+  lines(Sub_metering_2 ~ date_sub, col = "red")
+  lines(Sub_metering_3 ~ date_sub, col = "blue")
+})
+legend("topright", lty = 1, lwd = 2, col = c("black", "red", "blue"), legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
+dev.copy(png, file = "plot3.png")

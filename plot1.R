@@ -1,0 +1,7 @@
+setwd("C:/Users/dr30094/Coursera - Working Diectory/EDA/Week 1/Peer-Graded Assignment/exdata_data_household_power_consumption")
+powerdata <- read.csv("household_power_consumption.txt", header = T, sep = ';', na.strings = "?", nrows = 2075259, check.names = F, stringsAsFactors = F, comment.char = "", quote = '\"')
+powerdata_subset <- subset(powerdata, Date %in% c("1/2/2007", "2/2/2007"))
+powerdata_subset$Date <- as.Date(powerdata_subset$Date, format = "%d/%m/%y")
+hist(powerdata_subset$Global_active_power, main = "Global Active Power", col = "red")
+hist(powerdata_subset$Global_active_power, main = "Global Active Power", col = "red", xlab = "Global Active Power (kilowatts)")
+dev.copy(png, file = "plot1.png")
