@@ -5,16 +5,19 @@ require(scales)
 library(gridExtra)
  
 hh.power.csmp <- read.csv('../pete/Downloads/household_power_consumption.txt'
-                                 , sep = ';'
-                                ,na.strings = '?')
-hh.power.csmp$Date.Time <- paste(hh.power.csmp$Date, hh.power.csmp$Time)
-hh.power.csmp$Date.Time <- strptime(hh.power.csmp$Date.Time, format = '%d/%m/%Y %H:%M:%S')
-hh.power.csmp <- hh.power.csmp[which((hh.power.csmp$Date.Time >= '2007-02-14 00:00:00') 
-                                     & (hh.power.csmp$Date.Time <= '2007-02-15 23:59:59')),]
+                          , sep = ';'
+                          ,na.strings = '?')
+hh.power.csmp$Date <- as.Date(as.character(hh.power.csmp$Date), '%d/%m/%Y')
+hh.power.csmp <- subset(hh.power.csmp, hh.power.csmp$Date %between% c('2007-02-01','2007-02-02'))
+hh.power.csmp$Datetime <- strptime(paste(hh.power.csmp$Date
+                                         , as.character(hh.power.csmp$Time))
+                                   ,format = '%Y-%m-%d %H:%M:%S')
 
-ggplot(data = hh.power.csmp, aes(x = Date.Time))+
-  geom_line(aes(y = Sub_metering_1), color = '#2171b5')+
-  geom_line(aes(y = Sub_metering_2), color = '#fc4e2a')+
-  geom_line(aes(y = Sub_metering_3), color = '#238443')+
-  theme_linedraw()+
-  labs(x = '', y = 'Energy Sub-metering')
+plot(hh.power.csmp$Datetime, hh.power.csmp$Sub_metering_1
+     , 'l', xlab = 'Datetime', ylab = 'Submetering Power')
+lines(hh.power.csmp$Datetime, hh.power.csmp$Sub_metering_2, 'l', col = 'red')
+lines(hh.power.csmp$Datetime ,hh.power.csmp$Sub_metering_3, 'l', col = 'blue')
+legend("topright" 
+       ,legend = c('Submeter 1','Submeter 2','Submeter 3')
+       ,col = c('black','red','blue')
+       ,lty = 1)
