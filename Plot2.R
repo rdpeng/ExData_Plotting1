@@ -20,7 +20,7 @@
   
   par(mfrow = c(1,1)) ## Setting the plot area back to normal, in case it was changed
   
-  with(newdf, plot(newdf$datetime, newdf$Global_active_power, type = 'l', xlab = "", ylab = "Global Active Power (Kilowatts)"))
+  with(newdf, plot(datetime, Global_active_power, type = 'l', xlab = "", ylab = "Global Active Power (Kilowatts)"))
   
   dev.copy(png, file = "plot2.png") ##copping the plot graph to a PNG file
   
