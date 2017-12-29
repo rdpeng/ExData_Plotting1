@@ -20,11 +20,11 @@ newdf$datetime <- strptime(newdf$datetime, format = "%Y-%m-%d %H:%M:%S") ## Appl
 
 par(mfrow = c(1,1)) ## Setting the plot area back to normal, in case it was changed
 
-with(newdf, plot(newdf$datetime, newdf$Sub_metering_1, type = 'l', xlab = "", ylab = "Energy sub metering")) ##Plotting the first variable on scatterplot
+with(newdf, plot(datetime, Sub_metering_1, type = 'l', xlab = "", ylab = "Energy sub metering")) ##Plotting the first variable on scatterplot
 
-with(newdf, lines(newdf$datetime, Sub_metering_2, type = "l", col = "red")) ##Plotting the second variable
+with(newdf, lines(datetime, Sub_metering_2, type = "l", col = "red")) ##Plotting the second variable
 
-with(newdf, lines(newdf$datetime, Sub_metering_3, type = "l", col = "blue")) ##Plotting the third variable
+with(newdf, lines(datetime, Sub_metering_3, type = "l", col = "blue")) ##Plotting the third variable
 
 legend("topright", legend = c("Sub_metering_1","Sub_metering_2", "Sub_metering_3"), col = c("bisque4", "red", "blue"), lty = 1) ##Putting legends on the plot according to the assignment excercise
 
