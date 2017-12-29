@@ -21,26 +21,26 @@ newdf$datetime <- strptime(newdf$datetime, format = "%Y-%m-%d %H:%M:%S") ## Appl
 par(mfrow = c(2,2)) ## Setting the plot area for 4 graphs
 
 ## Plotting the 1st graph
-with(newdf, plot(newdf$datetime, newdf$Global_active_power, type = 'l', xlab = "", ylab = "Global Active Power"))
+with(newdf, plot(datetime, Global_active_power, type = 'l', xlab = "", ylab = "Global Active Power"))
 
 
 ## Plotting the 2nd graph
 
-with(newdf, plot(newdf$datetime, newdf$Voltage, type = 'l', xlab = "datetime", ylab = "Voltage"))
+with(newdf, plot(datetime, Voltage, type = 'l', xlab = "datetime", ylab = "Voltage"))
 
 ## Plotting the 3rd graph
 
-with(newdf, plot(newdf$datetime, newdf$Sub_metering_1, type = 'l', xlab = "", ylab = "Energy sub metering")) ##Plotting the firsT variable on scatterplot
+with(newdf, plot(datetime, Sub_metering_1, type = 'l', xlab = "", ylab = "Energy sub metering")) ##Plotting the firsT variable on scatterplot
 
-with(newdf, lines(newdf$datetime, Sub_metering_2, type = "l", col = "red")) ##Plotting the second variable
+with(newdf, lines(datetime, Sub_metering_2, type = "l", col = "red")) ##Plotting the second variable
 
-with(newdf, lines(newdf$datetime, Sub_metering_3, type = "l", col = "blue")) ##Plotting the third variable
+with(newdf, lines(datetime, Sub_metering_3, type = "l", col = "blue")) ##Plotting the third variable
 
 legend("topright", legend = c("Sub_metering_1","Sub_metering_2", "Sub_metering_3"), col = c("bisque4", "red", "blue"), lty = 1, bty = "n", cex = 0.70) ##Putting legends on the plot according to the assignment excercise
 
 
 ## Plotting the 4rt graph
-with(newdf, plot(newdf$datetime, newdf$Global_reactive_power, type = 'l', xlab = "datetime", ylab = "Global_reactive_power"))
+with(newdf, plot(datetime, Global_reactive_power, type = 'l', xlab = "datetime", ylab = "Global_reactive_power"))
 
 
 dev.copy(png, file = "plot4.png") ##copping the plot graph to a PNG file
