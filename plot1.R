@@ -11,7 +11,7 @@
   
   par(mfrow = c(1,1)) ## Setting the plot area back to normal, in case it was changed
   
-  with(newdf, hist(newdf$Global_active_power, col = "Red", main = "Global Active Power", xlab = "Global Active Power (kilowatts)")) ## Plotting an Histogram using 'newdf' data frame
+  with(newdf, hist(Global_active_power, col = "Red", main = "Global Active Power", xlab = "Global Active Power (kilowatts)")) ## Plotting an Histogram using 'newdf' data frame
   
   dev.copy(png, file = "plot1.png") ##copping the histogram to a PNG file
   
