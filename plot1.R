@@ -49,7 +49,6 @@ dataset <- df[!is.na(df$Date) & df$jjjj==2007 & df$mm==2 & (df$dd==1 | df$dd==2)
 
 
 dataset$weekdayshort <- format(dataset$datefield,"%a")
-dataset$timestamp <- as.POSIXct(paste(dataset$Date, dataset$Time), "%d/%m/%Y %H:%M:%S")
 str(dataset)
 
 table(dataset$jjjj,dataset$mm)
