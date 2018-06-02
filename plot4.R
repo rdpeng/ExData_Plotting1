@@ -1,4 +1,4 @@
-# plot3.R
+# plot4.R
 # ================================================================================================================
 #> sessionInfo()
 # =======================================================================================================================
@@ -35,22 +35,38 @@ table(dataset$jjjj,dataset$mm)
 table(dataset$dd,dataset$weekdayshort)
 
 
-plot3 <- function(device="screen") {
-  if (tolower(device) == "png")     png(filename = "plot3.png", width = 480, height = 480)
-  if (tolower(device) == "jpeg")    jpeg(filename ="plot3.jpeg", width = 480, height = 480)
-  # if (tolower(device) == "pdf")     pdf(file = "plot3.pdf", width = 480, height = 480)
+plot4 <- function(device="screen") {
+  if (tolower(device) == "png")     png(filename = "plot4.png", width = 480, height = 480)
+  if (tolower(device) == "jpeg")    jpeg(filename ="plot4.jpeg", width = 480, height = 480)
+  # if (tolower(device) == "pdf")     pdf(file = "plot4.pdf", width = 480, height = 480)
   
+  par(mfrow=c(2,2))
+  par(oma=c(1,1,1,1))   
+  par(mar=c(4,4,1,2))   
   
+  ##PLOT 1
+  plot(dataset$timestamp,dataset$Global_active_power, type="l", xlab="", ylab="Global Active Power")
+  ##PLOT 2
+  plot(dataset$timestamp,dataset$Voltage, type="l", xlab="datetime", ylab="Voltage")
+  
+  ##PLOT 3
   plot(dataset$timestamp,dataset$Sub_metering_1, type="l", xlab="", ylab="Energy sub metering")
   lines(dataset$timestamp,dataset$Sub_metering_2,col="red")
   lines(dataset$timestamp,dataset$Sub_metering_3,col="blue")
-  legend("topright", col=c("black","red","blue"), c("Sub_metering_1 ","Sub_metering_2 ", "Sub_metering_3 "),lty=1, lwd=1)
+  legend("topright", col=c("black","red","blue"), c("Sub_metering_1","Sub_metering_2", "Sub_metering_3"),lty=c(1,1),bty="n", cex=.7) 
+  #bty removes the box, cex shrinks the text, spacing added after labels so it renders correctly   
+  
+  #PLOT 4
+  plot(dataset$timestamp,dataset$Global_reactive_power, type="l", xlab="datetime", ylab="Global_reactive_power")
+  
+  
+  
   
   if (tolower(device)!="screen")
     dev.off()
 }  
 
-plot3()
-plot3("png")
-# plot3("jpeg")
+plot4()
+plot4("png")
+# plot4("jpeg")
 

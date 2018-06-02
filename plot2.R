@@ -50,7 +50,7 @@ plot2 <- function(device="screen") {
     dev.off()
 }  
 
-plot2
+plot2()
 plot2("png")
 # plot2("jpeg")
 
