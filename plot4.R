@@ -40,7 +40,7 @@ plot4 <- function(device="screen") {
   if (tolower(device) == "jpeg")    jpeg(filename ="plot4.jpeg", width = 480, height = 480)
   # if (tolower(device) == "pdf")     pdf(file = "plot4.pdf", width = 480, height = 480)
   
-  par(mfrow=c(2,2))
+  parsave <- par(mfrow=c(2,2))  # remember the active par settings
   par(oma=c(1,1,1,1))   
   par(mar=c(4,4,1,2))   
   
@@ -64,6 +64,7 @@ plot4 <- function(device="screen") {
   
   if (tolower(device)!="screen")
     dev.off()
+  par(parsave)  #  restore the par settings
 }  
 
 plot4()
