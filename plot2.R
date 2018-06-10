@@ -1,0 +1,10 @@
+file<-read.table(file='household_power_consumption.txt',sep = ';',header = T,na.strings = '?')
+file$D=as.Date(file$Date,format='%d/%m/%Y')
+file<-subset(file,file$D=='2007-02-01'|file$D=='2007-02-02')
+
+par(mfrow=c(1,1),mar=c(4,4,2,2))
+file$D=as.Date(file$Date,format='%d/%m/%Y')
+file$DT=strptime(paste(file$Date,file$Time,sep = '/'),format='%d/%m/%Y/%H:%M:%S')
+plot(file$DT,file$Global_active_power,type='l',xlab='')
+dev.copy(png,"plot2.png", width=480, height=480)
+dev.off()
