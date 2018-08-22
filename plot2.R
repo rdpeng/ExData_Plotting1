@@ -1,3 +1,4 @@
+
 ## Reads the file household_power_consumption.txt
 ## keeps only apporpriate columns
 ## plot an exploratory graph of the data read

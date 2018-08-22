@@ -1,3 +1,4 @@
+
 ## Reads the file household_power_consumption.txt
 ## keeps only apporpriate columns
 ## plot an exploratory graph of the data read
@@ -31,5 +32,4 @@ with(data3,{
          bty = "n",lwd=1, cex=1 ,y.intersp=1.4, col=c("black","red","blue"), lty=c(1,1,1))  
 } )
 dev.off()
-
 
