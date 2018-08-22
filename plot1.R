@@ -6,7 +6,6 @@
 
 library(data.table)
 library(dplyr)
- 
 
 setwd("C:/PC/Coursera/Data_Science/4_ExplDataAna/ExData_Plotting1")
 
