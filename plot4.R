@@ -30,7 +30,7 @@ with(data4,{
   
  plot(strptime(dateTime,"%d/%m/%Y %H:%M:%S"),num_Global_active_power,type="l",xlab="", ylab="Global Active Power")
 
- plot( strptime(data3$dateTime,"%d/%m/%Y %H:%M:%S"),n_Sub_metering_1,type="n",xlab="", ylab="Energy sub metering")
+ plot( strptime(data4$dateTime,"%d/%m/%Y %H:%M:%S"),n_Sub_metering_1,type="n",xlab="", ylab="Energy sub metering")
  points(strptime(dateTime,"%d/%m/%Y %H:%M:%S"),n_Sub_metering_1,type="l")
  points(strptime(dateTime,"%d/%m/%Y %H:%M:%S"),n_Sub_metering_2,type="l",col="red")
  points(strptime(dateTime,"%d/%m/%Y %H:%M:%S"),n_Sub_metering_3,type="l",col="blue")
