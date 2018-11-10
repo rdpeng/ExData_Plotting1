@@ -1,9 +1,13 @@
-setwd("C:/Users/user/Documents/coursera")
-dataFile <- "./household_power_consumption.txt"
-data <- read.table(dataFile, header=TRUE, sep=";", stringsAsFactors=FALSE, dec=".")
-subSetData <- data[data$Date %in% c("1/2/2007","2/2/2007") ,]
+NEI <- readRDS("summarySCC_PM25.rds")
+library(dplyr)
+NEIdp <- tbl_df(NEI)
 
-globalActivePower <- as.numeric(subSetData$Global_active_power)
-png("plot1.png", width=480, height=480)
-hist(globalActivePower, col="red", main="Global Active Power", xlab="Global Active Power (kilowatts)")
+EmissionsForYear = summarize(group_by(NEIdp, year), sum(Emissions))
+
+colnames(EmissionsForYear) <- c("Year", "Emissions")
+
+EmissionsForYear$EmissionsInMillions = EmissionsForYear$Emissions / 1000000
+
+png('plot1.png')
+barplot(EmissionsForYear$EmissionsInMillions, names.arg=EmissionsForYear$Year, col="blue", xlab='Years', ylab='Emissions (PM 2.5) in millions', main =  'Emissions (PM 2.5) per year')
 dev.off()

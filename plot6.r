@@ -1,0 +1,15 @@
+NEI <- readRDS("summarySCC_PM25.rds")
+library(dplyr)
+NEIdp <- tbl_df(NEI)
+
+BaltimoraEmissionsVehicle = summarize(group_by(filter(NEIdp, fips=='24510', type=='ON-ROAD'), year), sum(Emissions)) 
+BaltimoraEmissionsVehicle = mutate(BaltimoraEmissionsVehicle, Place = 'Baltimore City')
+LAEmissionsVehicle = summarize(group_by(filter(NEIdp, fips=='06037', type=='ON-ROAD'), year), sum(Emissions))
+LAEmissionsVehicle = mutate(LAEmissionsVehicle, Place = 'Los Angeles County')
+BaltimoreLA <- rbind(BaltimoraEmissionsVehicle,LAEmissionsVehicle)
+colnames(BaltimoreLA) <- c('Year', 'Emissions', 'Place')
+BaltimoreLA$Year <- as.character(BaltimoreLA$Year)
+
+png('plot6.png')
+qplot(Year,data=BaltimoreLA, geom="bar", weight=Emissions, facets=.~Place, fill=Year, main='Baltimore City/Los Angeles County: Emissions of motor vehicle', xlab='', ylab = 'Emissions (PM 2.5)')
+dev.off()
