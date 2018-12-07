@@ -1,0 +1,32 @@
+expl_assign <- read.csv2(file.choose(), dec = ".", stringsAsFactors = FALSE)
+colnames(expl_assign)
+head(expl_assign)
+tail(expl_assign)
+str(expl_assign)
+expl_assign$Date <- as.Date(expl_assign$Date, format = "%d/%m/%Y")
+str(expl_assign)
+
+
+str(sub_expl)
+sub_expl<-subset(expl_assign, Date == "2007-02-01" | Date == "2007-02-02")
+
+sub_expl$Time <- as.POSIXct(paste(sub_expl$Date, sub_expl$Time), format="%Y-%m-%d %H:%M:%S")
+
+?strptime()
+sub_expl$Global_active_power <- as.numeric(sub_expl$Global_active_power)
+sub_expl$Global_reactive_power <- as.numeric(sub_expl$Global_reactive_power)
+sub_expl$Voltage <- as.numeric(sub_expl$Voltage)
+sub_expl$Global_intensity <- as.numeric(sub_expl$Global_intensity)
+sub_expl$Sub_metering_1 <- as.numeric(sub_expl$Sub_metering_1)
+sub_expl$Sub_metering_2 <- as.numeric(sub_expl$Sub_metering_2)
+sub_expl$Sub_metering_3 <- as.numeric(sub_expl$Sub_metering_3)
+str(sub_expl)
+?plot
+png("plot3.png")
+
+with(sub_expl, plot(Time, Sub_metering_1, type = "l", ylab = "Energy Sub Metering", col = "black"))
+lines(sub_expl$Time, sub_expl$Sub_metering_2, col = "red")
+lines(sub_expl$Time, sub_expl$Sub_metering_3, col = "blue")
+legend("topright", legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), col = c("black", "red", "blue"), lty = 1)
+dev.off()
+     
