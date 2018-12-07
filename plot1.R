@@ -1,0 +1,13 @@
+expl_assign <- read.csv2(file.choose(), dec = ".", stringsAsFactors = FALSE)
+colnames(expl_assign)
+head(expl_assign)
+tail(expl_assign)
+str(expl_assign)
+
+sub_expl<-subset(expl_assign, Date == "2007-02-01" | Date == "2007-02-02")
+sub_expl$Global_active_power <- as.numeric(sub_expl$Global_active_power)
+class(sub_expl$Global_active_power)
+unique(sub_expl$Date)
+png("plot1.png")
+with(sub_expl, hist(Global_active_power, col = "red", main = "Global Active Power", xlab = "Global Active Power (Killowats)"))
+dev.off()
