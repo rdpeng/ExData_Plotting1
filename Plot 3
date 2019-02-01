@@ -1,0 +1,14 @@
+acs <- read.table("./data/household_power_consumption.txt", sep = ";", header = TRUE)
+acs$Date<- as.Date(acs$Date, format = "%d/%m/%Y" )
+acs<- subset(acs, acs$Date >= "2007-02-01" & acs$Date <= "2007-02-02" )
+
+acs$Date<-as.POSIXct(paste(acs$Date, acs$Time), format="%Y-%m-%d %H:%M:%S")
+
+plot(acs$Date,as.integer(acs$Sub_metering_1),type="l",xlab="",ylab="Energy sub metering")
+lines(acs$Date,as.integer(acs$Sub_metering_2),type="l",xlab="",ylab="Energy sub metering", col="red")
+lines(acs$Date,as.integer(acs$Sub_metering_3),type="l",xlab="",ylab="Energy sub metering", col="blue")
+
+legend("topright", lty=1, col=c("black","red","blue"),legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"))
+
+dev.copy(png,'plot3.png', height = 480, width = 480)
+dev.off()
