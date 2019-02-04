@@ -1,0 +1,73 @@
+#This is the first project of Exploratory Data Analysis
+rm(list=ls())
+dir()
+#reading the file from dir
+power<-read.table("household_power_consumption.txt",skip=1,sep=";")
+names(power)
+#Naming the table
+names(power)<-c("Date","Time","Global_active_power","Global_reactive_power","Voltage","Global_Intensity","Sub_metering_1","Sub_metering_2","Sub_metering_3")
+#Subseting data
+subpower<- subset(power, power$Date =="1/2/2007"| power$Date =="2/2/2007") 
+
+#Creating plot1 by calling plot function 
+hist(as.numeric((as.character(subpower$Global_active_power))),col="red",main="Global Active Power",xlab="Global Active Power in kilowatts")
+title(main="Global Active Power")
+#saving a copy of plot1
+dev.copy(png, file="plot1.png", height=480, width=480)
+dev.off()
+
+#Creating plot2 bt transforming the Date and Time variabels from characters into objects of type Date and POXIXlt 
+subpower$Date<-as.Date(subpower$Date, format="%D/%M/%Y")
+subpower$Time<-strptime(subpower$Time, format="%H:%M:%S")                
+
+subpower[1:1440,"Time"]<-format(subpower[1:1440,"Time"],"2007-02-01 %H:%M:%S") 
+subpower[1441:2880,"Time"]<-format(subpower[1441:2880,"Time"],"2007-02-02 %H:%M:%S")
+
+#Calling plot function to generate plot2
+plot(subpower$Time,as.numeric(as.character(subpower$Global_active_power)),type="l",xlab="",ylab="Global Active Power in killowatts")
+#save a copy of plot2
+dev.copy(png, file="plot2.png", height=480, width=480)
+dev.off()
+
+#Creating plot3 
+power <- read.csv("household_power_consumption.txt", header=T, sep=';', na.strings="?", 
+                      nrows=2075259, check.names=F, stringsAsFactors=F, comment.char="", quote='\"')
+data1 <- subset(power, Date %in% c("1/2/2007","2/2/2007"))
+data1$Date <- as.Date(data1$Date, format="%d/%m/%Y")
+datetime <- paste(as.Date(data1$Date), data1$Time)
+data1$Datetime <- as.POSIXct(datetime)
+
+#calling plot function
+with(data1, {
+        plot(Sub_metering_1~Datetime, type="l",
+             ylab="Global Active Power (kilowatts)", xlab="")
+        lines(Sub_metering_2~Datetime,col='Red')
+        lines(Sub_metering_3~Datetime,col='Blue')
+}) 
+
+legend("topright", col=c("black", "red", "blue"), lty=1, lwd=2, 
+       legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
+#saving a copy of plot3
+dev.copy(png, file="plot3.png", height=480, width=480)
+dev.off()
+
+#Creating plot4
+par(mfrow=c(2,2), mar=c(4,4,2,1), oma=c(0,0,2,0))
+with(data1, {
+        plot(Global_active_power~Datetime, type="l", 
+             ylab="Global Active Power (kilowatts)", xlab="")
+        plot(Voltage~Datetime, type="l", 
+             ylab="Voltage (volt)", xlab="")
+        plot(Sub_metering_1~Datetime, type="l", 
+             ylab="Global Active Power (kilowatts)", xlab="")
+        lines(Sub_metering_2~Datetime,col='Red')
+        lines(Sub_metering_3~Datetime,col='Blue')
+        legend("topright", col=c("black", "red", "blue"), lty=1, lwd=2, bty="n",
+               legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
+        plot(Global_reactive_power~Datetime, type="l", 
+             ylab="Global Rective Power (kilowatts)",xlab="")
+})
+
+#saving a copy of plot4
+dev.copy(png, file="plot4.png", height=480, width=480)
+dev.off()
