@@ -1,6 +1,12 @@
-a<-read.table("ExData_Plotting1\\household_power_consumption.txt",sep=";", header=T,stringsAsFactors = F)
-c<-as.Date(as.character(a[[1]]),"%d/%m/%Y")
-e<-a["2007-02-01"==c|"2007-02-02"==c,]
-dev.copy(png,"plot1.png")
-hist(as.numeric(e$Global_active_power),col="red",xlab="Global Active Power (kilowatts)",main = "Global Active Power")
+library(dplyr)
+NEI <- readRDS("summarySCC_PM25.rds")
+SCC <- readRDS("Source_Classification_Code.rds")
+ye<-c(1999,2002,2005,2008)
+sumem<-NULL
+for (i in 1:length(ye)){
+        a<-filter(NEI,year==ye[i])
+        sumem<-c(sumem,sum(a$Emissions))
+}
+png(filename = "plot1.png")
+plot(ye,sumem,pch=19,xlab="Year", ylab = "Total PM25 Emissions (tons)")
 dev.off()
