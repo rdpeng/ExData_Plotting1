@@ -7,7 +7,7 @@ datasets. In particular, we will be using the "Individual household
 electric power consumption Data Set" which I have made available on
 the course web site:
 
-
+## Following information realtes to the changes done to the dataset 
 * <b>Dataset</b>: <a href="https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip">Electric power consumption</a> [20Mb]
 
 * <b>Description</b>: Measurements of electric power consumption in
