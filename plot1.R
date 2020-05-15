@@ -1,4 +1,4 @@
-
+#test
 # Read whole data into workspace using read.table
 data <- read.table("household_power_consumption.txt", header=T, sep=';')
 
