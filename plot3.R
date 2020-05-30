@@ -1,0 +1,10 @@
+file<-"./data.txt"
+t<-read.table(file, header =TRUE, sep = ";", dec = ".")
+data<-subset(t,as.Date(Date)=="1/2/2007"|as.Date(Date)=="2/2/2007")
+with(data, plot(strptime(Time,format = "%H:%M:%S") ,as.numeric(Sub_metering_1), main = "", xlab = "", ylab = "Energy sub metering", type = "n"))
+with(data, lines(strptime(Time,format = "%H:%M:%S") ,as.numeric(Sub_metering_1), col = "black"))
+with(data, lines(strptime(Time,format = "%H:%M:%S") ,as.numeric(Sub_metering_2), col = "red"))
+with(data, lines(strptime(Time,format = "%H:%M:%S") ,as.numeric(Sub_metering_3), col = "blue"))
+legend("topright", legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), col = c("black", "red", "blue"), lty = 1)
+dev.copy(png, filename = "plot3.png", width = 480, height = 480)
+dev.off()
