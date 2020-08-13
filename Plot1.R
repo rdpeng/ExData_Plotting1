@@ -4,4 +4,4 @@ png("plot1.png", width=480, height=480)
 NumGAP= as.numeric(levels(hpc_true$Global_active_power))[hpc_true$Global_active_power]
 hist(NumGAP,col="red", main="Global Active Power", xlab="Global Active Power (kilowatts)")
 dev.off()
-
+#plot1
