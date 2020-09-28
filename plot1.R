@@ -1,6 +1,4 @@
 library("data.table")
-#Save file in that folder
-setwd("/Users/isabelmendez/Documents/R/ExploratoryDataAnalysis-Assignment_CourseProject1")
 
 #Load Data
 
