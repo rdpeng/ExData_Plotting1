@@ -14,7 +14,7 @@ In this repository you will find:
          * plot4.R    --> Script in R to create plot4.png
          * plot4.png  --> Fourth graphic needed to complete the Course Project         
 
-This repository has been forked, as demande in the exercice, from the original
+This repository has been forked, as demanded in the exercice, from the original
 repository (https://github.com/rdpeng/ExData_Plotting1), but the figure folder 
 created in the original repository have been deleted in order not to create
 misunderstandings.
