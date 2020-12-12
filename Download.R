@@ -18,4 +18,4 @@ power_cons <- filter(total_data, Date == "1/2/2007"| Date == "2/2/2007")
 ## the original data file.
 
 filename <- "hpc_20070201_20070202.txt"
-write.csv(power_cons, file = filename)
+write.csv(power_cons, file = filename, row.names = FALSE)
