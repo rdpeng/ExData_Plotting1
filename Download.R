@@ -1,5 +1,5 @@
 ## We will use this script to download the zip file of the exercise, unzip it,
-## filter first and second of february 2007, and save it in another csv file.
+## filter first and second of February 2007, and save it in another csv file.
 ## By doing this we will have a more manageable file for other scripts
 
 library(dplyr)
