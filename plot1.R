@@ -3,7 +3,7 @@
 ## As original data is already treated in the script called Download.R
 ## contained in this repository, we will load into a table the file
 ## hpc_20070201_20070202.txt created by this script which is a csv file
-## containing only the registers for february, the 1st and the 2nd, 2007. 
+## containing only the registers for February, the 1st and the 2nd, 2007. 
 
 library(lubridate)
 library(dplyr)
