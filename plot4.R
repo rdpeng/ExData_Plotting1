@@ -13,7 +13,7 @@ data <- read.csv("hpc_20070201_20070202.txt", header = TRUE)
 ## Date and Time are characters and to complete this graphic we need to show 
 ## evolution on time of the Global Active Power. To have this time variable
 ## we will add a column pasting Date and Time, and converting this value
-## to a time variable using lubridate functions.
+## to a time variable using lubridate package functions.
 
 data <- mutate(data, DateTime = dmy_hms(paste(data$Date, data$Time, sep = " ")))
 
