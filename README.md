@@ -5,6 +5,7 @@ This repository contains the proposed solution for the first Course Project of "
 In this repository you will find:
 
          * README.md  --> Present document explaining repository content
+         * Figure     --> Folder containing the graphics to reproduce
          * Download.R --> Script in R downloading the data file
          * plot1.R    --> Script in R to create plot1.png
          * plot1.png  --> First graphic needed to complete the Course Project
@@ -17,9 +18,7 @@ In this repository you will find:
 
 
 This repository has been forked, as demande in the exercice, from the original
-repository (https://github.com/rdpeng/ExData_Plotting1), but the figure folder 
-created in the original repository have been deleted in order not to create
-misunderstandings.
+repository (https://github.com/rdpeng/ExData_Plotting1).
 
 Original instructions of the exercise are copied below.
 
