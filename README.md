@@ -1,3 +1,27 @@
+## Purpose of the document
+
+This repository contains the proposed solution for the first Course Project of "Exploratory Data Analysis" from Coursera.
+
+In this repository you will find:
+
+         * README.md  --> Present document explaining repository content
+         * Figure     --> Folder containing the graphics to reproduce
+         * Download.R --> Script in R downloading the data file
+         * plot1.R    --> Script in R to create plot1.png
+         * plot1.png  --> First graphic needed to complete the Course Project
+         * plot2.R    --> Script in R to create plot2.png
+         * plot2.png  --> Second graphic needed to complete the Course Project
+         * plot3.R    --> Script in R to create plot3.png
+         * plot3.png  --> Third graphic needed to complete the Course Project
+         * plot4.R    --> Script in R to create plot4.png
+         * plot4.png  --> Fourth graphic needed to complete the Course Project         
+
+
+This repository has been forked, as demande in the exercice, from the original
+repository (https://github.com/rdpeng/ExData_Plotting1).
+
+Original instructions of the exercise are copied below.
+
 ## Introduction
 
 This assignment uses data from
