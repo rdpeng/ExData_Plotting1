@@ -20,7 +20,7 @@ par(mfrow=c(2,2),mar=c(4,4,4,4),cex=0.7)
     plot(HPC_Feb$Time,HPC_Feb$Global_active_power,type="l",xlab="",ylab="Global Active Power")
 #make plot2_Voltage
     HPC_Feb$Voltage<-as.numeric(HPC_Feb$Voltage)
-    plot(HPC_Feb$Time,HPC_Feb$Voltage,type="l",xlab="datetime",ylab="Global Active Power")    
+    plot(HPC_Feb$Time,HPC_Feb$Voltage,type="l",xlab="datetime",ylab="Voltage")    
 #make plot3    
     #sub_metering_1
     plot(HPC_Feb$Time,HPC_Feb$Sub_metering_1,type="l",xlab="",ylab="Energy Sub metering")
