@@ -92,23 +92,97 @@ date. There should be four PNG files and four R code files.
 The four plots that you will need to construct are shown below. 
 
 
-### Plot 1
+### Plot 1 
+![plot2](https://user-images.githubusercontent.com/81907372/115529125-ecff2080-a292-11eb-8f0d-aec0b01ab2d0.png)
 
+#Reading, naming and subsetting power consumption data
+power <- read.table("household_power_consumption.txt",skip=1,sep=";")
+names(power) <- c("Date","Time","Global_active_power","Global_reactive_power","Voltage","Global_intensity","Sub_metering_1","Sub_metering_2","Sub_metering_3")
+subpower <- subset(power,power$Date=="1/2/2007" | power$Date =="2/2/2007")
 
-![plot of chunk unnamed-chunk-2](figure/unnamed-chunk-2.png) 
+#Calling the basic plot function
+hist(as.numeric(as.character(subpower$Global_active_power)),col="red",main="Global Active Power",xlab="Global Active Power(kilowatts)")
+
+#Annotating graph
+title(main="Global Active Power")
+![plot1 png](https://user-images.githubusercontent.com/81907372/115528662-8974f300-a292-11eb-9602-3051600b21a5.png)
 
 
 ### Plot 2
 
-![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3.png) 
+#Reading, naming and subsetting power consumption data
+power <- read.table("household_power_consumption.txt",skip=1,sep=";")
+names(power) <- c("Date","Time","Global_active_power","Global_reactive_power","Voltage","Global_intensity","Sub_metering_1","Sub_metering_2","Sub_metering_3")
+subpower <- subset(power,power$Date=="1/2/2007" | power$Date =="2/2/2007")
+
+#Transforming the Date and Time vars from characters into objects of type Date and POSIXlt respectively
+subpower$Date <- as.Date(subpower$Date, format="%d/%m/%Y")
+subpower$Time <- strptime(subpower$Time, format="%H:%M:%S")
+subpower[1:1440,"Time"] <- format(subpower[1:1440,"Time"],"2007-02-01 %H:%M:%S")
+subpower[1441:2880,"Time"] <- format(subpower[1441:2880,"Time"],"2007-02-02 %H:%M:%S")
+
+#Calling the basic plot function
+plot(subpower$Time,as.numeric(as.character(subpower$Global_active_power)),type="l",xlab="",ylab="Global Active Power (kilowatts)") 
+
+#Annotating graph
+title(main="Global Active Power Vs Time")
+![plot2 png](https://user-images.githubusercontent.com/81907372/115529226-043e0e00-a293-11eb-8be3-9bf556a44138.png)
+
 
 
 ### Plot 3
 
-![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-4.png) 
+#Reading, naming and subsetting power consumption data
+power <- read.table("household_power_consumption.txt",skip=1,sep=";")
+names(power) <- c("Date","Time","Global_active_power","Global_reactive_power","Voltage","Global_intensity","Sub_metering_1","Sub_metering_2","Sub_metering_3")
+subpower <- subset(power,power$Date=="1/2/2007" | power$Date =="2/2/2007")
 
+#Transforming the Date and Time vars from characters into objects of type Date and POSIXlt respectively
+subpower$Date <- as.Date(subpower$Date, format="%d/%m/%Y")
+subpower$Time <- strptime(subpower$Time, format="%H:%M:%S")
+subpower[1:1440,"Time"] <- format(subpower[1:1440,"Time"],"2007-02-01 %H:%M:%S")
+subpower[1441:2880,"Time"] <- format(subpower[1441:2880,"Time"],"2007-02-02 %H:%M:%S")
+
+
+#Calling the basic plot functions
+plot(subpower$Time,subpower$Sub_metering_1,type="n",xlab="",ylab="Energy sub metering")
+with(subpower,lines(Time,as.numeric(as.character(Sub_metering_1))))
+with(subpower,lines(Time,as.numeric(as.character(Sub_metering_2)),col="red"))
+with(subpower,lines(Time,as.numeric(as.character(Sub_metering_3)),col="blue"))
+legend("topright", lty=1, col=c("black","red","blue"),legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"))
+
+#Annotating graph
+title(main="Energy sub-metering")
+
+![plot3 png](https://user-images.githubusercontent.com/81907372/115529629-597a1f80-a293-11eb-9e0c-e9ede2f05697.png)
 
 ### Plot 4
 
-![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5.png) 
+# Reading, naming and subsetting power consumption data
+power <- read.table("household_power_consumption.txt",skip=1,sep=";")
+names(power) <- c("Date","Time","Global_active_power","Global_reactive_power","Voltage","Global_intensity","Sub_metering_1","Sub_metering_2","Sub_metering_3")
+subpower <- subset(power,power$Date=="1/2/2007" | power$Date =="2/2/2007")
 
+# Transforming the Date and Time vars from characters into objects of type Date and POSIXlt respectively
+subpower$Date <- as.Date(subpower$Date, format="%d/%m/%Y")
+subpower$Time <- strptime(subpower$Time, format="%H:%M:%S")
+subpower[1:1440,"Time"] <- format(subpower[1:1440,"Time"],"2007-02-01 %H:%M:%S")
+subpower[1441:2880,"Time"] <- format(subpower[1441:2880,"Time"],"2007-02-02 %H:%M:%S")
+
+
+# Initiating a composite plot with many graphs
+par(mfrow=c(2,2))
+
+#Calling the basic plot function that calls different plot functions to build the 4 plots that form the graph
+with(subpower,{
+  plot(subpower$Time,as.numeric(as.character(subpower$Global_active_power)),type="l",  xlab="",ylab="Global Active Power")  
+  plot(subpower$Time,as.numeric(as.character(subpower$Voltage)), type="l",xlab="datetime",ylab="Voltage")
+  plot(subpower$Time,subpower$Sub_metering_1,type="n",xlab="",ylab="Energy sub metering")
+   with(subpower,lines(Time,as.numeric(as.character(Sub_metering_1))))
+   with(subpower,lines(Time,as.numeric(as.character(Sub_metering_2)),col="red"))
+   with(subpower,lines(Time,as.numeric(as.character(Sub_metering_3)),col="blue"))
+   legend("topright", lty=1, col=c("black","red","blue"),legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"), cex = 0.6)
+  plot(subpower$Time,as.numeric(as.character(subpower$Global_reactive_power)),type="l",xlab="datetime",ylab="Global_reactive_power")
+})
+
+![plot4 png](https://user-images.githubusercontent.com/81907372/115530089-bf66a700-a293-11eb-81ce-3b8676799f1b.png)
