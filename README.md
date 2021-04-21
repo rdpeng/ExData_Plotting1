@@ -95,7 +95,7 @@ The four plots that you will need to construct are shown below.
 ### Plot 1 
 ![plot2](https://user-images.githubusercontent.com/81907372/115529125-ecff2080-a292-11eb-8f0d-aec0b01ab2d0.png)
 
-#Reading, naming and subsetting power consumption data
+#Reading, naming and subsetting 
 power <- read.table("household_power_consumption.txt",skip=1,sep=";")
 names(power) <- c("Date","Time","Global_active_power","Global_reactive_power","Voltage","Global_intensity","Sub_metering_1","Sub_metering_2","Sub_metering_3")
 subpower <- subset(power,power$Date=="1/2/2007" | power$Date =="2/2/2007")
@@ -110,12 +110,12 @@ title(main="Global Active Power")
 
 ### Plot 2
 
-#Reading, naming and subsetting power consumption data
+#Reading, naming and subsetting data
 power <- read.table("household_power_consumption.txt",skip=1,sep=";")
 names(power) <- c("Date","Time","Global_active_power","Global_reactive_power","Voltage","Global_intensity","Sub_metering_1","Sub_metering_2","Sub_metering_3")
 subpower <- subset(power,power$Date=="1/2/2007" | power$Date =="2/2/2007")
 
-#Transforming the Date and Time vars from characters into objects of type Date and POSIXlt respectively
+#Transforming the Date and Time vars from characters into objects of type Date and POSIXlt 
 subpower$Date <- as.Date(subpower$Date, format="%d/%m/%Y")
 subpower$Time <- strptime(subpower$Time, format="%H:%M:%S")
 subpower[1:1440,"Time"] <- format(subpower[1:1440,"Time"],"2007-02-01 %H:%M:%S")
@@ -132,12 +132,12 @@ title(main="Global Active Power Vs Time")
 
 ### Plot 3
 
-#Reading, naming and subsetting power consumption data
+#Reading, naming and subsetting  data
 power <- read.table("household_power_consumption.txt",skip=1,sep=";")
 names(power) <- c("Date","Time","Global_active_power","Global_reactive_power","Voltage","Global_intensity","Sub_metering_1","Sub_metering_2","Sub_metering_3")
 subpower <- subset(power,power$Date=="1/2/2007" | power$Date =="2/2/2007")
 
-#Transforming the Date and Time vars from characters into objects of type Date and POSIXlt respectively
+#Transforming the Date and Time vars from characters into objects of type Date and POSIXlt 
 subpower$Date <- as.Date(subpower$Date, format="%d/%m/%Y")
 subpower$Time <- strptime(subpower$Time, format="%H:%M:%S")
 subpower[1:1440,"Time"] <- format(subpower[1:1440,"Time"],"2007-02-01 %H:%M:%S")
@@ -158,19 +158,19 @@ title(main="Energy sub-metering")
 
 ### Plot 4
 
-# Reading, naming and subsetting power consumption data
+#Reading, naming and subsetting  data
 power <- read.table("household_power_consumption.txt",skip=1,sep=";")
 names(power) <- c("Date","Time","Global_active_power","Global_reactive_power","Voltage","Global_intensity","Sub_metering_1","Sub_metering_2","Sub_metering_3")
 subpower <- subset(power,power$Date=="1/2/2007" | power$Date =="2/2/2007")
 
-# Transforming the Date and Time vars from characters into objects of type Date and POSIXlt respectively
+#Transforming the Date and Time vars from characters into objects of type Date and POSIXlt 
 subpower$Date <- as.Date(subpower$Date, format="%d/%m/%Y")
 subpower$Time <- strptime(subpower$Time, format="%H:%M:%S")
 subpower[1:1440,"Time"] <- format(subpower[1:1440,"Time"],"2007-02-01 %H:%M:%S")
 subpower[1441:2880,"Time"] <- format(subpower[1441:2880,"Time"],"2007-02-02 %H:%M:%S")
 
 
-# Initiating a composite plot with many graphs
+#Initiating a composite plot with many graphs
 par(mfrow=c(2,2))
 
 #Calling the basic plot function that calls different plot functions to build the 4 plots that form the graph
