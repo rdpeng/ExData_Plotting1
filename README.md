@@ -105,6 +105,7 @@ hist(as.numeric(as.character(subpower$Global_active_power)),col="red",main="Glob
 
 #Annotating graph
 title(main="Global Active Power")
+
 ![plot1 png](https://user-images.githubusercontent.com/81907372/115528662-8974f300-a292-11eb-9602-3051600b21a5.png)
 
 
@@ -126,6 +127,7 @@ plot(subpower$Time,as.numeric(as.character(subpower$Global_active_power)),type="
 
 #Annotating graph
 title(main="Global Active Power Vs Time")
+
 ![plot2 png](https://user-images.githubusercontent.com/81907372/115529226-043e0e00-a293-11eb-8be3-9bf556a44138.png)
 
 
