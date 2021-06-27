@@ -1,5 +1,4 @@
 data <- read.table(file.choose(), sep=";", header=TRUE)
-data[, dateTime = as.POSIXct(paste(Date, Time), format = "%d/%m/%Y %H:%M:%S")]
 data$Date <- as.Date(data$Date, format = '%d/%m/%Y')
 data$DateTime <- as.POSIXct(paste(data$Date, data$Time))
 if(!file.exists('figures')) dir.create('figures')
