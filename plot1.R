@@ -1,7 +1,7 @@
 library(data.table)
 
 ## 1. Load data
-download.file("https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip", ".")
+download.file("https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip", "./electric_power_data.zip")
 unzip("electric_power_data.zip","household_power_consumption.txt")
 data <- fread("household_power_consumption.txt", stringsAsFactors = F, sep = ";")
 
