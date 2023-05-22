@@ -9,3 +9,11 @@ file<-"./household_power_consumption.txt"
 data<-read.table(file,header=TRUE,sep=";",na.strings="?")
 # Filter Data from the dataset
 filterData<-subset(data,Date%in%c("1/2/2007","2/2/2007"))
+# Format Date and Time Data
+filterData$Date<-as.Date(filterData$Date,format="%d/%m/%Y")
+dtm<-paste(filterData$Date,filterData$Time)
+format_dtm<-strptime(dtm,format="%Y-%m-%d %H:%M:%S")
+# Create plot1
+png(file="plot1.png",width=480,height=480)
+hist(filterData$Global_active_power,col="red",main="Global Active Power",xlab="Global Active Power (kilowatts)",ylab="Frequency")
+dev.off()
