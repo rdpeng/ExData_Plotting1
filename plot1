@@ -1,9 +1,11 @@
- # Download and Install Required R Packages
- install.packages("dplyr")
- library(dplyr)
- install.packages("lubridate")
- library(lubridate)
- # Get Data from the text file
- setwd("~/GitHub")
+# Download and Install Required R Packages
+install.packages("dplyr")
+library(dplyr)
+install.packages("lubridate")
+library(lubridate)
+# Get Data from the text file
+setwd("~/GitHub")
 file<-"./household_power_consumption.txt"
 data<-read.table(file,header=TRUE,sep=";",na.strings="?")
+# Filter Data from the dataset
+filterData<-subset(data,Date%in%c("1/2/2007","2/2/2007"))
