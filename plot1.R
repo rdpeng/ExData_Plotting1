@@ -1,0 +1,7 @@
+library(lubridate)
+df<-read.table("household_power_consumption.txt",sep=";",header = TRUE)
+df$Date<- as.Date(dmy(df$Date))
+df<-subset(df,Date>="2007-02-01" & Date<="2007-02-02")
+png("plot1.png",width = 480,height = 480)
+hist(as.numeric(df$Global_active_power),col="red",xlab = "Global Active Power(killowatts)",ylab = "Frequancy",main = "Global Active Power")
+dev.off()
