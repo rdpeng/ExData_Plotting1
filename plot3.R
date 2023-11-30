@@ -1,4 +1,7 @@
-df <- read.table("household_power_consumption.txt",header = TRUE,sep=";",na.strings = "?")
+library(lubridate)
+library(dplyr)
+path<-"C:\\Users\\rajne\\OneDrive\\Desktop\\DataScience-specialisation\\Course-4(Exploratory Data Analysis)\\Project-1\\household_power_consumption.txt"
+df<-read.table(path,header = TRUE,sep=";",na.strings = "?")
 df <- subset(df,df$Date=="1/2/2007" | df$Date =="2/2/2007")
 
 df$Time <- as.POSIXct(paste(df$Date,df$Time),format = "%d/%m/%Y %H:%M:%S")

@@ -1,6 +1,7 @@
 library(lubridate)
 library(dplyr)
-df<-read.table("household_power_consumption.txt",sep=";",header = TRUE)
+path<-"C:\\Users\\rajne\\OneDrive\\Desktop\\DataScience-specialisation\\Course-4(Exploratory Data Analysis)\\Project-1\\household_power_consumption.txt"
+df<-read.table(path,sep=";",header = TRUE)
 df<-subset(df,Date=="1/2/2007" | Date=="2/2/2007")
 df<-df %>% mutate(Time= as.POSIXct(paste(df$Date, df$Time), format = "%d/%m/%Y %H:%M:%S"))
 df$Date<- as.Date(dmy(df$Date))
